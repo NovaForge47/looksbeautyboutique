@@ -380,7 +380,7 @@ function Booking() {
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
             Reserve Your Visit
           </h2>
-          <p className="mt-4 text-ink/70">Online 24/7 via Setmore — or by phone</p>
+          <p className="mt-4 text-ink/70">Book Via Form Or Via App</p>
         </div>
 
         <div className="mt-12 grid lg:grid-cols-3 gap-6">
