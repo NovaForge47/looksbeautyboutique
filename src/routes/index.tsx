@@ -263,7 +263,10 @@ function About() {
   return (
     <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-        <BeforeAfter />
+        <div className="flex flex-col gap-6">
+          <BeforeAfter src={beforeAfterImg.url} alt="Before and after manicure at Looks Beauty Boutique" />
+          <BeforeAfter src={beforeAfterHairImg.url} alt="Before and after hair treatment at Looks Beauty Boutique" />
+        </div>
         <div>
           <SectionLabel>Our Studio</SectionLabel>
           <RoseLine />
