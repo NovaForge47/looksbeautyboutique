@@ -708,7 +708,7 @@ function Footer() {
             <div className="mt-5 h-px w-10 bg-rose-gold" />
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li><a href="#home" className="hover:text-rose-gold">Home</a></li>
-              <li><a href="#services" className="hover:text-rose-gold">Services</a></li>
+              <li><a href="#about" className="hover:text-rose-gold">About</a></li>
               <li><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-gold">Bookings</a></li>
               <li><a href="#contact" className="hover:text-rose-gold">Contact</a></li>
             </ul>
