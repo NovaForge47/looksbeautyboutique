@@ -179,6 +179,7 @@ function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg.url})` }}
       />
+      <HeroNav />
       <a
         href={BOOKING_URL}
         target="_blank"
