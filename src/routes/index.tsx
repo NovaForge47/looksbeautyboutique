@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroBg from "@/assets/hero-clean.jpg.asset.json";
-import logoAsset from "@/assets/looks-logo.png.asset.json";
+
 import heroLogo from "@/assets/looks-logo-hero-transparent.png.asset.json";
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
@@ -30,14 +30,6 @@ const MAPS_URL =
 const MAPS_EMBED =
   "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
 
-const services = [
-  { icon: "💅", name: "Classic Manicure", duration: "45 min", price: "€15" },
-  { icon: "✨", name: "Gel Manicure", duration: "60 min", price: "€25" },
-  { icon: "💎", name: "Semi-Permanent", duration: "75 min", price: "€30" },
-  { icon: "🌸", name: "Classic Pedicure", duration: "60 min", price: "€20" },
-  { icon: "👑", name: "Gel Pedicure", duration: "75 min", price: "€35" },
-  { icon: "🎨", name: "Nail Art", duration: "15 min / nail", price: "€5" },
-];
 
 const team = [
   {
@@ -86,7 +78,6 @@ function LumierePage() {
       <Hero />
       <Ribbon />
       <About />
-      <Services />
       <Stats />
       <Team />
       <Booking />
@@ -103,29 +94,24 @@ function HeroNav() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
     { href: "#about", label: "About" },
     { href: "#gallery", label: "Gallery" },
-    { href: BOOKING_URL, label: "Book Now", external: true },
+    { href: "#booking", label: "Book Now" },
   ];
 
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" className="flex items-center shrink-0">
-          <img
-            src={logoAsset.url}
-            alt="Looks Beauty Boutique"
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
-          />
+        <a href="#home" className="flex items-center shrink-0 font-display text-white text-xl sm:text-2xl tracking-tight">
+          looks<span className="text-rose-gold">.</span>
         </a>
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
           {links.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
+              
+              
               className={
                 l.label === "Book Now"
                   ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
@@ -150,8 +136,8 @@ function HeroNav() {
             <a
               key={l.label}
               href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
+              
+              
               onClick={() => setOpen(false)}
               className={
                 l.label === "Book Now"
@@ -205,10 +191,10 @@ function Hero() {
               Book Now
             </a>
             <a
-              href="#services"
+              href="#about"
               className="inline-flex items-center justify-center rounded-full border border-white/40 text-white px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-white/10 transition"
             >
-              Services
+              About
             </a>
           </div>
         </div>
@@ -382,49 +368,6 @@ function About() {
   );
 }
 
-/* -------------------- SERVICES -------------------- */
-function Services() {
-  return (
-    <section id="services" className="bg-blush py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="text-center">
-          <SectionLabel dark>Services</SectionLabel>
-          <RoseLine center />
-          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">Our Services</h2>
-          <p className="mt-4 text-ink/70">Every service, a unique experience</p>
-        </div>
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <div
-              key={s.name}
-              className="group bg-white rounded-xl border border-rose-gold p-8 shadow-[0_10px_30px_-20px_rgba(201,165,92,0.5)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_25px_45px_-15px_rgba(201,165,92,0.55)] hover:border-2"
-            >
-              <div className="text-4xl text-rose-gold">{s.icon}</div>
-              <h3 className="mt-6 font-display text-2xl">{s.name}</h3>
-              <p className="mt-2 text-sm text-ink/60">{s.duration}</p>
-              <div className="mt-4 h-7 relative overflow-hidden">
-                <p className="absolute inset-0 text-sm text-ink/50 italic transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-                  Reveal price →
-                </p>
-                <p className="absolute inset-0 font-bold text-xl text-rose-gold translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  {s.price}
-                </p>
-              </div>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-1 text-rose-gold text-sm hover:underline"
-              >
-                Book <ArrowRight size={14} />
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* -------------------- STATS -------------------- */
 function Stats() {
@@ -513,23 +456,14 @@ function Booking() {
           <p className="mt-4 text-ink/70">Online 24/7 via Setmore — or by phone</p>
         </div>
 
-        <div className="mt-12 grid lg:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl p-10 md:p-12 shadow-[0_25px_60px_-25px_rgba(201,165,92,0.35)] flex flex-col">
-            <div className="text-4xl">✨</div>
-            <h3 className="mt-4 font-display text-3xl">Online Booking</h3>
-            <p className="mt-3 text-ink/70 text-sm leading-relaxed">
-              Choose your service, artist and time slot — instant confirmation.
-            </p>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto pt-8"
-            >
-              <span className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose-gold text-ink py-4 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_15px_30px_-12px_rgba(201,165,92,0.6)]">
-                Book on Setmore <ArrowRight size={16} />
-              </span>
-            </a>
+        <div className="mt-12 grid lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 bg-white rounded-2xl overflow-hidden shadow-[0_25px_60px_-25px_rgba(201,165,92,0.35)]">
+            <iframe
+              src={BOOKING_URL}
+              title="Book on Setmore"
+              className="w-full h-[720px] border-0"
+              loading="lazy"
+            />
           </div>
 
           <div className="bg-white rounded-2xl p-10 md:p-12 shadow-[0_25px_60px_-25px_rgba(201,165,92,0.35)]">
@@ -683,7 +617,8 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <img src={logoAsset.url} alt="Looks Beauty Boutique" className="h-14 w-auto brightness-0 invert" />
+            <div className="font-display text-white text-3xl tracking-tight">looks<span className="text-rose-gold">.</span></div>
+            <div className="mt-1 font-display italic text-white/50 text-sm">beauty boutique</div>
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">
               A nail &amp; hair salon in the heart of Syntagma — inside the arcade at Filellinon 3. Every look is a work of art.
             </p>
@@ -722,7 +657,7 @@ function Footer() {
             <div className="mt-5 h-px w-10 bg-rose-gold" />
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li><a href="#home" className="hover:text-rose-gold">Home</a></li>
-              <li><a href="#services" className="hover:text-rose-gold">Services</a></li>
+              <li><a href="#about" className="hover:text-rose-gold">About</a></li>
               <li><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-gold">Bookings</a></li>
               <li><a href="#contact" className="hover:text-rose-gold">Contact</a></li>
             </ul>
