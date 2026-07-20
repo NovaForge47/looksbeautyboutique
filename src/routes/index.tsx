@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroBg from "@/assets/hero-clean.jpg.asset.json";
 import logoAsset from "@/assets/looks-logo.png.asset.json";
+import heroLogo from "@/assets/looks-logo-hero.png.asset.json";
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
@@ -183,19 +184,18 @@ function Hero() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/20 to-ink/80 md:from-ink/40 md:via-transparent md:to-ink/70" />
       <HeroNav />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center">
-        <div className="max-w-xl pt-24 pb-16 sm:pt-28 sm:pb-20">
-          <p className="font-display italic text-rose-gold text-lg sm:text-xl mb-4">
-            Looks Beauty Boutique
-          </p>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
+        <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
+          <img
+            src={heroLogo.url}
+            alt="looks. beauty boutique"
+            className="w-64 sm:w-80 lg:w-96 h-auto mb-8"
+          />
           <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-white">
             Beauty is in the details.
             <span className="block italic text-rose-gold">We make it yours.</span>
           </h1>
-          <p className="mt-5 text-sm sm:text-base text-white/80 max-w-md">
-            Nail &amp; Hair Salon · Syntagma, Athens
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a
               href={BOOKING_URL}
               target="_blank"
