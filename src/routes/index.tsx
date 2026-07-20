@@ -307,10 +307,8 @@ function BeforeAfter() {
     };
   }, []);
 
-  const before =
-    "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=900&auto=format&fit=crop";
-  const after =
-    "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&auto=format&fit=crop";
+  const before = nailsFrench.url;
+  const after = nailsBlackRed.url;
 
   return (
     <div className="w-full max-w-xl mx-auto">
