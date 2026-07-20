@@ -206,7 +206,7 @@ function Hero() {
         href={BOOKING_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute left-[10%] bottom-[12%] w-[180px] h-[45px] md:w-[240px] md:h-[55px] lg:w-[280px] lg:h-[60px] z-10 cursor-pointer"
+        className="absolute right-[10%] bottom-[16%] w-[180px] h-[48px] md:w-[240px] md:h-[58px] lg:w-[280px] lg:h-[64px] z-10 cursor-pointer"
         aria-label="Book Now"
         title="Book Now"
       />
