@@ -30,14 +30,6 @@ const MAPS_URL =
 const MAPS_EMBED =
   "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
 
-const services = [
-  { icon: "💅", name: "Classic Manicure", duration: "45 min", price: "€15" },
-  { icon: "✨", name: "Gel Manicure", duration: "60 min", price: "€25" },
-  { icon: "💎", name: "Semi-Permanent", duration: "75 min", price: "€30" },
-  { icon: "🌸", name: "Classic Pedicure", duration: "60 min", price: "€20" },
-  { icon: "👑", name: "Gel Pedicure", duration: "75 min", price: "€35" },
-  { icon: "🎨", name: "Nail Art", duration: "15 min / nail", price: "€5" },
-];
 
 const team = [
   {
