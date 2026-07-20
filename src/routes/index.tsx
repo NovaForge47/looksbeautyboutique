@@ -102,21 +102,16 @@ function HeroNav() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
     { href: "#about", label: "About" },
     { href: "#gallery", label: "Gallery" },
-    { href: BOOKING_URL, label: "Book Now", external: true },
+    { href: "#booking", label: "Book Now" },
   ];
 
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" className="flex items-center shrink-0">
-          <img
-            src={logoAsset.url}
-            alt="Looks Beauty Boutique"
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
-          />
+        <a href="#home" className="flex items-center shrink-0 font-display text-white text-xl sm:text-2xl tracking-tight">
+          looks<span className="text-rose-gold">.</span>
         </a>
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
           {links.map((l) => (
