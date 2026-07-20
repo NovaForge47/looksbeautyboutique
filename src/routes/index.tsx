@@ -125,10 +125,10 @@ function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-3 items-center gap-4">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[1fr_auto] items-center gap-6">
         <a
           href="#home"
-          className="flex items-center truncate transition-all"
+          className="flex items-center truncate"
         >
           <img
             src={logoAsset.url}
@@ -136,7 +136,7 @@ function Nav() {
             className="h-12 md:h-14 w-auto object-contain"
           />
         </a>
-        <nav className={`hidden md:flex items-center justify-center gap-8 lg:gap-10 text-[13px] font-medium tracking-[0.18em] uppercase ${
+        <nav className={`hidden md:flex items-center justify-end gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase ${
           scrolled ? "text-ink/80" : "text-white/90"
         }`}>
           {links.map((l) => (
@@ -147,7 +147,7 @@ function Nav() {
               rel={l.external ? "noopener noreferrer" : undefined}
               className={`transition-colors ${
                 l.label === "Book Now"
-                  ? "rounded-full bg-rose-gold text-ink px-5 py-2 hover:bg-rose-gold/90"
+                  ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90"
                   : "hover:text-rose-gold"
               }`}
             >
@@ -155,9 +155,8 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <div className="hidden md:flex justify-end" />
         <button
-          className={`md:hidden justify-self-end p-2 transition-colors ${
+          className={`md:hidden p-2 transition-colors ${
             scrolled ? "text-ink" : "text-white"
           }`}
           onClick={() => setOpen((v) => !v)}
