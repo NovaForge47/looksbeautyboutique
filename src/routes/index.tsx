@@ -114,22 +114,23 @@ function Nav() {
   const links = [
     { href: "#home", label: "Αρχική" },
     { href: "#services", label: "Υπηρεσίες" },
-    { href: "#booking", label: "Κρατήσεις" },
+    { href: "#gallery", label: "Δείγματα" },
     { href: "#contact", label: "Επικοινωνία" },
   ];
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white border-b border-rose-gold/70 transition-shadow ${
-        scrolled ? "shadow-[0_10px_30px_-15px_rgba(183,110,121,0.35)]" : ""
+      className={`sticky top-0 z-50 bg-white border-b border-rose-gold/40 transition-shadow ${
+        scrolled ? "shadow-[0_10px_30px_-15px_rgba(160,135,118,0.35)]" : ""
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-3 items-center gap-4">
-        <a
-          href="#home"
-          className="font-display italic text-2xl md:text-3xl text-rose-gold tracking-tight truncate"
-        >
-          Lumière Nails
+        <a href="#home" className="flex items-center truncate">
+          <img
+            src={logoAsset.url}
+            alt="Looks Beauty Boutique"
+            className="h-12 md:h-14 w-auto object-contain"
+          />
         </a>
         <nav className="hidden md:flex items-center justify-center gap-10 text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
           {links.map((l) => (
@@ -140,8 +141,10 @@ function Nav() {
         </nav>
         <div className="hidden md:flex justify-end">
           <a
-            href="#booking"
-            className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-6 py-3 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_10px_25px_-10px_rgba(183,110,121,0.6)]"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-6 py-3 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_10px_25px_-10px_rgba(160,135,118,0.6)]"
           >
             Κλείστε Ραντεβού
           </a>
@@ -167,12 +170,19 @@ function Nav() {
             </a>
           ))}
           <a
-            href="#booking"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center rounded-full bg-rose-gold text-white px-6 py-3 text-sm font-medium"
           >
             Κλείστε Ραντεβού
           </a>
+        </div>
+      )}
+    </header>
+  );
+}
         </div>
       )}
     </header>
