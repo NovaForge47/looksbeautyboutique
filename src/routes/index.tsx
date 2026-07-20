@@ -1,15 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroHand from "@/assets/hero-hand.jpg";
+import logoAsset from "@/assets/looks-logo.png.asset.json";
+import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
+import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
+import nailsFrench from "@/assets/nails-french.jpg.asset.json";
 import {
-  Sparkles,
   ArrowRight,
   ArrowDown,
   Plus,
   Star,
   MapPin,
   Phone,
-  Mail,
+  Clock,
   Instagram,
   Facebook,
   Menu,
@@ -19,6 +22,12 @@ import {
 export const Route = createFileRoute("/")({
   component: LumierePage,
 });
+
+const BOOKING_URL = "https://looksbeautyboutique.setmore.com/";
+const MAPS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=Filellinon+3,+Athina+105+57,+Greece";
+const MAPS_EMBED =
+  "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
 
 const services = [
   { icon: "💅", name: "Manicure Απλό", duration: "45 λεπτά", price: "€15" },
@@ -31,44 +40,46 @@ const services = [
 
 const team = [
   {
-    name: "Μαρία",
-    title: "Senior Nail Artist",
-    exp: "5 χρόνια εμπειρία",
-    photo:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=600&fit=crop&crop=faces",
-  },
-  {
-    name: "Ελένη",
-    title: "Gel & Nail Art Specialist",
-    exp: "3 χρόνια εμπειρία",
-    photo:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=600&fit=crop&crop=faces",
+    name: "Βασιλική",
+    title: "Nail Artist",
+    exp: "Manicure · Ημιμόνιμο · Nail Art",
+    photo: nailsFrench.url,
   },
   {
     name: "Σοφία",
-    title: "Pedicure Expert",
-    exp: "4 χρόνια εμπειρία",
-    photo:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=600&fit=crop&crop=faces",
+    title: "Nail Artist",
+    exp: "Manicure · Pedicure · Repairs",
+    photo: nailsNudeOmbre.url,
   },
 ];
 
 const reviews = [
   {
-    text: "Απίστευτη δουλειά! Τα νύχια μου έμειναν τέλεια για 3 εβδομάδες.",
-    name: "ΜΑΡΙΑ Π.",
+    text:
+      "This nail salon was amazing. So clean, professional, and detail oriented. Loved how my nails turned out!",
+    name: "KENDA HARRIS",
   },
   {
-    text: "Επαγγελματισμός και φιλικό περιβάλλον. Θα ξαναέρθω σίγουρα!",
-    name: "ΕΛΕΝΗ Κ.",
+    text:
+      "I came in without an appointment and left an hour later super happy with beautifully manicured nails. Thanks for your professional, efficient and friendly service!",
+    name: "SABINE PROKSCH-BAUER",
   },
   {
-    text: "Το καλύτερο nail studio που έχω επισκεφτεί στην Αθήνα.",
-    name: "ΣΟΦΙΑ Μ.",
+    text:
+      "Had a wonderful experience here — mani/pedi. I came with a few broken nails and a bit of an emergency situation. Sophia was amazing — I highly recommend!",
+    name: "MELINA PAPADOPOULOS",
   },
 ];
 
-const timeSlots = ["10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
+const hours: { day: string; time: string }[] = [
+  { day: "Δευτέρα", time: "10:00 – 18:00" },
+  { day: "Τρίτη", time: "09:00 – 20:00" },
+  { day: "Τετάρτη", time: "09:00 – 20:00" },
+  { day: "Πέμπτη", time: "09:00 – 20:00" },
+  { day: "Παρασκευή", time: "08:00 – 20:00" },
+  { day: "Σάββατο", time: "10:00 – 18:00" },
+  { day: "Κυριακή", time: "Κλειστά" },
+];
 
 function LumierePage() {
   return (
@@ -103,22 +114,23 @@ function Nav() {
   const links = [
     { href: "#home", label: "Αρχική" },
     { href: "#services", label: "Υπηρεσίες" },
-    { href: "#booking", label: "Κρατήσεις" },
+    { href: "#gallery", label: "Δείγματα" },
     { href: "#contact", label: "Επικοινωνία" },
   ];
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white border-b border-rose-gold/70 transition-shadow ${
-        scrolled ? "shadow-[0_10px_30px_-15px_rgba(183,110,121,0.35)]" : ""
+      className={`sticky top-0 z-50 bg-white border-b border-rose-gold/40 transition-shadow ${
+        scrolled ? "shadow-[0_10px_30px_-15px_rgba(160,135,118,0.35)]" : ""
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-3 items-center gap-4">
-        <a
-          href="#home"
-          className="font-display italic text-2xl md:text-3xl text-rose-gold tracking-tight truncate"
-        >
-          Lumière Nails
+        <a href="#home" className="flex items-center truncate">
+          <img
+            src={logoAsset.url}
+            alt="Looks Beauty Boutique"
+            className="h-12 md:h-14 w-auto object-contain"
+          />
         </a>
         <nav className="hidden md:flex items-center justify-center gap-10 text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
           {links.map((l) => (
@@ -129,8 +141,10 @@ function Nav() {
         </nav>
         <div className="hidden md:flex justify-end">
           <a
-            href="#booking"
-            className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-6 py-3 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_10px_25px_-10px_rgba(183,110,121,0.6)]"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-6 py-3 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_10px_25px_-10px_rgba(160,135,118,0.6)]"
           >
             Κλείστε Ραντεβού
           </a>
@@ -156,7 +170,9 @@ function Nav() {
             </a>
           ))}
           <a
-            href="#booking"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center rounded-full bg-rose-gold text-white px-6 py-3 text-sm font-medium"
           >
@@ -188,7 +204,7 @@ function Hero() {
         <div aria-hidden className="pointer-events-none absolute bottom-16 left-10 w-56 h-56 rounded-full bg-rose-gold/10 blur-3xl" />
         <div className="relative max-w-xl">
           <p className="text-rose-gold text-xs md:text-[13px] uppercase tracking-[0.32em] font-medium">
-            Premium Nail Studio · Αθήνα
+            Nail Salon · Σύνταγμα, Αθήνα
           </p>
           <div className="mt-5 h-[2px] w-[60px] bg-rose-gold" />
           <h1 className="mt-8 font-display font-light leading-[1.05] text-[56px] md:text-[72px] lg:text-[80px] tracking-tight">
@@ -204,8 +220,10 @@ function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#booking"
-              className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-rose-gold/90 transition-all shadow-[0_15px_30px_-12px_rgba(183,110,121,0.7)]"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-rose-gold/90 transition-all shadow-[0_15px_30px_-12px_rgba(160,135,118,0.7)]"
             >
               Κλείστε Ραντεβού <ArrowRight size={16} />
             </a>
@@ -218,9 +236,9 @@ function Hero() {
           </div>
           <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
             {[
-              { n: "500+", l: "Πελάτισσες" },
-              { n: "5★", l: "Google" },
-              { n: "24/7", l: "Online" },
+              { n: "4.6★", l: "Google Rating" },
+              { n: "164+", l: "Κριτικές" },
+              { n: "Σύνταγμα", l: "Filellinon 3" },
             ].map((s) => (
               <div key={s.l}>
                 <div className="font-display text-3xl text-rose-gold">{s.n}</div>
@@ -238,7 +256,7 @@ function Hero() {
 /* -------------------- RIBBON -------------------- */
 function Ribbon() {
   const text =
-    "PREMIUM NAIL ART · MANICURE · PEDICURE · GEL · ΗΜΙΜΟΝΙΜΟ · NAIL ART · LUMIÈRE NAILS · ΑΘΗΝΑ · ";
+    "LOOKS BEAUTY BOUTIQUE · MANICURE · PEDICURE · ΗΜΙΜΟΝΙΜΟ · NAIL ART · ΣΥΝΤΑΓΜΑ · ΑΘΗΝΑ · ";
   return (
     <section className="bg-ink py-8 overflow-hidden border-y border-rose-gold/20">
       <div className="flex whitespace-nowrap lumiere-marquee-track">
@@ -289,10 +307,8 @@ function BeforeAfter() {
     };
   }, []);
 
-  const before =
-    "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=900&auto=format&fit=crop";
-  const after =
-    "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&auto=format&fit=crop";
+  const before = nailsFrench.url;
+  const after = nailsBlackRed.url;
 
   return (
     <div className="w-full max-w-xl mx-auto">
@@ -378,7 +394,7 @@ function About() {
             Εμπιστευτείτε τα Νύχιά σας σε Αληθινούς Καλλιτέχνες
           </h2>
           <p className="mt-8 text-ink/70 text-base leading-[1.8] max-w-lg">
-            Στο Lumière Nails πιστεύουμε ότι κάθε λεπτομέρεια μετράει. Χρησιμοποιούμε αποκλειστικά
+            Στο Looks Beauty Boutique πιστεύουμε ότι κάθε λεπτομέρεια μετράει. Χρησιμοποιούμε αποκλειστικά
             premium προϊόντα και τεχνικές για να σας χαρίσουμε τέλεια αποτελέσματα κάθε φορά.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
@@ -446,10 +462,10 @@ function Services() {
 /* -------------------- STATS -------------------- */
 function Stats() {
   const items = [
-    { n: "500+", l: "Ευχαριστημένες Πελάτισσες" },
-    { n: "5★", l: "Βαθμολογία Google" },
-    { n: "50+", l: "Διαθέσιμα Σχέδια" },
-    { n: "24/7", l: "Online Κράτηση" },
+    { n: "4.6★", l: "Google Rating" },
+    { n: "164+", l: "Κριτικές" },
+    { n: "6", l: "Ημέρες Ανοιχτά" },
+    { n: "Online", l: "Κρατήσεις 24/7" },
   ];
   return (
     <section className="bg-ink py-24">
@@ -484,19 +500,16 @@ function Team() {
             Οι Καλλιτέχνες μας
           </h2>
         </div>
-        <div className="mt-16 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="mt-16 grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {team.map((m) => (
             <div
               key={m.name}
-              className="bg-white rounded-2xl shadow-[0_15px_35px_-20px_rgba(0,0,0,0.15)] p-10 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_25px_50px_-20px_rgba(183,110,121,0.4)]"
+              className="bg-white rounded-2xl shadow-[0_15px_35px_-20px_rgba(0,0,0,0.15)] p-10 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_25px_50px_-20px_rgba(160,135,118,0.4)]"
             >
-              <div className="mx-auto w-32 h-32 rounded-full ring-[3px] ring-rose-gold ring-offset-4 ring-offset-white overflow-hidden">
-                <img
-                  src={m.photo}
-                  alt={m.name}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+              <div className="mx-auto w-32 h-32 rounded-full ring-[3px] ring-rose-gold ring-offset-4 ring-offset-white bg-blush flex items-center justify-center">
+                <span className="font-display italic text-5xl text-rose-gold">
+                  {m.name.charAt(0)}
+                </span>
               </div>
               <h3 className="mt-8 font-display italic text-3xl">{m.name}</h3>
               <p className="mt-2 text-rose-gold text-[11px] uppercase tracking-[0.25em]">
@@ -504,7 +517,9 @@ function Team() {
               </p>
               <p className="mt-3 text-sm text-ink/60">{m.exp}</p>
               <a
-                href="#booking"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center rounded-full bg-rose-gold text-white px-6 py-2.5 text-sm hover:bg-rose-gold/90 transition-all"
               >
                 Κλείστε Ραντεβού
@@ -519,199 +534,77 @@ function Team() {
 
 /* -------------------- BOOKING -------------------- */
 function Booking() {
-  const [service, setService] = useState("");
-  const [artist, setArtist] = useState("");
-  const [date, setDate] = useState("");
-  const [slot, setSlot] = useState<string | null>(null);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [done, setDone] = useState(false);
-
-  const submit = (e: FormEvent) => {
-    e.preventDefault();
-    setDone(true);
-  };
-
   return (
     <section id="booking" className="bg-blush py-24 lg:py-32">
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <SectionLabel dark>Κράτηση Ραντεβού</SectionLabel>
           <RoseLine center />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
             Κλείστε το Ραντεβού σας
           </h2>
-          <p className="mt-4 text-ink/70">Online 24/7 — χωρίς τηλεφώνημα</p>
+          <p className="mt-4 text-ink/70">Online 24/7 μέσω Setmore — ή τηλεφωνικά</p>
         </div>
 
-        <div className="mt-10 mx-auto max-w-2xl rounded-xl border border-rose-gold bg-white px-6 py-4 text-sm text-ink/80 text-center">
-          📌 Demo φόρμα — Σε πραγματικό site η κράτηση γίνεται αυτόματα
-        </div>
+        <div className="mt-12 grid lg:grid-cols-2 gap-6">
+          <div className="bg-white rounded-2xl p-10 md:p-12 shadow-[0_25px_60px_-25px_rgba(160,135,118,0.35)] flex flex-col">
+            <div className="text-4xl">✨</div>
+            <h3 className="mt-4 font-display text-3xl">Online Κράτηση</h3>
+            <p className="mt-3 text-ink/70 text-sm leading-relaxed">
+              Επιλέξτε υπηρεσία, τεχνίτρια και ώρα που σας βολεύει — άμεση επιβεβαίωση.
+            </p>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto pt-8"
+            >
+              <span className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose-gold text-white py-4 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_15px_30px_-12px_rgba(160,135,118,0.6)]">
+                Κρατήστε στο Setmore <ArrowRight size={16} />
+              </span>
+            </a>
+          </div>
 
-        <div className="mt-8 bg-white rounded-2xl p-8 md:p-12 shadow-[0_25px_60px_-25px_rgba(183,110,121,0.35)]">
-          {done ? (
-            <div className="text-center py-16">
-              <div className="text-5xl">✅</div>
-              <h3 className="mt-6 font-display text-3xl">Το ραντεβού σας καταχωρήθηκε!</h3>
-              <p className="mt-3 text-ink/60">
-                Θα λάβετε επιβεβαίωση σύντομα. Ευχαριστούμε που επιλέξατε το Lumière Nails.
-              </p>
-              <button
-                onClick={() => {
-                  setDone(false);
-                  setService("");
-                  setArtist("");
-                  setDate("");
-                  setSlot(null);
-                  setName("");
-                  setPhone("");
-                }}
-                className="mt-8 inline-flex items-center rounded-full bg-rose-gold text-white px-6 py-3 text-sm"
-              >
-                Νέα Κράτηση
-              </button>
+          <div className="bg-white rounded-2xl p-10 md:p-12 shadow-[0_25px_60px_-25px_rgba(160,135,118,0.35)]">
+            <div className="flex items-center gap-3">
+              <Clock size={22} className="text-rose-gold" />
+              <h3 className="font-display text-3xl">Ωράριο</h3>
             </div>
-          ) : (
-            <form onSubmit={submit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <Field label="Υπηρεσία">
-                  <select
-                    required
-                    value={service}
-                    onChange={(e) => setService(e.target.value)}
-                    className="lumiere-input"
+            <ul className="mt-6 divide-y divide-rose-gold/20 text-sm">
+              {hours.map((h) => (
+                <li key={h.day} className="flex items-center justify-between py-2.5">
+                  <span className="text-ink/80">{h.day}</span>
+                  <span
+                    className={`font-medium ${
+                      h.time === "Κλειστά" ? "text-ink/40" : "text-ink"
+                    }`}
                   >
-                    <option value="">Επιλέξτε Υπηρεσία</option>
-                    {services.map((s) => (
-                      <option key={s.name} value={s.name}>
-                        {s.name} — {s.price}
-                      </option>
-                    ))}
-                  </select>
-                </Field>
-                <Field label="Τεχνίτρια">
-                  <select
-                    required
-                    value={artist}
-                    onChange={(e) => setArtist(e.target.value)}
-                    className="lumiere-input"
-                  >
-                    <option value="">Επιλέξτε Τεχνίτρια</option>
-                    <option>Μαρία</option>
-                    <option>Ελένη</option>
-                    <option>Σοφία</option>
-                    <option>Δεν έχω προτίμηση</option>
-                  </select>
-                </Field>
-              </div>
-              <Field label="Ημερομηνία">
-                <input
-                  type="date"
-                  required
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  className="lumiere-input accent-rose-gold"
-                />
-              </Field>
-              <Field label="Ώρα">
-                <div className="flex flex-wrap gap-2">
-                  {timeSlots.map((t) => (
-                    <button
-                      type="button"
-                      key={t}
-                      onClick={() => setSlot(t)}
-                      className={`rounded-full border px-5 py-2 text-sm transition-all ${
-                        slot === t
-                          ? "bg-rose-gold text-white border-rose-gold"
-                          : "bg-white text-ink border-rose-gold hover:bg-blush/40"
-                      }`}
-                    >
-                      {t}
-                    </button>
-                  ))}
-                </div>
-              </Field>
-              <div className="grid md:grid-cols-2 gap-6">
-                <Field label="Ονοματεπώνυμο">
-                  <input
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="π.χ. Μαρία Παπαδοπούλου"
-                    className="lumiere-input"
-                  />
-                </Field>
-                <Field label="Τηλέφωνο">
-                  <input
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="6900000000"
-                    className="lumiere-input"
-                  />
-                </Field>
-              </div>
-              <button
-                type="submit"
-                className="w-full rounded-full bg-rose-gold text-white py-4 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 shadow-[0_15px_30px_-12px_rgba(183,110,121,0.6)]"
-              >
-                Επιβεβαίωση Ραντεβού <ArrowRight size={16} />
-              </button>
-            </form>
-          )}
+                    {h.time}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="tel:+302117409989"
+              className="mt-6 inline-flex items-center gap-2 text-rose-gold text-sm font-medium hover:underline"
+            >
+              <Phone size={14} /> 21 1740 9989
+            </a>
+          </div>
         </div>
       </div>
-
-      <style>{`
-        .lumiere-input {
-          width: 100%;
-          background: #fff;
-          border: 1px solid var(--rose-gold);
-          border-radius: 8px;
-          padding: 12px 14px;
-          font-family: var(--font-body);
-          font-size: 14px;
-          color: var(--ink);
-          transition: all 0.2s ease;
-          outline: none;
-        }
-        .lumiere-input:focus {
-          border-width: 2px;
-          padding: 11px 13px;
-          box-shadow: 0 0 0 4px rgba(183,110,121,0.15);
-        }
-      `}</style>
     </section>
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="block mb-2 text-xs uppercase tracking-[0.2em] text-ink/70">{label}</span>
-      {children}
-    </label>
-  );
-}
+
 
 /* -------------------- GALLERY -------------------- */
 function Gallery() {
   const tiles = [
-    {
-      h: "aspect-[4/5]",
-      src: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&auto=format&fit=crop",
-      alt: "Ροζ ημιμόνιμο manicure",
-    },
-    {
-      h: "aspect-square",
-      src: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=900&auto=format&fit=crop",
-      alt: "Nail art λεπτομέρεια",
-    },
-    {
-      h: "aspect-[4/5]",
-      src: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=900&auto=format&fit=crop",
-      alt: "Gel manicure φινίρισμα",
-    },
+    { h: "aspect-[4/5]", src: nailsBlackRed.url, alt: "Black & red deck of cards nail art" },
+    { h: "aspect-square", src: nailsFrench.url, alt: "Square French manicure with heart detail" },
+    { h: "aspect-[4/5]", src: nailsNudeOmbre.url, alt: "Nude to white ombré almond nails" },
   ];
   return (
     <section className="bg-white py-24 lg:py-32">
@@ -821,24 +714,37 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-display italic text-rose-gold text-3xl">Lumière Nails</div>
+            <img src={logoAsset.url} alt="Looks Beauty Boutique" className="h-14 w-auto brightness-0 invert" />
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">
-              Premium nail studio στην καρδιά της Αθήνας. Κάθε νύχι είναι έργο τέχνης.
+              Nail salon στην καρδιά του Συντάγματος, μέσα στη Στοά Filellinon 3. Κάθε νύχι είναι έργο τέχνης.
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/looks_beautyboutiquesyntagma/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <Instagram size={16} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/looksbeautyboutique/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-white transition-all"
                 aria-label="Facebook"
               >
                 <Facebook size={16} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@looksbbsyntagma"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-white transition-all text-xs font-bold"
+                aria-label="TikTok"
+              >
+                TT
               </a>
             </div>
           </div>
@@ -848,7 +754,7 @@ function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li><a href="#home" className="hover:text-rose-gold">Αρχική</a></li>
               <li><a href="#services" className="hover:text-rose-gold">Υπηρεσίες</a></li>
-              <li><a href="#booking" className="hover:text-rose-gold">Κρατήσεις</a></li>
+              <li><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-gold">Κρατήσεις</a></li>
               <li><a href="#contact" className="hover:text-rose-gold">Επικοινωνία</a></li>
             </ul>
           </div>
@@ -858,19 +764,15 @@ function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-rose-gold mt-0.5 shrink-0" />
-                Ερμού 45, Αθήνα 10563
+                <span>Μέσα στη Στοά, Filellinon 3, Αθήνα 105 57</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-rose-gold shrink-0" />
-                +30 210 000 0000
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-rose-gold shrink-0" />
-                hello@lumierenails.gr
+                <a href="tel:+302117409989" className="hover:text-rose-gold">21 1740 9989</a>
               </li>
             </ul>
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=Ermou+45,+Athens+10563,+Greece"
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-rose-gold text-rose-gold px-4 py-2 text-xs uppercase tracking-[0.2em] hover:bg-rose-gold hover:text-white transition-all"
@@ -879,10 +781,10 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-14 rounded-2xl overflow-hidden border border-rose-gold/40 shadow-[0_25px_60px_-30px_rgba(183,110,121,0.6)]">
+        <div className="mt-14 rounded-2xl overflow-hidden border border-rose-gold/40 shadow-[0_25px_60px_-30px_rgba(160,135,118,0.6)]">
           <iframe
-            title="Lumière Nails — Ερμού 45, Αθήνα"
-            src="https://www.google.com/maps?q=Ermou+45,+Athens+10563,+Greece&output=embed"
+            title="Looks Beauty Boutique — Filellinon 3, Αθήνα"
+            src={MAPS_EMBED}
             width="100%"
             height="320"
             loading="lazy"
@@ -892,7 +794,7 @@ function Footer() {
         </div>
         <div className="mt-16 h-px bg-rose-gold/40" />
         <p className="mt-6 text-center text-xs text-white/40">
-          © 2026 Lumière Nails. All rights reserved.
+          © 2026 Looks Beauty Boutique. All rights reserved.
         </p>
       </div>
     </footer>
