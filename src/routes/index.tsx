@@ -714,24 +714,37 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-display italic text-rose-gold text-3xl">Lumière Nails</div>
+            <img src={logoAsset.url} alt="Looks Beauty Boutique" className="h-14 w-auto brightness-0 invert" />
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">
-              Premium nail studio στην καρδιά της Αθήνας. Κάθε νύχι είναι έργο τέχνης.
+              Nail salon στην καρδιά του Συντάγματος, μέσα στη Στοά Filellinon 3. Κάθε νύχι είναι έργο τέχνης.
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/looks_beautyboutiquesyntagma/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <Instagram size={16} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/looksbeautyboutique/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-white transition-all"
                 aria-label="Facebook"
               >
                 <Facebook size={16} />
+              </a>
+              <a
+                href="https://www.tiktok.com/@looksbbsyntagma"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-white transition-all text-xs font-bold"
+                aria-label="TikTok"
+              >
+                TT
               </a>
             </div>
           </div>
@@ -741,7 +754,7 @@ function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li><a href="#home" className="hover:text-rose-gold">Αρχική</a></li>
               <li><a href="#services" className="hover:text-rose-gold">Υπηρεσίες</a></li>
-              <li><a href="#booking" className="hover:text-rose-gold">Κρατήσεις</a></li>
+              <li><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-gold">Κρατήσεις</a></li>
               <li><a href="#contact" className="hover:text-rose-gold">Επικοινωνία</a></li>
             </ul>
           </div>
@@ -751,19 +764,15 @@ function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-rose-gold mt-0.5 shrink-0" />
-                Ερμού 45, Αθήνα 10563
+                <span>Μέσα στη Στοά, Filellinon 3, Αθήνα 105 57</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-rose-gold shrink-0" />
-                +30 210 000 0000
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-rose-gold shrink-0" />
-                hello@lumierenails.gr
+                <a href="tel:+302117409989" className="hover:text-rose-gold">21 1740 9989</a>
               </li>
             </ul>
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=Ermou+45,+Athens+10563,+Greece"
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-rose-gold text-rose-gold px-4 py-2 text-xs uppercase tracking-[0.2em] hover:bg-rose-gold hover:text-white transition-all"
@@ -772,10 +781,10 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="mt-14 rounded-2xl overflow-hidden border border-rose-gold/40 shadow-[0_25px_60px_-30px_rgba(183,110,121,0.6)]">
+        <div className="mt-14 rounded-2xl overflow-hidden border border-rose-gold/40 shadow-[0_25px_60px_-30px_rgba(160,135,118,0.6)]">
           <iframe
-            title="Lumière Nails — Ερμού 45, Αθήνα"
-            src="https://www.google.com/maps?q=Ermou+45,+Athens+10563,+Greece&output=embed"
+            title="Looks Beauty Boutique — Filellinon 3, Αθήνα"
+            src={MAPS_EMBED}
             width="100%"
             height="320"
             loading="lazy"
@@ -785,7 +794,7 @@ function Footer() {
         </div>
         <div className="mt-16 h-px bg-rose-gold/40" />
         <p className="mt-6 text-center text-xs text-white/40">
-          © 2026 Lumière Nails. All rights reserved.
+          © 2026 Looks Beauty Boutique. All rights reserved.
         </p>
       </div>
     </footer>
