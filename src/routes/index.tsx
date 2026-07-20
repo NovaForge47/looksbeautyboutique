@@ -128,9 +128,7 @@ function Nav() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-3 items-center gap-4">
         <a
           href="#home"
-          className={`flex items-center truncate rounded-lg px-2 py-1 transition-all ${
-            scrolled ? "bg-transparent" : "bg-white/95 backdrop-blur"
-          }`}
+          className="flex items-center truncate transition-all"
         >
           <img
             src={logoAsset.url}
@@ -138,7 +136,7 @@ function Nav() {
             className="h-12 md:h-14 w-auto object-contain"
           />
         </a>
-        <nav className={`hidden md:flex items-center justify-center gap-10 text-[13px] font-medium tracking-[0.18em] uppercase ${
+        <nav className={`hidden md:flex items-center justify-center gap-8 lg:gap-10 text-[13px] font-medium tracking-[0.18em] uppercase ${
           scrolled ? "text-ink/80" : "text-white/90"
         }`}>
           {links.map((l) => (
