@@ -187,35 +187,13 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-ink text-white flex items-center justify-center min-h-[calc(100vh-5rem)] px-8 md:px-16 lg:px-24 py-20 lg:py-0 overflow-hidden"
+      className="relative bg-ink text-white min-h-[calc(100vh-5rem)] overflow-hidden"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg.url})` }}
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-ink/30"
-      />
-      <div aria-hidden className="pointer-events-none absolute top-10 right-10 w-40 h-40 rounded-full bg-rose-gold/20 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute bottom-16 left-10 w-56 h-56 rounded-full bg-rose-gold/10 blur-3xl" />
-      <div className="relative flex flex-wrap items-center justify-center gap-4">
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-ink px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-rose-gold/90 transition-all shadow-[0_15px_30px_-12px_rgba(201,165,92,0.7)]"
-        >
-          Book an Appointment <ArrowRight size={16} />
-        </a>
-        <a
-          href="#services"
-          className="inline-flex items-center gap-2 rounded-full border border-white/70 text-white px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-white hover:text-ink transition-all"
-        >
-          View Services <ArrowDown size={16} />
-        </a>
-      </div>
     </section>
   );
 }
