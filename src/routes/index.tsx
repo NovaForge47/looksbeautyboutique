@@ -199,10 +199,10 @@ function Hero() {
               Book Now
             </a>
             <a
-              href="#services"
+              href="#about"
               className="inline-flex items-center justify-center rounded-full border border-white/40 text-white px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-white/10 transition"
             >
-              Services
+              About
             </a>
           </div>
         </div>
