@@ -7,6 +7,7 @@ import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
 import beforeAfterImg from "@/assets/before-after.png.asset.json";
+import beforeAfterHairImg from "@/assets/before-after-hair.png.asset.json";
 import {
   ArrowRight,
   ArrowDown,
@@ -183,9 +184,7 @@ function Hero() {
           </h1>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#booking"
               className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
             >
               Book Now
@@ -226,15 +225,11 @@ function Ribbon() {
 }
 
 /* -------------------- ABOUT -------------------- */
-function BeforeAfter() {
+function BeforeAfter({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="w-full max-w-xl mx-auto">
+    <div className="w-full">
       <div className="relative w-full overflow-hidden rounded-sm border-2 border-rose-gold">
-        <img
-          src={beforeAfterImg.url}
-          alt="Before and after manicure at Looks Beauty Boutique"
-          className="block w-full h-auto"
-        />
+        <img src={src} alt={alt} className="block w-full h-auto" />
         <span className="absolute top-4 left-4 rounded-full bg-ink/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1">
           Before
         </span>
@@ -266,7 +261,10 @@ function About() {
   return (
     <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-        <BeforeAfter />
+        <div className="flex flex-col gap-6">
+          <BeforeAfter src={beforeAfterImg.url} alt="Before and after manicure at Looks Beauty Boutique" />
+          <BeforeAfter src={beforeAfterHairImg.url} alt="Before and after hair treatment at Looks Beauty Boutique" />
+        </div>
         <div>
           <SectionLabel>Our Studio</SectionLabel>
           <RoseLine />
@@ -382,7 +380,7 @@ function Booking() {
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
             Reserve Your Visit
           </h2>
-          <p className="mt-4 text-ink/70">Online 24/7 via Setmore — or by phone</p>
+          <p className="mt-4 text-ink/70">Book Via Form Or Via App</p>
         </div>
 
         <div className="mt-12 grid lg:grid-cols-3 gap-6">
@@ -527,9 +525,7 @@ function FinalCTA() {
         <div className="mt-6 h-[2px] w-[60px] bg-ink mx-auto" />
         <p className="mt-6 text-ink/80 text-lg">Book your appointment online — 24/7</p>
         <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#booking"
           className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-rose-gold px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
         >
           Book Now <ArrowRight size={16} />
@@ -586,7 +582,7 @@ function Footer() {
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li><a href="#home" className="hover:text-rose-gold">Home</a></li>
               <li><a href="#about" className="hover:text-rose-gold">About</a></li>
-              <li><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hover:text-rose-gold">Bookings</a></li>
+              <li><a href="#booking" className="hover:text-rose-gold">Bookings</a></li>
               <li><a href="#contact" className="hover:text-rose-gold">Contact</a></li>
             </ul>
           </div>
