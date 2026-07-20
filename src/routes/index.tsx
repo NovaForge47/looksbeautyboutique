@@ -256,7 +256,7 @@ function Hero() {
 /* -------------------- RIBBON -------------------- */
 function Ribbon() {
   const text =
-    "PREMIUM NAIL ART · MANICURE · PEDICURE · GEL · ΗΜΙΜΟΝΙΜΟ · NAIL ART · LUMIÈRE NAILS · ΑΘΗΝΑ · ";
+    "LOOKS BEAUTY BOUTIQUE · MANICURE · PEDICURE · ΗΜΙΜΟΝΙΜΟ · NAIL ART · ΣΥΝΤΑΓΜΑ · ΑΘΗΝΑ · ";
   return (
     <section className="bg-ink py-8 overflow-hidden border-y border-rose-gold/20">
       <div className="flex whitespace-nowrap lumiere-marquee-track">
