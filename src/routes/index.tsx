@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import heroBg from "@/assets/hero-clean.jpg.asset.json";
 
 import heroLogo from "@/assets/looks-logo-hero-transparent.png.asset.json";
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
+import beforeAfterImg from "@/assets/before-after.png.asset.json";
 import {
   ArrowRight,
   ArrowDown,
@@ -79,7 +80,7 @@ function LumierePage() {
       <Ribbon />
       <About />
       <Stats />
-      <Team />
+      
       <Booking />
       <Gallery />
       <Reviews />
@@ -102,9 +103,8 @@ function HeroNav() {
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" className="flex items-center shrink-0 font-display italic text-white text-lg sm:text-xl tracking-tight">
-          beauty boutique
-        </a>
+        <a href="#home" aria-label="Home" className="shrink-0 w-8 h-8" />
+
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
           {links.map((l) => (
             <a
@@ -227,82 +227,14 @@ function Ribbon() {
 
 /* -------------------- ABOUT -------------------- */
 function BeforeAfter() {
-  const [pos, setPos] = useState(50);
-  const ref = useRef<HTMLDivElement>(null);
-  const dragging = useRef(false);
-
-  const setFromClientX = (clientX: number) => {
-    const el = ref.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    const p = ((clientX - r.left) / r.width) * 100;
-    setPos(Math.max(0, Math.min(100, p)));
-  };
-
-  useEffect(() => {
-    const move = (e: MouseEvent | TouchEvent) => {
-      if (!dragging.current) return;
-      const x = "touches" in e ? e.touches[0].clientX : (e as MouseEvent).clientX;
-      setFromClientX(x);
-    };
-    const up = () => (dragging.current = false);
-    window.addEventListener("mousemove", move);
-    window.addEventListener("touchmove", move);
-    window.addEventListener("mouseup", up);
-    window.addEventListener("touchend", up);
-    return () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("touchmove", move);
-      window.removeEventListener("mouseup", up);
-      window.removeEventListener("touchend", up);
-    };
-  }, []);
-
-  const before = nailsFrench.url;
-  const after = nailsBlackRed.url;
-
   return (
     <div className="w-full max-w-xl mx-auto">
-      <div
-        ref={ref}
-        className="relative aspect-square w-full overflow-hidden rounded-sm border-2 border-rose-gold select-none touch-none cursor-ew-resize"
-        onMouseDown={(e) => {
-          dragging.current = true;
-          setFromClientX(e.clientX);
-        }}
-        onTouchStart={(e) => {
-          dragging.current = true;
-          setFromClientX(e.touches[0].clientX);
-        }}
-      >
+      <div className="relative w-full overflow-hidden rounded-sm border-2 border-rose-gold">
         <img
-          src={before}
-          alt="Before"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          draggable={false}
+          src={beforeAfterImg.url}
+          alt="Before and after manicure at Looks Beauty Boutique"
+          className="block w-full h-auto"
         />
-        <div
-          className="absolute inset-0 overflow-hidden pointer-events-none"
-          style={{ clipPath: `inset(0 0 0 ${pos}%)` }}
-        >
-          <img
-            src={after}
-            alt="After"
-            className="w-full h-full object-cover"
-            draggable={false}
-          />
-        </div>
-        <div
-          className="absolute top-0 bottom-0 w-[2px] bg-white shadow-[0_0_12px_rgba(0,0,0,0.3)] pointer-events-none"
-          style={{ left: `${pos}%` }}
-        />
-        <div
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white border-2 border-rose-gold flex items-center justify-center shadow-lg pointer-events-none"
-          style={{ left: `${pos}%` }}
-        >
-          <ArrowRight size={14} className="text-rose-gold -mr-1" />
-          <ArrowRight size={14} className="text-rose-gold rotate-180 -ml-1" />
-        </div>
         <span className="absolute top-4 left-4 rounded-full bg-ink/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1">
           Before
         </span>
@@ -310,9 +242,6 @@ function BeforeAfter() {
           After
         </span>
       </div>
-      <p className="mt-4 text-center text-xs text-ink/50 uppercase tracking-[0.2em]">
-        Drag to see the difference
-      </p>
     </div>
   );
 }
@@ -617,7 +546,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-display italic text-white text-3xl tracking-tight">beauty boutique</div>
+            
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">
               A nail &amp; hair salon in the heart of Syntagma — inside the arcade at Filellinon 3. Every look is a work of art.
             </p>
