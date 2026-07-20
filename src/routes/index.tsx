@@ -118,8 +118,8 @@ function HeroNav() {
             <a
               key={l.label}
               href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
+              
+              
               className={
                 l.label === "Book Now"
                   ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
@@ -144,8 +144,8 @@ function HeroNav() {
             <a
               key={l.label}
               href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
+              
+              
               onClick={() => setOpen(false)}
               className={
                 l.label === "Book Now"
