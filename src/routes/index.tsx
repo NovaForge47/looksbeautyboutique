@@ -184,9 +184,7 @@ function Hero() {
           </h1>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#booking"
               className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
             >
               Book Now
