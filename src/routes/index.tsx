@@ -507,23 +507,14 @@ function Booking() {
           <p className="mt-4 text-ink/70">Online 24/7 via Setmore — or by phone</p>
         </div>
 
-        <div className="mt-12 grid lg:grid-cols-2 gap-6">
-          <div className="bg-white rounded-2xl p-10 md:p-12 shadow-[0_25px_60px_-25px_rgba(201,165,92,0.35)] flex flex-col">
-            <div className="text-4xl">✨</div>
-            <h3 className="mt-4 font-display text-3xl">Online Booking</h3>
-            <p className="mt-3 text-ink/70 text-sm leading-relaxed">
-              Choose your service, artist and time slot — instant confirmation.
-            </p>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto pt-8"
-            >
-              <span className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rose-gold text-ink py-4 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_15px_30px_-12px_rgba(201,165,92,0.6)]">
-                Book on Setmore <ArrowRight size={16} />
-              </span>
-            </a>
+        <div className="mt-12 grid lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 bg-white rounded-2xl overflow-hidden shadow-[0_25px_60px_-25px_rgba(201,165,92,0.35)]">
+            <iframe
+              src={BOOKING_URL}
+              title="Book on Setmore"
+              className="w-full h-[720px] border-0"
+              loading="lazy"
+            />
           </div>
 
           <div className="bg-white rounded-2xl p-10 md:p-12 shadow-[0_25px_60px_-25px_rgba(201,165,92,0.35)]">
