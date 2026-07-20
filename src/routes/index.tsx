@@ -109,11 +109,34 @@ function HeroNav() {
   ];
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-20">
-      {/* Mobile menu toggle */}
-      <div className="md:hidden flex items-center justify-end px-6 h-20">
+    <div className="absolute top-0 left-0 right-0 z-30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
+        <a href="#home" className="flex items-center shrink-0">
+          <img
+            src={logoAsset.url}
+            alt="Looks Beauty Boutique"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+          />
+        </a>
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+              className={
+                l.label === "Book Now"
+                  ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
+                  : "hover:text-rose-gold transition drop-shadow"
+              }
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
         <button
-          className="p-2 text-white"
+          className="md:hidden p-2 text-white shrink-0"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
@@ -121,7 +144,7 @@ function HeroNav() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-ink/90 backdrop-blur border-y border-rose-gold/30 px-6 py-5 flex flex-col gap-4">
+        <div className="md:hidden bg-ink/95 backdrop-blur border-t border-rose-gold/30 px-6 py-5 flex flex-col gap-4">
           {links.map((l) => (
             <a
               key={l.label}
@@ -129,69 +152,17 @@ function HeroNav() {
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noopener noreferrer" : undefined}
               onClick={() => setOpen(false)}
-              className={`text-sm uppercase tracking-[0.18em] ${
+              className={
                 l.label === "Book Now"
-                  ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium"
-                  : "text-white/90"
-              }`}
+                  ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
+                  : "text-white/90 text-sm uppercase tracking-[0.18em]"
+              }
             >
               {l.label}
             </a>
           ))}
         </div>
       )}
-
-      {/* Desktop clickable overlays matching the background image nav */}
-      <nav className="hidden md:block absolute top-0 left-0 right-0 h-24 pointer-events-none">
-        {/* HOME */}
-        <a
-          href="#home"
-          className="absolute top-[5%] left-[3%] w-[8%] h-[4%] pointer-events-auto cursor-pointer"
-          aria-label="Home"
-        />
-        {/* SERVICES */}
-        <a
-          href="#services"
-          className="absolute top-[5%] left-[11.5%] w-[10%] h-[4%] pointer-events-auto cursor-pointer"
-          aria-label="Services"
-        />
-        {/* ABOUT */}
-        <a
-          href="#about"
-          className="absolute top-[5%] left-[21.5%] w-[8%] h-[4%] pointer-events-auto cursor-pointer"
-          aria-label="About"
-        />
-        {/* GALLERY */}
-        <a
-          href="#gallery"
-          className="absolute top-[5%] left-[30.5%] w-[9%] h-[4%] pointer-events-auto cursor-pointer"
-          aria-label="Gallery"
-        />
-        {/* Top BOOK NOW pill */}
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute top-[5%] left-[40.5%] w-[10%] h-[4%] pointer-events-auto cursor-pointer"
-          aria-label="Book Now"
-        />
-        {/* Instagram */}
-        <a
-          href="https://www.instagram.com/looks_beautyboutiquesyntagma/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute top-[4.5%] left-[89.5%] w-[3%] h-[4.5%] pointer-events-auto cursor-pointer"
-          aria-label="Instagram"
-        />
-        {/* Facebook */}
-        <a
-          href="https://www.facebook.com/looksbeautyboutique/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute top-[4.5%] left-[93%] w-[3%] h-[4.5%] pointer-events-auto cursor-pointer"
-          aria-label="Facebook"
-        />
-      </nav>
     </div>
   );
 }
@@ -201,25 +172,51 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-ink text-white min-h-screen overflow-hidden"
+      className="relative bg-ink text-white overflow-hidden min-h-[100svh]"
     >
-      <div
+      <img
+        src={heroBg.url}
+        alt=""
         aria-hidden
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg.url})` }}
+        className="absolute inset-0 h-full w-full object-cover object-[75%_center] sm:object-center"
       />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/20 to-ink/80 md:from-ink/40 md:via-transparent md:to-ink/70" />
       <HeroNav />
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute left-[12%] bottom-[26%] w-[13%] h-[5.5%] min-w-[140px] min-h-[44px] z-10 cursor-pointer"
-        aria-label="Book Now"
-        title="Book Now"
-      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center">
+        <div className="max-w-xl pt-24 pb-16 sm:pt-28 sm:pb-20">
+          <p className="font-display italic text-rose-gold text-lg sm:text-xl mb-4">
+            Looks Beauty Boutique
+          </p>
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-white">
+            Beauty is in the details.
+            <span className="block italic text-rose-gold">We make it yours.</span>
+          </h1>
+          <p className="mt-5 text-sm sm:text-base text-white/80 max-w-md">
+            Nail &amp; Hair Salon · Syntagma, Athens
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
+            >
+              Book Now
+            </a>
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center rounded-full border border-white/40 text-white px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-white/10 transition"
+            >
+              Services
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
+
 
 /* -------------------- RIBBON -------------------- */
 function Ribbon() {
