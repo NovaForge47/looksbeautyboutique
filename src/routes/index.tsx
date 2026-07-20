@@ -183,11 +183,6 @@ function Nav() {
     </header>
   );
 }
-        </div>
-      )}
-    </header>
-  );
-}
 
 /* -------------------- HERO -------------------- */
 function Hero() {
