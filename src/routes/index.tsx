@@ -102,8 +102,8 @@ function HeroNav() {
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" className="flex items-center shrink-0 font-display text-white text-xl sm:text-2xl tracking-tight">
-          looks<span className="text-rose-gold">.</span>
+        <a href="#home" className="flex items-center shrink-0 font-display italic text-white text-lg sm:text-xl tracking-tight">
+          beauty boutique
         </a>
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
           {links.map((l) => (
