@@ -82,7 +82,6 @@ const hours: { day: string; time: string }[] = [
 function LumierePage() {
   return (
     <div className="font-body bg-pearl text-ink">
-      <HeroNav />
       <Hero />
       <Ribbon />
       <About />
