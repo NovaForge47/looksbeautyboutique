@@ -376,49 +376,6 @@ function About() {
   );
 }
 
-/* -------------------- SERVICES -------------------- */
-function Services() {
-  return (
-    <section id="services" className="bg-blush py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="text-center">
-          <SectionLabel dark>Services</SectionLabel>
-          <RoseLine center />
-          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">Our Services</h2>
-          <p className="mt-4 text-ink/70">Every service, a unique experience</p>
-        </div>
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <div
-              key={s.name}
-              className="group bg-white rounded-xl border border-rose-gold p-8 shadow-[0_10px_30px_-20px_rgba(201,165,92,0.5)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_25px_45px_-15px_rgba(201,165,92,0.55)] hover:border-2"
-            >
-              <div className="text-4xl text-rose-gold">{s.icon}</div>
-              <h3 className="mt-6 font-display text-2xl">{s.name}</h3>
-              <p className="mt-2 text-sm text-ink/60">{s.duration}</p>
-              <div className="mt-4 h-7 relative overflow-hidden">
-                <p className="absolute inset-0 text-sm text-ink/50 italic transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-                  Reveal price →
-                </p>
-                <p className="absolute inset-0 font-bold text-xl text-rose-gold translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  {s.price}
-                </p>
-              </div>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-1 text-rose-gold text-sm hover:underline"
-              >
-                Book <ArrowRight size={14} />
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* -------------------- STATS -------------------- */
 function Stats() {
