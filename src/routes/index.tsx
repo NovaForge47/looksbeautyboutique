@@ -1,15 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroHand from "@/assets/hero-hand.jpg";
+import logoAsset from "@/assets/looks-logo.png.asset.json";
+import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
+import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
+import nailsFrench from "@/assets/nails-french.jpg.asset.json";
 import {
-  Sparkles,
   ArrowRight,
   ArrowDown,
   Plus,
   Star,
   MapPin,
   Phone,
-  Mail,
+  Clock,
   Instagram,
   Facebook,
   Menu,
@@ -19,6 +22,12 @@ import {
 export const Route = createFileRoute("/")({
   component: LumierePage,
 });
+
+const BOOKING_URL = "https://looksbeautyboutique.setmore.com/";
+const MAPS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=Filellinon+3,+Athina+105+57,+Greece";
+const MAPS_EMBED =
+  "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
 
 const services = [
   { icon: "💅", name: "Manicure Απλό", duration: "45 λεπτά", price: "€15" },
@@ -31,44 +40,46 @@ const services = [
 
 const team = [
   {
-    name: "Μαρία",
-    title: "Senior Nail Artist",
-    exp: "5 χρόνια εμπειρία",
-    photo:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=600&fit=crop&crop=faces",
-  },
-  {
-    name: "Ελένη",
-    title: "Gel & Nail Art Specialist",
-    exp: "3 χρόνια εμπειρία",
-    photo:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=600&fit=crop&crop=faces",
+    name: "Βασιλική",
+    title: "Nail Artist",
+    exp: "Manicure · Ημιμόνιμο · Nail Art",
+    photo: nailsFrench.url,
   },
   {
     name: "Σοφία",
-    title: "Pedicure Expert",
-    exp: "4 χρόνια εμπειρία",
-    photo:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=600&fit=crop&crop=faces",
+    title: "Nail Artist",
+    exp: "Manicure · Pedicure · Repairs",
+    photo: nailsNudeOmbre.url,
   },
 ];
 
 const reviews = [
   {
-    text: "Απίστευτη δουλειά! Τα νύχια μου έμειναν τέλεια για 3 εβδομάδες.",
-    name: "ΜΑΡΙΑ Π.",
+    text:
+      "This nail salon was amazing. So clean, professional, and detail oriented. Loved how my nails turned out!",
+    name: "KENDA HARRIS",
   },
   {
-    text: "Επαγγελματισμός και φιλικό περιβάλλον. Θα ξαναέρθω σίγουρα!",
-    name: "ΕΛΕΝΗ Κ.",
+    text:
+      "I came in without an appointment and left an hour later super happy with beautifully manicured nails. Thanks for your professional, efficient and friendly service!",
+    name: "SABINE PROKSCH-BAUER",
   },
   {
-    text: "Το καλύτερο nail studio που έχω επισκεφτεί στην Αθήνα.",
-    name: "ΣΟΦΙΑ Μ.",
+    text:
+      "Had a wonderful experience here — mani/pedi. I came with a few broken nails and a bit of an emergency situation. Sophia was amazing — I highly recommend!",
+    name: "MELINA PAPADOPOULOS",
   },
 ];
 
-const timeSlots = ["10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
+const hours: { day: string; time: string }[] = [
+  { day: "Δευτέρα", time: "10:00 – 18:00" },
+  { day: "Τρίτη", time: "09:00 – 20:00" },
+  { day: "Τετάρτη", time: "09:00 – 20:00" },
+  { day: "Πέμπτη", time: "09:00 – 20:00" },
+  { day: "Παρασκευή", time: "08:00 – 20:00" },
+  { day: "Σάββατο", time: "10:00 – 18:00" },
+  { day: "Κυριακή", time: "Κλειστά" },
+];
 
 function LumierePage() {
   return (
