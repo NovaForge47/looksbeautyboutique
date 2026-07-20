@@ -220,8 +220,10 @@ function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#booking"
-              className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-rose-gold/90 transition-all shadow-[0_15px_30px_-12px_rgba(183,110,121,0.7)]"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-white px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-rose-gold/90 transition-all shadow-[0_15px_30px_-12px_rgba(160,135,118,0.7)]"
             >
               Κλείστε Ραντεβού <ArrowRight size={16} />
             </a>
@@ -234,9 +236,9 @@ function Hero() {
           </div>
           <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
             {[
-              { n: "500+", l: "Πελάτισσες" },
-              { n: "5★", l: "Google" },
-              { n: "24/7", l: "Online" },
+              { n: "4.6★", l: "Google Rating" },
+              { n: "164+", l: "Κριτικές" },
+              { n: "Σύνταγμα", l: "Filellinon 3" },
             ].map((s) => (
               <div key={s.l}>
                 <div className="font-display text-3xl text-rose-gold">{s.n}</div>
