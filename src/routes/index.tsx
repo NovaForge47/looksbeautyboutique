@@ -98,17 +98,9 @@ function LumierePage() {
   );
 }
 
-/* -------------------- NAV -------------------- */
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+/* -------------------- HERO NAV -------------------- */
+function HeroNav() {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const links = [
     { href: "#home", label: "Home" },
     { href: "#services", label: "Services" },
@@ -118,27 +110,16 @@ function Nav() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur border-b border-rose-gold/40 shadow-[0_10px_30px_-15px_rgba(201,165,92,0.35)]"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[1fr_auto] items-center gap-6">
-        <a
-          href="#home"
-          className="flex items-center truncate"
-        >
+    <div className="absolute top-0 left-0 right-0 z-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 md:h-24 flex items-center justify-between gap-6">
+        <a href="#home" className="flex items-center shrink-0">
           <img
             src={logoAsset.url}
             alt="Looks Beauty Boutique"
-            className="h-12 md:h-14 w-auto object-contain"
+            className="h-10 md:h-12 w-auto object-contain"
           />
         </a>
-        <nav className={`hidden md:flex items-center justify-end gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase ${
-          scrolled ? "text-ink/80" : "text-white/90"
-        }`}>
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
           {links.map((l) => (
             <a
               key={l.label}
@@ -148,7 +129,7 @@ function Nav() {
               className={`transition-colors ${
                 l.label === "Book Now"
                   ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90"
-                  : "hover:text-rose-gold"
+                  : "hover:text-rose-gold drop-shadow"
               }`}
             >
               {l.label}
@@ -156,9 +137,7 @@ function Nav() {
           ))}
         </nav>
         <button
-          className={`md:hidden p-2 transition-colors ${
-            scrolled ? "text-ink" : "text-white"
-          }`}
+          className="md:hidden p-2 text-white"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
@@ -166,7 +145,7 @@ function Nav() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden border-t border-rose-gold/40 bg-white px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-ink/90 backdrop-blur border-y border-rose-gold/30 px-6 py-5 flex flex-col gap-4">
           {links.map((l) => (
             <a
               key={l.label}
@@ -177,7 +156,7 @@ function Nav() {
               className={`text-sm uppercase tracking-[0.18em] ${
                 l.label === "Book Now"
                   ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium"
-                  : "text-ink/80"
+                  : "text-white/90"
               }`}
             >
               {l.label}
@@ -185,7 +164,7 @@ function Nav() {
           ))}
         </div>
       )}
-    </header>
+    </div>
   );
 }
 
