@@ -82,7 +82,6 @@ const hours: { day: string; time: string }[] = [
 function LumierePage() {
   return (
     <div className="font-body bg-pearl text-ink">
-      <Nav />
       <Hero />
       <Ribbon />
       <About />
@@ -98,57 +97,23 @@ function LumierePage() {
   );
 }
 
-/* -------------------- NAV -------------------- */
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+/* -------------------- HERO NAV -------------------- */
+function HeroNav() {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const links = [
     { href: "#home", label: "Home" },
     { href: "#services", label: "Services" },
+    { href: "#about", label: "About" },
     { href: "#gallery", label: "Gallery" },
-    { href: "#contact", label: "Contact" },
+    { href: BOOKING_URL, label: "Book Now", external: true },
   ];
 
   return (
-    <header
-      className={`sticky top-0 z-50 bg-white border-b border-rose-gold/40 transition-shadow ${
-        scrolled ? "shadow-[0_10px_30px_-15px_rgba(201,165,92,0.35)]" : ""
-      }`}
-    >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-3 items-center gap-4">
-        <a href="#home" className="flex items-center truncate">
-          <img
-            src={logoAsset.url}
-            alt="Looks Beauty Boutique"
-            className="h-12 md:h-14 w-auto object-contain"
-          />
-        </a>
-        <nav className="hidden md:flex items-center justify-center gap-10 text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-rose-gold transition-colors">
-              {l.label}
-            </a>
-          ))}
-        </nav>
-        <div className="hidden md:flex justify-end">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-ink px-6 py-3 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_10px_25px_-10px_rgba(201,165,92,0.6)]"
-          >
-            Book Now
-          </a>
-        </div>
+    <div className="absolute top-0 left-0 right-0 z-20">
+      {/* Mobile menu toggle */}
+      <div className="md:hidden flex items-center justify-end px-6 h-20">
         <button
-          className="md:hidden justify-self-end p-2 text-ink"
+          className="p-2 text-white"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
@@ -156,29 +121,78 @@ function Nav() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden border-t border-rose-gold/40 bg-white px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-ink/90 backdrop-blur border-y border-rose-gold/30 px-6 py-5 flex flex-col gap-4">
           {links.map((l) => (
             <a
-              key={l.href}
+              key={l.label}
               href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
               onClick={() => setOpen(false)}
-              className="text-sm uppercase tracking-[0.18em] text-ink/80"
+              className={`text-sm uppercase tracking-[0.18em] ${
+                l.label === "Book Now"
+                  ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium"
+                  : "text-white/90"
+              }`}
             >
               {l.label}
             </a>
           ))}
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 text-sm font-medium"
-          >
-            Book Now
-          </a>
         </div>
       )}
-    </header>
+
+      {/* Desktop clickable overlays matching the background image nav */}
+      <nav className="hidden md:block absolute top-0 left-0 right-0 h-24 pointer-events-none">
+        {/* HOME */}
+        <a
+          href="#home"
+          className="absolute top-[5%] left-[3%] w-[8%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Home"
+        />
+        {/* SERVICES */}
+        <a
+          href="#services"
+          className="absolute top-[5%] left-[11.5%] w-[10%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Services"
+        />
+        {/* ABOUT */}
+        <a
+          href="#about"
+          className="absolute top-[5%] left-[21.5%] w-[8%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="About"
+        />
+        {/* GALLERY */}
+        <a
+          href="#gallery"
+          className="absolute top-[5%] left-[30.5%] w-[9%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Gallery"
+        />
+        {/* Top BOOK NOW pill */}
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-[5%] left-[40.5%] w-[10%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Book Now"
+        />
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/looks_beautyboutiquesyntagma/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-[4.5%] left-[89.5%] w-[3%] h-[4.5%] pointer-events-auto cursor-pointer"
+          aria-label="Instagram"
+        />
+        {/* Facebook */}
+        <a
+          href="https://www.facebook.com/looksbeautyboutique/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-[4.5%] left-[93%] w-[3%] h-[4.5%] pointer-events-auto cursor-pointer"
+          aria-label="Facebook"
+        />
+      </nav>
+    </div>
   );
 }
 
@@ -187,12 +201,21 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-ink text-white min-h-[calc(100vh-5rem)] overflow-hidden"
+      className="relative bg-ink text-white min-h-screen overflow-hidden"
     >
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg.url})` }}
+      />
+      <HeroNav />
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute left-[12%] bottom-[26%] w-[13%] h-[5.5%] min-w-[140px] min-h-[44px] z-10 cursor-pointer"
+        aria-label="Book Now"
+        title="Book Now"
       />
     </section>
   );
@@ -329,7 +352,7 @@ function RoseLine({ center = false }: { center?: boolean }) {
 
 function About() {
   return (
-    <section className="bg-white py-24 lg:py-32">
+    <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
         <BeforeAfter />
         <div>
