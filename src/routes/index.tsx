@@ -602,21 +602,9 @@ function Booking() {
 /* -------------------- GALLERY -------------------- */
 function Gallery() {
   const tiles = [
-    {
-      h: "aspect-[4/5]",
-      src: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&auto=format&fit=crop",
-      alt: "Ροζ ημιμόνιμο manicure",
-    },
-    {
-      h: "aspect-square",
-      src: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=900&auto=format&fit=crop",
-      alt: "Nail art λεπτομέρεια",
-    },
-    {
-      h: "aspect-[4/5]",
-      src: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=900&auto=format&fit=crop",
-      alt: "Gel manicure φινίρισμα",
-    },
+    { h: "aspect-[4/5]", src: nailsBlackRed.url, alt: "Black & red deck of cards nail art" },
+    { h: "aspect-square", src: nailsFrench.url, alt: "Square French manicure with heart detail" },
+    { h: "aspect-[4/5]", src: nailsNudeOmbre.url, alt: "Nude to white ombré almond nails" },
   ];
   return (
     <section className="bg-white py-24 lg:py-32">
