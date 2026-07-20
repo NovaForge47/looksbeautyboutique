@@ -525,9 +525,7 @@ function FinalCTA() {
         <div className="mt-6 h-[2px] w-[60px] bg-ink mx-auto" />
         <p className="mt-6 text-ink/80 text-lg">Book your appointment online — 24/7</p>
         <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#booking"
           className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-rose-gold px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
         >
           Book Now <ArrowRight size={16} />
