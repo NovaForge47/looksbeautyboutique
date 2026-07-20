@@ -500,19 +500,16 @@ function Team() {
             Οι Καλλιτέχνες μας
           </h2>
         </div>
-        <div className="mt-16 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="mt-16 grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {team.map((m) => (
             <div
               key={m.name}
-              className="bg-white rounded-2xl shadow-[0_15px_35px_-20px_rgba(0,0,0,0.15)] p-10 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_25px_50px_-20px_rgba(183,110,121,0.4)]"
+              className="bg-white rounded-2xl shadow-[0_15px_35px_-20px_rgba(0,0,0,0.15)] p-10 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_25px_50px_-20px_rgba(160,135,118,0.4)]"
             >
-              <div className="mx-auto w-32 h-32 rounded-full ring-[3px] ring-rose-gold ring-offset-4 ring-offset-white overflow-hidden">
-                <img
-                  src={m.photo}
-                  alt={m.name}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+              <div className="mx-auto w-32 h-32 rounded-full ring-[3px] ring-rose-gold ring-offset-4 ring-offset-white bg-blush flex items-center justify-center">
+                <span className="font-display italic text-5xl text-rose-gold">
+                  {m.name.charAt(0)}
+                </span>
               </div>
               <h3 className="mt-8 font-display italic text-3xl">{m.name}</h3>
               <p className="mt-2 text-rose-gold text-[11px] uppercase tracking-[0.25em]">
@@ -520,7 +517,9 @@ function Team() {
               </p>
               <p className="mt-3 text-sm text-ink/60">{m.exp}</p>
               <a
-                href="#booking"
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center rounded-full bg-rose-gold text-white px-6 py-2.5 text-sm hover:bg-rose-gold/90 transition-all"
               >
                 Κλείστε Ραντεβού
