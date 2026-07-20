@@ -70,10 +70,10 @@
 
 :root {
   --radius: 0.625rem;
-  --blush: #F5EFE9;
-  --rose-gold: #A08776;
-  --ink: #1A1512;
-  --pearl: #FBF9F6;
+  --blush: #EFE4CE;
+  --rose-gold: #C9A55C;
+  --ink: #0A0A0A;
+  --pearl: #F7F1E3;
   --gold: #C8A97E;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
