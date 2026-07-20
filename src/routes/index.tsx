@@ -204,7 +204,7 @@ function Hero() {
         <div aria-hidden className="pointer-events-none absolute bottom-16 left-10 w-56 h-56 rounded-full bg-rose-gold/10 blur-3xl" />
         <div className="relative max-w-xl">
           <p className="text-rose-gold text-xs md:text-[13px] uppercase tracking-[0.32em] font-medium">
-            Premium Nail Studio · Αθήνα
+            Nail Salon · Σύνταγμα, Αθήνα
           </p>
           <div className="mt-5 h-[2px] w-[60px] bg-rose-gold" />
           <h1 className="mt-8 font-display font-light leading-[1.05] text-[56px] md:text-[72px] lg:text-[80px] tracking-tight">
