@@ -227,15 +227,11 @@ function Ribbon() {
 }
 
 /* -------------------- ABOUT -------------------- */
-function BeforeAfter() {
+function BeforeAfter({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="w-full max-w-xl mx-auto">
+    <div className="w-full">
       <div className="relative w-full overflow-hidden rounded-sm border-2 border-rose-gold">
-        <img
-          src={beforeAfterImg.url}
-          alt="Before and after manicure at Looks Beauty Boutique"
-          className="block w-full h-auto"
-        />
+        <img src={src} alt={alt} className="block w-full h-auto" />
         <span className="absolute top-4 left-4 rounded-full bg-ink/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1">
           Before
         </span>
