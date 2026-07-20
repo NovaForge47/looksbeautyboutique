@@ -195,7 +195,7 @@ function Hero() {
             Beauty is in the details.
             <span className="block italic text-rose-gold">We make it yours.</span>
           </h1>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a
               href={BOOKING_URL}
               target="_blank"
