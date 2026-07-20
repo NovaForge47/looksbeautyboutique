@@ -112,43 +112,56 @@ function Nav() {
   const links = [
     { href: "#home", label: "Home" },
     { href: "#services", label: "Services" },
+    { href: "#about", label: "About" },
     { href: "#gallery", label: "Gallery" },
-    { href: "#contact", label: "Contact" },
+    { href: BOOKING_URL, label: "Book Now", external: true },
   ];
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white border-b border-rose-gold/40 transition-shadow ${
-        scrolled ? "shadow-[0_10px_30px_-15px_rgba(201,165,92,0.35)]" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur border-b border-rose-gold/40 shadow-[0_10px_30px_-15px_rgba(201,165,92,0.35)]"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 grid grid-cols-[minmax(0,1fr)_auto] md:grid-cols-3 items-center gap-4">
-        <a href="#home" className="flex items-center truncate">
+        <a
+          href="#home"
+          className={`flex items-center truncate rounded-lg px-2 py-1 transition-all ${
+            scrolled ? "bg-transparent" : "bg-white/95 backdrop-blur"
+          }`}
+        >
           <img
             src={logoAsset.url}
             alt="Looks Beauty Boutique"
             className="h-12 md:h-14 w-auto object-contain"
           />
         </a>
-        <nav className="hidden md:flex items-center justify-center gap-10 text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
+        <nav className={`hidden md:flex items-center justify-center gap-10 text-[13px] font-medium tracking-[0.18em] uppercase ${
+          scrolled ? "text-ink/80" : "text-white/90"
+        }`}>
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-rose-gold transition-colors">
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+              className={`transition-colors ${
+                l.label === "Book Now"
+                  ? "rounded-full bg-rose-gold text-ink px-5 py-2 hover:bg-rose-gold/90"
+                  : "hover:text-rose-gold"
+              }`}
+            >
               {l.label}
             </a>
           ))}
         </nav>
-        <div className="hidden md:flex justify-end">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-ink px-6 py-3 text-sm font-medium tracking-wide hover:bg-rose-gold/90 transition-all hover:-translate-y-0.5 shadow-[0_10px_25px_-10px_rgba(201,165,92,0.6)]"
-          >
-            Book Now
-          </a>
-        </div>
+        <div className="hidden md:flex justify-end" />
         <button
-          className="md:hidden justify-self-end p-2 text-ink"
+          className={`md:hidden justify-self-end p-2 transition-colors ${
+            scrolled ? "text-ink" : "text-white"
+          }`}
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
@@ -159,23 +172,20 @@ function Nav() {
         <div className="md:hidden border-t border-rose-gold/40 bg-white px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <a
-              key={l.href}
+              key={l.label}
               href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
               onClick={() => setOpen(false)}
-              className="text-sm uppercase tracking-[0.18em] text-ink/80"
+              className={`text-sm uppercase tracking-[0.18em] ${
+                l.label === "Book Now"
+                  ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium"
+                  : "text-ink/80"
+              }`}
             >
               {l.label}
             </a>
           ))}
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 text-sm font-medium"
-          >
-            Book Now
-          </a>
         </div>
       )}
     </header>
