@@ -86,7 +86,6 @@ function LumierePage() {
       <Hero />
       <Ribbon />
       <About />
-      <Services />
       <Stats />
       <Team />
       <Booking />
