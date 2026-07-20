@@ -668,7 +668,8 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <img src={logoAsset.url} alt="Looks Beauty Boutique" className="h-14 w-auto brightness-0 invert" />
+            <div className="font-display text-white text-3xl tracking-tight">looks<span className="text-rose-gold">.</span></div>
+            <div className="mt-1 font-display italic text-white/50 text-sm">beauty boutique</div>
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">
               A nail &amp; hair salon in the heart of Syntagma — inside the arcade at Filellinon 3. Every look is a work of art.
             </p>
