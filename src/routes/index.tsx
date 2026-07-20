@@ -197,12 +197,20 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-ink text-white min-h-[calc(100vh-5rem)] overflow-hidden"
+      className="relative bg-ink text-white min-h-screen overflow-hidden"
     >
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg.url})` }}
+      />
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute left-[10%] bottom-[12%] w-[180px] h-[45px] md:w-[240px] md:h-[55px] lg:w-[280px] lg:h-[60px] z-10 cursor-pointer"
+        aria-label="Book Now"
+        title="Book Now"
       />
     </section>
   );
