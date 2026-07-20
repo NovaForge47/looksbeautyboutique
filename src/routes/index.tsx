@@ -110,33 +110,10 @@ function HeroNav() {
 
   return (
     <div className="absolute top-0 left-0 right-0 z-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 md:h-24 flex items-center justify-between gap-6">
-        <a href="#home" className="flex items-center shrink-0">
-          <img
-            src={logoAsset.url}
-            alt="Looks Beauty Boutique"
-            className="h-10 md:h-12 w-auto object-contain"
-          />
-        </a>
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
-              className={`transition-colors ${
-                l.label === "Book Now"
-                  ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90"
-                  : "hover:text-rose-gold drop-shadow"
-              }`}
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
+      {/* Mobile menu toggle */}
+      <div className="md:hidden flex items-center justify-end px-6 h-20">
         <button
-          className="md:hidden p-2 text-white"
+          className="p-2 text-white"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
@@ -163,6 +140,58 @@ function HeroNav() {
           ))}
         </div>
       )}
+
+      {/* Desktop clickable overlays matching the background image nav */}
+      <nav className="hidden md:block absolute top-0 left-0 right-0 h-24 pointer-events-none">
+        {/* HOME */}
+        <a
+          href="#home"
+          className="absolute top-[5%] left-[3%] w-[8%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Home"
+        />
+        {/* SERVICES */}
+        <a
+          href="#services"
+          className="absolute top-[5%] left-[11.5%] w-[10%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Services"
+        />
+        {/* ABOUT */}
+        <a
+          href="#about"
+          className="absolute top-[5%] left-[21.5%] w-[8%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="About"
+        />
+        {/* GALLERY */}
+        <a
+          href="#gallery"
+          className="absolute top-[5%] left-[30.5%] w-[9%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Gallery"
+        />
+        {/* Top BOOK NOW pill */}
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-[5%] left-[40.5%] w-[10%] h-[4%] pointer-events-auto cursor-pointer"
+          aria-label="Book Now"
+        />
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/looks_beautyboutiquesyntagma/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-[4.5%] left-[89.5%] w-[3%] h-[4.5%] pointer-events-auto cursor-pointer"
+          aria-label="Instagram"
+        />
+        {/* Facebook */}
+        <a
+          href="https://www.facebook.com/looksbeautyboutique/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-[4.5%] left-[93%] w-[3%] h-[4.5%] pointer-events-auto cursor-pointer"
+          aria-label="Facebook"
+        />
+      </nav>
     </div>
   );
 }
