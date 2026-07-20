@@ -7,6 +7,7 @@ import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
 import beforeAfterImg from "@/assets/before-after.png.asset.json";
+import beforeAfterHairImg from "@/assets/before-after-hair.png.asset.json";
 import {
   ArrowRight,
   ArrowDown,
