@@ -102,8 +102,8 @@ function HeroNav() {
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" className="flex items-center shrink-0 font-display text-white text-xl sm:text-2xl tracking-tight">
-          looks<span className="text-rose-gold">.</span>
+        <a href="#home" className="flex items-center shrink-0 font-display italic text-white text-lg sm:text-xl tracking-tight">
+          beauty boutique
         </a>
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/90">
           {links.map((l) => (
@@ -617,8 +617,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-display text-white text-3xl tracking-tight">looks<span className="text-rose-gold">.</span></div>
-            <div className="mt-1 font-display italic text-white/50 text-sm">beauty boutique</div>
+            <div className="font-display italic text-white text-3xl tracking-tight">beauty boutique</div>
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">
               A nail &amp; hair salon in the heart of Syntagma — inside the arcade at Filellinon 3. Every look is a work of art.
             </p>
