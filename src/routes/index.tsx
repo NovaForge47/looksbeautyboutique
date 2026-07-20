@@ -187,7 +187,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-ink text-white flex items-center min-h-[calc(100vh-5rem)] px-8 md:px-16 lg:px-24 py-20 lg:py-0 overflow-hidden"
+      className="relative bg-ink text-white flex items-center justify-center min-h-[calc(100vh-5rem)] px-8 md:px-16 lg:px-24 py-20 lg:py-0 overflow-hidden"
     >
       <div
         aria-hidden
@@ -196,54 +196,25 @@ function Hero() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-ink/30"
+        className="pointer-events-none absolute inset-0 bg-ink/30"
       />
       <div aria-hidden className="pointer-events-none absolute top-10 right-10 w-40 h-40 rounded-full bg-rose-gold/20 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute bottom-16 left-10 w-56 h-56 rounded-full bg-rose-gold/10 blur-3xl" />
-      <div className="relative max-w-xl">
-        <p className="text-rose-gold text-xs md:text-[13px] uppercase tracking-[0.32em] font-medium">
-          Nail &amp; Hair Salon · Syntagma, Athens
-        </p>
-        <div className="mt-5 h-[2px] w-[60px] bg-rose-gold" />
-        <h1 className="mt-8 font-display font-light leading-[1.05] text-[56px] md:text-[72px] lg:text-[80px] tracking-tight">
-          Nail and{" "}
-          <span className="relative inline-block lumiere-underline">Hair</span>
-          <br />
-          Perfection
-        </h1>
-        <p className="mt-8 text-white/60 text-base md:text-[17px] leading-relaxed max-w-md">
-          Every detail matters. Every look is a work of art.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-ink px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-rose-gold/90 transition-all shadow-[0_15px_30px_-12px_rgba(201,165,92,0.7)]"
-          >
-            Book an Appointment <ArrowRight size={16} />
-          </a>
-          <a
-            href="#services"
-            className="inline-flex items-center gap-2 rounded-full border border-white/70 text-white px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-white hover:text-ink transition-all"
-          >
-            View Services <ArrowDown size={16} />
-          </a>
-        </div>
-        <div className="mt-14 grid grid-cols-3 gap-6 max-w-md">
-          {[
-            { n: "4.6★", l: "Google Rating" },
-            { n: "164+", l: "Reviews" },
-            { n: "Syntagma", l: "Filellinon 3" },
-          ].map((s) => (
-            <div key={s.l}>
-              <div className="font-display text-3xl text-rose-gold">{s.n}</div>
-              <div className="mt-1 text-[11px] uppercase tracking-[0.2em] text-white/70">
-                {s.l}
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="relative flex flex-wrap items-center justify-center gap-4">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full bg-rose-gold text-ink px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-rose-gold/90 transition-all shadow-[0_15px_30px_-12px_rgba(201,165,92,0.7)]"
+        >
+          Book an Appointment <ArrowRight size={16} />
+        </a>
+        <a
+          href="#services"
+          className="inline-flex items-center gap-2 rounded-full border border-white/70 text-white px-7 py-3.5 text-sm font-medium hover:-translate-y-1 hover:bg-white hover:text-ink transition-all"
+        >
+          View Services <ArrowDown size={16} />
+        </a>
       </div>
     </section>
   );
