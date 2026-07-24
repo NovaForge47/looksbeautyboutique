@@ -277,9 +277,9 @@ function About() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             {[
-              "💅 Premium Products",
-              "👩‍🎨 Certified Technicians",
-              "✨ Signature Designs",
+              "Premium Products",
+              "Certified Technicians",
+              "Signature Designs",
             ].map((t) => (
               <span
                 key={t}
