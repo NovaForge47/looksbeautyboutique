@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Looks Beauty Boutique — Nail & Hair Salon in Syntagma, Athens" },
-      { name: "description", content: "Looks Beauty Boutique — nail & hair salon in Syntagma (Filellinon 3, Athens). Manicure, pedicure, gel, nail art & hair. 4.6★ from 164+ reviews. Book online." },
+      { title: "Looks Beauty Boutique — Σαλόνι Νυχιών & Μαλλιών στο Σύνταγμα, Αθήνα" },
+      { name: "description", content: "Looks Beauty Boutique — σαλόνι νυχιών & μαλλιών στο Σύνταγμα (Φιλελλήνων 3, Αθήνα). Manicure, pedicure, ημιμόνιμο, nail art & μαλλιά. 4.6★ από 164+ κριτικές. Κλείστε ραντεβού online." },
       { name: "author", content: "Looks Beauty Boutique" },
-      { property: "og:title", content: "Looks Beauty Boutique — Nail & Hair Salon in Syntagma" },
-      { property: "og:description", content: "Premium nail & hair salon inside the arcade at Filellinon 3, Athens. Manicure, pedicure, nail art." },
+      { property: "og:title", content: "Looks Beauty Boutique — Σαλόνι Νυχιών & Μαλλιών στο Σύνταγμα" },
+      { property: "og:description", content: "Premium σαλόνι νυχιών & μαλλιών μέσα στη στοά, Φιλελλήνων 3, Αθήνα. Manicure, pedicure, nail art." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="el">
       <head>
         <HeadContent />
       </head>
