@@ -157,7 +157,7 @@ function Hero() {
           <img
             src={heroLogo.url}
             alt="looks. beauty boutique"
-            className="w-64 sm:w-80 lg:w-96 h-auto mb-8 opacity-100 contrast-[1.8] brightness-110 saturate-[1.2] drop-shadow-[0_4px_40px_rgba(255,255,255,0.95)]"
+            className="w-64 sm:w-80 lg:w-96 h-auto mb-8 opacity-100 contrast-[2.5] brightness-125 saturate-[1.6] drop-shadow-[0_0_60px_rgba(255,255,255,1)]"
           />
           <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-ink">
             Η ομορφιά είναι στη λεπτομέρεια.
@@ -225,7 +225,7 @@ function About() {
           <BeforeAfter src={beforeAfterHairImg.url} alt="Πριν και μετά θεραπεία μαλλιών στο Looks Beauty Boutique" />
         </div>
         <div>
-          <SectionLabel>Το Στούντιο μας</SectionLabel>
+          <SectionLabel>Το Salon μας</SectionLabel>
           <RoseLine />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl leading-[1.1]">
             Εμπιστευτείτε το look σας σε αληθινούς καλλιτέχνες
@@ -371,7 +371,6 @@ function Gallery() {
     <section id="gallery" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
-          <SectionLabel>Πορτφόλιο</SectionLabel>
           <RoseLine center />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
             Η δουλειά μας μιλάει από μόνη της
@@ -386,9 +385,9 @@ function Gallery() {
             {slides.map((s, i) => (
               <div
                 key={i}
-                className="snap-center shrink-0 w-full sm:w-[80%] lg:w-[70%] mx-auto"
+                className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-[55%] xl:w-[50%]"
               >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-rose-gold bg-blush shadow-[0_25px_60px_-30px_rgba(194,178,128,0.6)]">
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-2xl border border-rose-gold bg-blush shadow-[0_25px_60px_-30px_rgba(194,178,128,0.6)]">
                   <img
                     src={s.src}
                     alt={s.alt}
