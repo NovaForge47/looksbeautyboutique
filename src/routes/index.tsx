@@ -154,11 +154,11 @@ function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
         <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
-          <div className="mb-8 p-6 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.6)_0%,rgba(255,255,255,0.25)_55%,transparent_80%)]">
+          <div className="mb-8">
             <img
               src={heroLogo.url}
               alt="looks. beauty boutique"
-              className="w-64 sm:w-80 lg:w-96 h-auto opacity-100 contrast-[1.3] brightness-105 saturate-[1.1] drop-shadow-[0_0_30px_rgba(255,255,255,0.8)]"
+              className="w-64 sm:w-80 lg:w-96 h-auto opacity-100 contrast-[1.2] brightness-100 saturate-[1.05]"
             />
           </div>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-ink">
