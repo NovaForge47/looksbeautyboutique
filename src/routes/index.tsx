@@ -157,7 +157,7 @@ function Hero() {
           <img
             src={heroLogo.url}
             alt="looks. beauty boutique"
-            className="w-64 sm:w-80 lg:w-96 h-auto mb-8 opacity-100 contrast-110 drop-shadow-[0_2px_20px_rgba(255,255,255,0.8)]"
+            className="w-64 sm:w-80 lg:w-96 h-auto mb-8 opacity-100 contrast-[1.8] brightness-110 saturate-[1.2] drop-shadow-[0_4px_40px_rgba(255,255,255,0.95)]"
           />
           <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-ink">
             Η ομορφιά είναι στη λεπτομέρεια.
