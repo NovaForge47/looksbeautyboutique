@@ -350,7 +350,7 @@ function Story() {
   return (
     <section id="story" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-        <SectionLabel>Η Ιστορία μας</SectionLabel>
+        <p className="text-sm uppercase tracking-[0.3em] font-medium text-rose-gold">Η Ιστορία μας</p>
         <RoseLine center />
         <div className="mt-12 text-ink/80 text-base md:text-lg leading-[1.9] space-y-6">
           <p>
