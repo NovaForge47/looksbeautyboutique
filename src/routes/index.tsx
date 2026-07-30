@@ -68,6 +68,7 @@ function LumierePage() {
       <About />
       <Stats />
       <Booking />
+      <Story />
       <Gallery />
       <Reviews />
       <FinalCTA />
