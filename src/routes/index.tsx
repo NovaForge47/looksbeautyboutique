@@ -162,10 +162,10 @@ function Hero() {
               className="w-64 sm:w-80 lg:w-96 h-auto opacity-100 contrast-[1.2] brightness-100 saturate-[1.05] drop-shadow-[1px_0_0_#000] drop-shadow-[-1px_0_0_#000] drop-shadow-[0_1px_0_#000] drop-shadow-[0_-1px_0_#000] drop-shadow-[1px_1px_0_#000] drop-shadow-[-1px_1px_0_#000] drop-shadow-[1px_-1px_0_#000] drop-shadow-[-1px_-1px_0_#000]"
             />
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-ink">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-ink">
             Η ομορφιά είναι στη λεπτομέρεια.
             <span className="block italic text-rose-gold mt-2">
-              <span className="bg-black/25 px-3 py-1 rounded-sm">Την κάνουμε δική σας.</span>
+              Την κάνουμε δική σας.
             </span>
           </h1>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
