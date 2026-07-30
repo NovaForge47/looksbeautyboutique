@@ -164,7 +164,9 @@ function Hero() {
           </div>
           <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.05] text-ink">
             Η ομορφιά είναι στη λεπτομέρεια.
-            <span className="block italic text-rose-gold">Την κάνουμε δική σας.</span>
+            <span className="block italic text-rose-gold mt-2">
+              <span className="bg-black/25 px-3 py-1 rounded-sm">Την κάνουμε δική σας.</span>
+            </span>
           </h1>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a
