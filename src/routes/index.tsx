@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroNewBg from "@/assets/hero-new-bg.jpg.asset.json";
 
-import heroLogo from "@/assets/looks-logo-user-exact.png.asset.json";
+import heroLogo from "@/assets/looks-logo-new.png.asset.json";
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
