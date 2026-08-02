@@ -148,7 +148,7 @@ function Hero() {
         src={heroNewBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover object-[35%_center] sm:object-[30%_center]"
+        className="absolute inset-0 h-full w-full object-cover object-[65%_center] sm:object-[30%_center]"
       />
       <div aria-hidden className="absolute inset-0 bg-ink/10 md:bg-ink/5" />
       <HeroNav />
