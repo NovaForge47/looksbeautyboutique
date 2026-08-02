@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroNewBg from "@/assets/hero-new-bg.jpg.asset.json";
 
-import heroLogo from "@/assets/looks-logo-hero-transparent.png.asset.json";
+import heroLogo from "@/assets/looks-logo-hero-exact.png.asset.json";
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
@@ -159,7 +159,7 @@ function Hero() {
             <img
               src={heroLogo.url}
               alt="looks. beauty boutique"
-              className="w-64 sm:w-80 lg:w-96 h-auto opacity-100 contrast-[1.2] brightness-100 saturate-[1.05] drop-shadow-[1px_0_0_#000] drop-shadow-[-1px_0_0_#000] drop-shadow-[0_1px_0_#000] drop-shadow-[0_-1px_0_#000] drop-shadow-[1px_1px_0_#000] drop-shadow-[-1px_1px_0_#000] drop-shadow-[1px_-1px_0_#000] drop-shadow-[-1px_-1px_0_#000]"
+              className="w-64 sm:w-80 lg:w-96 h-auto drop-shadow-[1px_0_0_#000] drop-shadow-[-1px_0_0_#000] drop-shadow-[0_1px_0_#000] drop-shadow-[0_-1px_0_#000] drop-shadow-[1px_1px_0_#000] drop-shadow-[-1px_1px_0_#000] drop-shadow-[1px_-1px_0_#000] drop-shadow-[-1px_-1px_0_#000]"
             />
           </div>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-ink">
