@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroWhite from "@/assets/hero-white.jpg";
+import heroNewBg from "@/assets/hero-new-bg.jpg.asset.json";
 
 import heroLogo from "@/assets/looks-logo-hero-transparent.png.asset.json";
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
@@ -145,12 +145,12 @@ function Hero() {
       className="relative bg-white text-ink overflow-hidden min-h-[100svh]"
     >
       <img
-        src={heroWhite}
+        src={heroNewBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover object-[75%_center] sm:object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[65%_center] sm:object-[30%_center]"
       />
-      <div aria-hidden className="absolute inset-0 bg-white/40 md:bg-white/20" />
+      <div aria-hidden className="absolute inset-0 bg-ink/10 md:bg-ink/5" />
       <HeroNav />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
