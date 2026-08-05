@@ -294,7 +294,7 @@ function Booking() {
     <section id="booking" className="bg-blush py-24 lg:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <SectionLabel dark>Κλείσε Ραντεβού</SectionLabel>
+          <SectionLabel dark>BOOK NOW</SectionLabel>
           <RoseLine center />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
             Κάντε την Κράτησή σας
@@ -531,7 +531,7 @@ function FinalCTA() {
           href="#booking"
           className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-rose-gold px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
         >
-          Κλείσε Ραντεβού <ArrowRight size={16} />
+          BOOK NOW <ArrowRight size={16} />
         </a>
       </div>
     </section>
