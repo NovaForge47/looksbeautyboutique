@@ -90,13 +90,7 @@ function HeroNav() {
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" aria-label="Αρχική" className="shrink-0">
-          <img
-            src={heroLogo.url}
-            alt="looks. beauty boutique"
-            className="h-8 sm:h-10 w-auto object-contain"
-          />
-        </a>
+        <a href="#home" aria-label="Αρχική" className="shrink-0 w-8 h-8" />
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
           {links.map((l) => (
@@ -161,6 +155,13 @@ function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
         <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
+          <div className="mb-8">
+            <img
+              src={heroLogo.url}
+              alt="looks. beauty boutique"
+              className="w-64 sm:w-80 lg:w-96 h-auto"
+            />
+          </div>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-ink">
             Η ομορφιά είναι στη λεπτομέρεια.
             <span className="block italic text-rose-gold mt-2">
