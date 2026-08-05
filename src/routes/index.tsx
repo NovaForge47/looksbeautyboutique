@@ -84,13 +84,19 @@ function HeroNav() {
     { href: "#home", label: "Αρχική" },
     { href: "#about", label: "Σχετικά" },
     { href: "#gallery", label: "Γκαλερί" },
-    { href: "#booking", label: "Κλείσε Ραντεβού" },
+    { href: "#booking", label: "BOOK NOW" },
   ];
 
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" aria-label="Αρχική" className="shrink-0 w-8 h-8" />
+        <a href="#home" aria-label="Αρχική" className="shrink-0">
+          <img
+            src={heroLogo.url}
+            alt="looks. beauty boutique"
+            className="h-8 sm:h-10 w-auto object-contain"
+          />
+        </a>
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
           {links.map((l) => (
@@ -98,7 +104,7 @@ function HeroNav() {
               key={l.label}
               href={l.href}
               className={
-                l.label === "Κλείσε Ραντεβού"
+                l.label === "BOOK NOW"
                   ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
                   : "hover:text-rose-gold transition"
               }
@@ -123,7 +129,7 @@ function HeroNav() {
               href={l.href}
               onClick={() => setOpen(false)}
               className={
-                l.label === "Κλείσε Ραντεβού"
+                l.label === "BOOK NOW"
                   ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
                   : "text-ink/80 text-sm uppercase tracking-[0.18em]"
               }
@@ -155,13 +161,6 @@ function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
         <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
-          <div className="mb-8">
-            <img
-              src={heroLogo.url}
-              alt="looks. beauty boutique"
-              className="w-64 sm:w-80 lg:w-96 h-auto"
-            />
-          </div>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-ink">
             Η ομορφιά είναι στη λεπτομέρεια.
             <span className="block italic text-rose-gold mt-2">
@@ -173,7 +172,7 @@ function Hero() {
               href="#booking"
               className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
             >
-              Κλείσε Ραντεβού
+              BOOK NOW
             </a>
             <a
               href="#about"
@@ -295,7 +294,7 @@ function Booking() {
     <section id="booking" className="bg-blush py-24 lg:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <SectionLabel dark>Κλείσε Ραντεβού</SectionLabel>
+          <SectionLabel dark>BOOK NOW</SectionLabel>
           <RoseLine center />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
             Κάντε την Κράτησή σας
@@ -532,7 +531,7 @@ function FinalCTA() {
           href="#booking"
           className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-rose-gold px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
         >
-          Κλείσε Ραντεβού <ArrowRight size={16} />
+          BOOK NOW <ArrowRight size={16} />
         </a>
       </div>
     </section>
