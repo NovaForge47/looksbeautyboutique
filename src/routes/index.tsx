@@ -92,7 +92,7 @@ function HeroNav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
         <a href="#home" aria-label="Αρχική" className="shrink-0 w-8 h-8" />
 
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/80">
           {links.map((l) => (
             <a
               key={l.label}
@@ -108,7 +108,7 @@ function HeroNav() {
           ))}
         </nav>
         <button
-          className="md:hidden p-2 text-ink shrink-0"
+          className="md:hidden p-2 text-white shrink-0"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
@@ -116,7 +116,7 @@ function HeroNav() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-white/95 backdrop-blur border-t border-rose-gold/30 px-6 py-5 flex flex-col gap-4">
+        <div className="md:hidden bg-black/95 backdrop-blur border-t border-rose-gold/30 px-6 py-5 flex flex-col gap-4">
           {links.map((l) => (
             <a
               key={l.label}
@@ -125,7 +125,7 @@ function HeroNav() {
               className={
                 l.label === "BOOK NOW"
                   ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
-                  : "text-ink/80 text-sm uppercase tracking-[0.18em]"
+                  : "text-white/80 text-sm uppercase tracking-[0.18em]"
               }
             >
               {l.label}
