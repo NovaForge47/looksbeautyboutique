@@ -165,7 +165,7 @@ function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
         <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
-          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-ink">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1]">
             Η ομορφιά είναι στη λεπτομέρεια.
             <span className="block italic text-rose-gold mt-2">
               Την κάνουμε δική σας.
@@ -180,7 +180,7 @@ function Hero() {
             </a>
             <a
               href="#about"
-              className="inline-flex items-center justify-center rounded-full border border-ink/40 text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-ink/10 transition"
+              className="inline-flex items-center justify-center rounded-full border border-white/40 text-white px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-white/10 transition"
             >
               Σχετικά
             </a>
