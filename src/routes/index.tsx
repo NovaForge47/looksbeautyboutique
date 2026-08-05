@@ -92,7 +92,7 @@ function HeroNav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
         <a href="#home" aria-label="Αρχική" className="shrink-0 w-8 h-8" />
 
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/80">
           {links.map((l) => (
             <a
               key={l.label}
@@ -108,7 +108,7 @@ function HeroNav() {
           ))}
         </nav>
         <button
-          className="md:hidden p-2 text-ink shrink-0"
+          className="md:hidden p-2 text-white shrink-0"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
