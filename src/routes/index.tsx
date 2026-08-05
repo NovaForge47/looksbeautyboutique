@@ -142,7 +142,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-black text-ink overflow-hidden min-h-[100svh]"
+      className="relative bg-black text-white overflow-hidden min-h-[100svh]"
     >
       <img
         src={heroNewBg.url}
