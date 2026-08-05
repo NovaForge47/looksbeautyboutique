@@ -90,13 +90,7 @@ function HeroNav() {
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" aria-label="Αρχική" className="shrink-0">
-          <img
-            src={heroLogo.url}
-            alt="looks. beauty boutique"
-            className="h-8 sm:h-10 w-auto object-contain"
-          />
-        </a>
+        <a href="#home" aria-label="Αρχική" className="shrink-0 w-8 h-8" />
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-ink/80">
           {links.map((l) => (
