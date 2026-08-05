@@ -153,15 +153,18 @@ function Hero() {
       <div aria-hidden className="absolute inset-0 bg-ink/10 md:bg-ink/5" />
       <HeroNav />
 
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
+        <a href="#home" aria-label="Αρχική">
+          <img
+            src={heroLogo.url}
+            alt="looks. beauty boutique"
+            className="w-40 sm:w-48 lg:w-56 h-auto object-contain"
+          />
+        </a>
+      </div>
+
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
         <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
-          <div className="mb-8">
-            <img
-              src={heroLogo.url}
-              alt="looks. beauty boutique"
-              className="w-64 sm:w-80 lg:w-96 h-auto"
-            />
-          </div>
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1] text-ink">
             Η ομορφιά είναι στη λεπτομέρεια.
             <span className="block italic text-rose-gold mt-2">
