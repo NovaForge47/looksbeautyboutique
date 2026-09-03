@@ -8,6 +8,7 @@ import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
 import beforeAfterImg from "@/assets/before-after.png.asset.json";
 import beforeAfterHairImg from "@/assets/before-after-hair.png.asset.json";
+import { LanguageProvider, useI18n } from "@/lib/i18n";
 import {
   ArrowRight,
   Star,
@@ -24,6 +25,24 @@ import {
 
 export const Route = createFileRoute("/")({
   component: LumierePage,
+  head: () => ({
+    meta: [
+      { title: "Looks Beauty Boutique | Nails & Hair Salon στο Σύνταγμα" },
+      {
+        name: "description",
+        content:
+          "Nail & hair salon στην καρδιά του Συντάγματος, Φιλελλήνων 3. Manicure, pedicure, nail art και μαλλιά. Online ραντεβού 24/7.",
+      },
+      { property: "og:title", content: "Looks Beauty Boutique | Nails & Hair Salon, Athens" },
+      {
+        property: "og:description",
+        content:
+          "Περισσότερα από 15 χρόνια ομορφιάς στο Σύνταγμα. Κλείστε online ραντεβού για nails, hair & beauty.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
 });
 
 const BOOKING_URL = "https://looksbeautyboutique.setmore.com/";
@@ -32,65 +51,74 @@ const MAPS_URL =
 const MAPS_EMBED =
   "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
 
-
-const reviews = [
-  {
-    text:
-      "Αυτό το σαλόνι νυχιών ήταν καταπληκτικό. Τόσο καθαρό, επαγγελματικό και προσεγμένο στη λεπτομέρεια. Λάτρεψα το αποτέλεσμα στα νύχια μου!",
-    name: "KENDA HARRIS",
-  },
-  {
-    text:
-      "Ήρθα χωρίς ραντεβού και έφυγα μια ώρα μετά υπερευχαριστημένη με πανέμορφα φροντισμένα νύχια. Ευχαριστώ για την επαγγελματική, γρήγορη και φιλική εξυπηρέτηση!",
-    name: "SABINE PROKSCH-BAUER",
-  },
-  {
-    text:
-      "Είχα υπέροχη εμπειρία εδώ — mani/pedi. Ήρθα με μερικά σπασμένα νύχια σε λίγο επείγουσα κατάσταση. Η Σοφία ήταν φανταστική — τη συνιστώ ανεπιφύλακτα!",
-    name: "MELINA PAPADOPOULOS",
-  },
-];
-
-const hours: { day: string; time: string }[] = [
-  { day: "Δευτέρα", time: "10:00 – 18:00" },
-  { day: "Τρίτη", time: "09:00 – 20:00" },
-  { day: "Τετάρτη", time: "09:00 – 20:00" },
-  { day: "Πέμπτη", time: "09:00 – 20:00" },
-  { day: "Παρασκευή", time: "08:00 – 20:00" },
-  { day: "Σάββατο", time: "10:00 – 18:00" },
-  { day: "Κυριακή", time: "Κλειστά" },
+const hourTimes = [
+  "10:00 – 18:00",
+  "09:00 – 20:00",
+  "09:00 – 20:00",
+  "09:00 – 20:00",
+  "08:00 – 20:00",
+  "10:00 – 18:00",
+  null,
 ];
 
 function LumierePage() {
   return (
-    <div className="font-body bg-pearl text-ink">
-      <Hero />
-      <About />
-      <Stats />
-      <Booking />
-      <Story />
-      <Gallery />
-      <Reviews />
-      <FinalCTA />
-      <Footer />
+    <LanguageProvider>
+      <div className="font-body bg-pearl text-ink">
+        <Hero />
+        <About />
+        <Stats />
+        <Booking />
+        <Story />
+        <Gallery />
+        <Reviews />
+        <FinalCTA />
+        <Footer />
+      </div>
+    </LanguageProvider>
+  );
+}
+
+/* -------------------- LANGUAGE SWITCH -------------------- */
+function LangSwitch({ compact = false }: { compact?: boolean }) {
+  const { lang, setLang } = useI18n();
+  return (
+    <div
+      className={`inline-flex items-center rounded-full border border-rose-gold/60 overflow-hidden ${
+        compact ? "text-[11px]" : "text-[11px] lg:text-[12px]"
+      }`}
+    >
+      {(["el", "en"] as const).map((l) => (
+        <button
+          key={l}
+          onClick={() => setLang(l)}
+          aria-pressed={lang === l}
+          className={`px-3 py-1.5 uppercase tracking-[0.15em] transition ${
+            lang === l ? "bg-rose-gold text-ink" : "text-inherit hover:text-rose-gold"
+          }`}
+        >
+          {l === "el" ? "ΕΛ" : "EN"}
+        </button>
+      ))}
     </div>
   );
 }
 
 /* -------------------- HERO NAV -------------------- */
 function HeroNav() {
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const links = [
-    { href: "#home", label: "Αρχική" },
-    { href: "#about", label: "Σχετικά" },
-    { href: "#gallery", label: "Γκαλερί" },
-    { href: "#booking", label: "BOOK NOW" },
+    { href: "#home", label: t.nav.home },
+    { href: "#about", label: t.nav.about },
+    { href: "#gallery", label: t.nav.gallery },
+    { href: "#booking", label: t.nav.book, cta: true },
   ];
 
   return (
     <div className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
-        <a href="#home" aria-label="Αρχική" className="shrink-0 w-8 h-8" />
+        <a href="#home" aria-label={t.nav.home} className="shrink-0 w-8 h-8" />
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/80">
           {links.map((l) => (
@@ -98,7 +126,7 @@ function HeroNav() {
               key={l.label}
               href={l.href}
               className={
-                l.label === "BOOK NOW"
+                l.cta
                   ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
                   : "hover:text-rose-gold transition"
               }
@@ -106,14 +134,22 @@ function HeroNav() {
               {l.label}
             </a>
           ))}
+          <div className="text-white/80">
+            <LangSwitch />
+          </div>
         </nav>
-        <button
-          className="md:hidden p-2 text-white shrink-0"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <div className="text-white/80">
+            <LangSwitch compact />
+          </div>
+          <button
+            className="p-2 text-white shrink-0"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={t.nav.menu}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden bg-white/95 backdrop-blur border-t border-rose-gold/30 px-6 py-5 flex flex-col gap-4">
@@ -123,7 +159,7 @@ function HeroNav() {
               href={l.href}
               onClick={() => setOpen(false)}
               className={
-                l.label === "BOOK NOW"
+                l.cta
                   ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
                   : "text-ink/80 text-sm uppercase tracking-[0.18em]"
               }
@@ -139,6 +175,7 @@ function HeroNav() {
 
 /* -------------------- HERO -------------------- */
 function Hero() {
+  const { t } = useI18n();
   return (
     <section
       id="home"
@@ -154,7 +191,7 @@ function Hero() {
       <HeroNav />
 
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
-        <a href="#home" aria-label="Αρχική">
+        <a href="#home" aria-label={t.nav.home}>
           <img
             src={heroLogo.url}
             alt="looks. beauty boutique"
@@ -166,23 +203,21 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
         <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1]">
-            Η ομορφιά είναι στη λεπτομέρεια.
-            <span className="block italic text-rose-gold mt-2">
-              Την κάνουμε δική σας.
-            </span>
+            {t.hero.line1}
+            <span className="block italic text-rose-gold mt-2">{t.hero.line2}</span>
           </h1>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a
               href="#booking"
               className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
             >
-              BOOK NOW
+              {t.nav.book}
             </a>
             <a
               href="#about"
               className="inline-flex items-center justify-center rounded-full border border-white/40 text-white px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-white/10 transition"
             >
-              Σχετικά
+              {t.hero.about}
             </a>
           </div>
         </div>
@@ -193,15 +228,16 @@ function Hero() {
 
 /* -------------------- ABOUT -------------------- */
 function BeforeAfter({ src, alt }: { src: string; alt: string }) {
+  const { t } = useI18n();
   return (
     <div className="w-full">
       <div className="relative w-full overflow-hidden rounded-sm border-2 border-rose-gold">
         <img src={src} alt={alt} className="block w-full h-auto" />
         <span className="absolute top-4 left-4 rounded-full bg-ink/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1">
-          Πριν
+          {t.about.before}
         </span>
         <span className="absolute top-4 right-4 rounded-full bg-rose-gold text-ink text-[10px] uppercase tracking-[0.25em] px-3 py-1">
-          Μετά
+          {t.about.after}
         </span>
       </div>
     </div>
@@ -225,34 +261,28 @@ function RoseLine({ center = false }: { center?: boolean }) {
 }
 
 function About() {
+  const { t } = useI18n();
   return (
     <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
         <div className="flex flex-col gap-6">
-          <BeforeAfter src={beforeAfterImg.url} alt="Πριν και μετά manicure στο Looks Beauty Boutique" />
-          <BeforeAfter src={beforeAfterHairImg.url} alt="Πριν και μετά θεραπεία μαλλιών στο Looks Beauty Boutique" />
+          <BeforeAfter src={beforeAfterImg.url} alt={t.about.altNails} />
+          <BeforeAfter src={beforeAfterHairImg.url} alt={t.about.altHair} />
         </div>
         <div>
-          <SectionLabel>Το Salon μας</SectionLabel>
+          <SectionLabel>{t.about.label}</SectionLabel>
           <RoseLine />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl leading-[1.1]">
-            Εμπιστευτείτε το look σας σε αληθινούς καλλιτέχνες
+            {t.about.title}
           </h2>
-          <p className="mt-8 text-ink/70 text-base leading-[1.8] max-w-lg">
-            Στο Looks Beauty Boutique πιστεύουμε ότι κάθε λεπτομέρεια μετράει. Χρησιμοποιούμε
-            μόνο premium προϊόντα και τεχνικές για να σας χαρίσουμε άψογο αποτέλεσμα — κάθε φορά.
-          </p>
+          <p className="mt-8 text-ink/70 text-base leading-[1.8] max-w-lg">{t.about.body}</p>
           <div className="mt-10 flex flex-wrap gap-3">
-            {[
-              "Premium Προϊόντα",
-              "Πιστοποιημένες Τεχνικοί",
-              "Signature Σχέδια",
-            ].map((t) => (
+            {t.about.chips.map((c) => (
               <span
-                key={t}
+                key={c}
                 className="inline-flex items-center rounded-full border border-rose-gold text-rose-gold bg-white px-5 py-2 text-sm"
               >
-                {t}
+                {c}
               </span>
             ))}
           </div>
@@ -262,14 +292,14 @@ function About() {
   );
 }
 
-
 /* -------------------- STATS -------------------- */
 function Stats() {
+  const { t } = useI18n();
   const items = [
-    { n: "4.6★", l: "Αξιολόγηση Google" },
-    { n: "164+", l: "Κριτικές" },
-    { n: "6", l: "Μέρες Ανοιχτά" },
-    { n: "Online", l: "Ραντεβού 24/7" },
+    { n: "4.6★", l: t.stats.rating },
+    { n: "164+", l: t.stats.reviews },
+    { n: "6", l: t.stats.days },
+    { n: "Online", l: t.stats.online },
   ];
   return (
     <section className="bg-ink py-24">
@@ -277,9 +307,7 @@ function Stats() {
         {items.map((s, i) => (
           <div
             key={s.l}
-            className={`text-center px-6 ${
-              i > 0 ? "lg:border-l lg:border-rose-gold/40" : ""
-            }`}
+            className={`text-center px-6 ${i > 0 ? "lg:border-l lg:border-rose-gold/40" : ""}`}
           >
             <div className="font-display text-rose-gold text-6xl md:text-7xl leading-none">
               {s.n}
@@ -294,23 +322,22 @@ function Stats() {
 
 /* -------------------- BOOKING -------------------- */
 function Booking() {
+  const { t } = useI18n();
   return (
     <section id="booking" className="bg-blush py-24 lg:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
-          <SectionLabel dark>BOOK NOW</SectionLabel>
+          <SectionLabel dark>{t.nav.book}</SectionLabel>
           <RoseLine center />
-          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
-            Κάντε την Κράτησή σας
-          </h2>
-          <p className="mt-4 text-ink/70">Κράτηση μέσω φόρμας ή εφαρμογής</p>
+          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">{t.booking.title}</h2>
+          <p className="mt-4 text-ink/70">{t.booking.subtitle}</p>
         </div>
 
         <div className="mt-12 grid lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 bg-white rounded-2xl overflow-hidden shadow-[0_25px_60px_-25px_rgba(194,178,128,0.35)]">
             <iframe
               src={BOOKING_URL}
-              title="Κράτηση στο Setmore"
+              title={t.booking.iframeTitle}
               className="w-full h-[720px] border-0"
               loading="lazy"
             />
@@ -319,21 +346,20 @@ function Booking() {
           <div className="bg-white rounded-2xl p-10 md:p-12 shadow-[0_25px_60px_-25px_rgba(194,178,128,0.35)]">
             <div className="flex items-center gap-3">
               <Clock size={22} className="text-rose-gold" />
-              <h3 className="font-display text-3xl">Ώρες Λειτουργίας</h3>
+              <h3 className="font-display text-3xl">{t.booking.hours}</h3>
             </div>
             <ul className="mt-6 divide-y divide-rose-gold/20 text-sm">
-              {hours.map((h) => (
-                <li key={h.day} className="flex items-center justify-between py-2.5">
-                  <span className="text-ink/80">{h.day}</span>
-                  <span
-                    className={`font-medium ${
-                      h.time === "Κλειστά" ? "text-ink/40" : "text-ink"
-                    }`}
-                  >
-                    {h.time}
-                  </span>
-                </li>
-              ))}
+              {t.booking.days.map((day, i) => {
+                const time = hourTimes[i];
+                return (
+                  <li key={day} className="flex items-center justify-between py-2.5">
+                    <span className="text-ink/80">{day}</span>
+                    <span className={`font-medium ${time ? "text-ink" : "text-ink/40"}`}>
+                      {time ?? t.booking.closed}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
             <a
               href="tel:+302117409989"
@@ -348,32 +374,22 @@ function Booking() {
   );
 }
 
-
-
 /* -------------------- STORY -------------------- */
 function Story() {
+  const { t } = useI18n();
   return (
     <section id="story" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-        <p className="text-sm uppercase tracking-[0.3em] font-medium text-rose-gold">Η Ιστορία μας</p>
+        <p className="text-sm uppercase tracking-[0.3em] font-medium text-rose-gold">
+          {t.story.label}
+        </p>
         <RoseLine center />
         <div className="mt-12 text-ink/80 text-base md:text-lg leading-[1.9] space-y-6">
-          <p>
-            Στην καρδιά της Αθήνας στο Σύνταγμα, λίγα μόλις βήματα από το σταθμό του μετρό, το LOOKS Beauty Boutique αποτελεί εδώ και περισσότερα από 15 χρόνια έναν σταθερό προορισμό ομορφιάς όπου η ποιότητα, η αισθητική και η προσωπική φροντίδα συναντιούνται.
-          </p>
-          <p>
-            Με ανανεωμένη φιλοσοφία και σύγχρονη προσέγγιση στην ομορφιά, εξελίσσουμε καθημερινά τον χώρο και τις υπηρεσίες μας, παραμένοντας πιστοί σε όσα έχουν αξία για εμάς: επαγγελματισμό, συνέπεια, υψηλή ποιότητα και μια εμπειρία που κάνει κάθε επίσκεψη ξεχωριστή.
-          </p>
-          <p>
-            Για εμάς, η πραγματική ομορφιά ξεκινά από το πώς νιώθει κανείς. Γι' αυτό δημιουργήσαμε έναν ζεστό και φιλόξενο χώρο, όπου η φροντίδα, η προσοχή στη λεπτομέρεια και η προσωπική σχέση με κάθε πελάτισσα αποτελούν μέρος της καθημερινής μας φιλοσοφίας. Η εμπιστοσύνη των γυναικών που μας επιλέγουν όλα αυτά τα χρόνια είναι η μεγαλύτερη έμπνευσή μας.
-          </p>
-          <p>
-            Η ομάδα μας, με εξειδίκευση στους τομείς Nails Hair & Beauty και συνεχή εκπαίδευση στις σύγχρονες τεχνικές, δημιουργεί εξατομικευμένες υπηρεσίες που αναδεικνύουν την ομορφιά και το προσωπικό στυλ κάθε γυναίκας.
-          </p>
+          {t.story.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
           <blockquote className="relative mt-10 pl-6 md:pl-8 border-l-2 border-rose-gold text-left italic text-ink">
-            <p>
-              «Γιατί η ομορφιά δεν είναι μόνο αυτό που βλέπουμε στον καθρέφτη. Είναι ο τρόπος που νιώθουμε όταν επιλέγουμε να φροντίσουμε τον εαυτό μας. Αυτό είναι το συναίσθημα που θέλουμε να παίρνει μαζί της κάθε γυναίκα όταν φεύγει από το κατάστημά μας.»
-            </p>
+            <p>{t.story.quote}</p>
             <footer className="mt-4 text-rose-gold text-xs uppercase tracking-[0.25em] not-italic">
               — LOOKS Beauty Boutique
             </footer>
@@ -384,14 +400,13 @@ function Story() {
   );
 }
 
-
-
 /* -------------------- GALLERY (CAROUSEL) -------------------- */
 function Gallery() {
+  const { t } = useI18n();
   const slides = [
-    { src: nailsBlackRed.url, alt: "Nail art με μαύρο & κόκκινο θέμα τράπουλας" },
-    { src: nailsFrench.url, alt: "Τετράγωνο γαλλικό manicure με λεπτομέρεια καρδιάς" },
-    { src: nailsNudeOmbre.url, alt: "Nude προς λευκό ombré μυτερά νύχια" },
+    { src: nailsBlackRed.url, alt: t.gallery.alts[0] },
+    { src: nailsFrench.url, alt: t.gallery.alts[1] },
+    { src: nailsNudeOmbre.url, alt: t.gallery.alts[2] },
   ];
   const [index, setIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -416,9 +431,7 @@ function Gallery() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
           <RoseLine center />
-          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">
-            Η δουλειά μας μιλάει από μόνη της
-          </h2>
+          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">{t.gallery.title}</h2>
         </div>
 
         <div className="mt-16 relative">
@@ -445,14 +458,14 @@ function Gallery() {
 
           <button
             onClick={() => goTo(index - 1)}
-            aria-label="Προηγούμενο"
+            aria-label={t.gallery.prev}
             className="absolute top-1/2 -translate-y-1/2 left-2 lg:-left-4 w-11 h-11 rounded-full bg-white border border-rose-gold text-rose-gold flex items-center justify-center shadow hover:bg-rose-gold hover:text-ink transition"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={() => goTo(index + 1)}
-            aria-label="Επόμενο"
+            aria-label={t.gallery.next}
             className="absolute top-1/2 -translate-y-1/2 right-2 lg:-right-4 w-11 h-11 rounded-full bg-white border border-rose-gold text-rose-gold flex items-center justify-center shadow hover:bg-rose-gold hover:text-ink transition"
           >
             <ChevronRight size={20} />
@@ -478,18 +491,19 @@ function Gallery() {
 
 /* -------------------- REVIEWS -------------------- */
 function Reviews() {
+  const { t } = useI18n();
   return (
     <section className="bg-ink py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
-          <SectionLabel>Κριτικές</SectionLabel>
+          <SectionLabel>{t.reviews.label}</SectionLabel>
           <RoseLine center />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl text-white">
-            Τι λένε οι πελάτες μας
+            {t.reviews.title}
           </h2>
         </div>
         <div className="mt-16 grid md:grid-cols-3 gap-6">
-          {reviews.map((r) => (
+          {t.reviews.items.map((r) => (
             <div
               key={r.name}
               className="relative rounded-2xl p-10 pt-14"
@@ -517,25 +531,25 @@ function Reviews() {
 
 /* -------------------- FINAL CTA -------------------- */
 function FinalCTA() {
+  const { t } = useI18n();
   return (
     <section
       className="py-28 lg:py-36 text-center text-ink"
       style={{
-        background:
-          "linear-gradient(135deg, #C2B280 0%, #EFE4CE 50%, #C2B280 100%)",
+        background: "linear-gradient(135deg, #C2B280 0%, #EFE4CE 50%, #C2B280 100%)",
       }}
     >
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="font-display font-light text-5xl md:text-6xl leading-[1.05]">
-          Έτοιμοι για το Τέλειο Look;
+          {t.cta.title}
         </h2>
         <div className="mt-6 h-[2px] w-[60px] bg-ink mx-auto" />
-        <p className="mt-6 text-ink/80 text-lg">Κλείστε το ραντεβού σας online — 24/7</p>
+        <p className="mt-6 text-ink/80 text-lg">{t.cta.subtitle}</p>
         <a
           href="#booking"
           className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-rose-gold px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
         >
-          BOOK NOW <ArrowRight size={16} />
+          {t.nav.book} <ArrowRight size={16} />
         </a>
       </div>
     </section>
@@ -544,14 +558,13 @@ function FinalCTA() {
 
 /* -------------------- FOOTER -------------------- */
 function Footer() {
+  const { t } = useI18n();
   return (
     <footer id="contact" className="bg-ink text-white pt-20 pb-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">
-              Σαλόνι νυχιών & μαλλιών στην καρδιά του Συντάγματος — μέσα στη στοά, Φιλελλήνων 3. Κάθε look είναι έργο τέχνης.
-            </p>
+            <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">{t.footer.blurb}</p>
             <div className="mt-6 flex gap-3">
               <a
                 href="https://www.instagram.com/looks_beautyboutiquesyntagma/"
@@ -583,22 +596,26 @@ function Footer() {
             </div>
           </div>
           <div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">Πλοήγηση</div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">
+              {t.footer.nav}
+            </div>
             <div className="mt-5 h-px w-10 bg-rose-gold" />
             <ul className="mt-5 space-y-3 text-sm text-white/80">
-              <li><a href="#home" className="hover:text-rose-gold">Αρχική</a></li>
-              <li><a href="#about" className="hover:text-rose-gold">Σχετικά</a></li>
-              <li><a href="#booking" className="hover:text-rose-gold">Ραντεβού</a></li>
-              <li><a href="#contact" className="hover:text-rose-gold">Επικοινωνία</a></li>
+              <li><a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a></li>
+              <li><a href="#about" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
+              <li><a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a></li>
+              <li><a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a></li>
             </ul>
           </div>
           <div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">Επικοινωνία</div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">
+              {t.footer.contact}
+            </div>
             <div className="mt-5 h-px w-10 bg-rose-gold" />
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-rose-gold mt-0.5 shrink-0" />
-                <span>Μέσα στη στοά, Φιλελλήνων 3, Αθήνα 105 57</span>
+                <span>{t.footer.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-rose-gold shrink-0" />
@@ -611,13 +628,13 @@ function Footer() {
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-rose-gold text-rose-gold px-4 py-2 text-xs uppercase tracking-[0.2em] hover:bg-rose-gold hover:text-ink transition-all"
             >
-              Οδηγίες <ArrowRight size={14} />
+              {t.footer.directions} <ArrowRight size={14} />
             </a>
           </div>
         </div>
         <div className="mt-14 rounded-2xl overflow-hidden border border-rose-gold/40 shadow-[0_25px_60px_-30px_rgba(194,178,128,0.6)]">
           <iframe
-            title="Looks Beauty Boutique — Φιλελλήνων 3, Αθήνα"
+            title={t.footer.mapTitle}
             src={MAPS_EMBED}
             width="100%"
             height="320"
@@ -627,9 +644,7 @@ function Footer() {
           />
         </div>
         <div className="mt-16 h-px bg-rose-gold/40" />
-        <p className="mt-6 text-center text-xs text-white/40">
-          © 2026 Looks Beauty Boutique. Με επιφύλαξη κάθε δικαιώματος.
-        </p>
+        <p className="mt-6 text-center text-xs text-white/40">{t.footer.rights}</p>
       </div>
     </footer>
   );
