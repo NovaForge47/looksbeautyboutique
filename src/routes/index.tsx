@@ -187,7 +187,10 @@ function Hero() {
         aria-hidden
         className="absolute inset-0 h-full w-full object-cover object-[80%_center] sm:object-[60%_center]"
       />
-      <div aria-hidden className="absolute inset-0 bg-ink/10 md:bg-ink/5" />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+      />
       <HeroNav />
 
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
@@ -200,13 +203,15 @@ function Hero() {
         </a>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-center justify-center">
-        <div className="max-w-2xl pt-24 pb-16 sm:pt-28 sm:pb-20 text-center flex flex-col items-center">
-          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.1]">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-end">
+        <div className="max-w-xl pb-10 sm:pb-14 lg:pb-16 pt-40 text-left">
+          <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.15]">
             {t.hero.line1}
-            <span className="block italic text-rose-gold mt-2">{t.hero.line2}</span>
+            <span className="block italic text-rose-gold mt-2 text-base sm:text-lg lg:text-xl font-normal">
+              {t.hero.line2}
+            </span>
           </h1>
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+          <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="#booking"
               className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
