@@ -205,7 +205,7 @@ function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-end">
         <div className="max-w-xl pb-10 sm:pb-14 lg:pb-16 pt-40 text-left">
-          <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.15]">
+          <h1 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl leading-[1.15]">
             {t.hero.line1}
             <span className="block italic text-rose-gold mt-2 text-base sm:text-lg lg:text-xl font-normal">
               {t.hero.line2}
