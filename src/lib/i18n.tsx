@@ -43,8 +43,8 @@ type Dict = {
 const el: Dict = {
   nav: { home: "Αρχική", about: "Σχετικά", gallery: "Γκαλερί", book: "BOOK NOW", menu: "Μενού" },
   hero: {
-    line1: "Η ομορφιά είναι στη λεπτομέρεια.",
-    line2: "Την κάνουμε δική σας.",
+    line1: "Beauty is in the details, we make it yours!",
+    line2: "15+ χρόνια εμπιστοσύνης στην καρδιά του Συντάγματος!",
     about: "Σχετικά",
   },
   about: {
@@ -131,8 +131,8 @@ const el: Dict = {
 const en: Dict = {
   nav: { home: "Home", about: "About", gallery: "Gallery", book: "BOOK NOW", menu: "Menu" },
   hero: {
-    line1: "Beauty is in the details.",
-    line2: "We make it yours.",
+    line1: "Beauty is in the details, we make it yours!",
+    line2: "15+ χρόνια εμπιστοσύνης στην καρδιά του Συντάγματος!",
     about: "About",
   },
   about: {
