@@ -17,6 +17,7 @@ type Dict = {
     carouselAlts: string[];
   };
   stats: { rating: string; reviews: string; days: string; online: string };
+  hair: { label: string; title: string; alts: string[] };
   booking: {
     title: string;
     subtitle: string;
@@ -69,6 +70,16 @@ const el: Dict = {
     reviews: "Κριτικές",
     days: "Μέρες Ανοιχτά",
     online: "Ραντεβού 24/7",
+  },
+  hair: {
+    label: "Μαλλιά",
+    title: "Μεταμορφώσεις μαλλιών που μιλάνε από μόνες τους",
+    alts: [
+      "Πριν και μετά styling ξανθών μαλλιών με μπούκλες",
+      "Πριν και μετά γκρι balayage μαλλιών",
+      "Πριν και μετά ανταύγειες μαλλιών",
+      "Πριν και μετά ash blonde βαφή μαλλιών",
+    ],
   },
   booking: {
     title: "Κάντε την Κράτησή σας",
@@ -162,6 +173,16 @@ const en: Dict = {
     reviews: "Reviews",
     days: "Days Open",
     online: "Booking 24/7",
+  },
+  hair: {
+    label: "Hair",
+    title: "Hair transformations that speak for themselves",
+    alts: [
+      "Before and after blonde curls styling",
+      "Before and after grey balayage hair",
+      "Before and after hair highlights",
+      "Before and after ash blonde hair colour",
+    ],
   },
   booking: {
     title: "Make Your Booking",
