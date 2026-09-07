@@ -74,6 +74,7 @@ function LumierePage() {
       <div className="font-body bg-pearl text-ink">
         <Hero />
         <About />
+        <HairBeforeAfter />
         <Stats />
         <Booking />
         <Story />
@@ -363,6 +364,35 @@ function About() {
               </span>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------- HAIR BEFORE/AFTER -------------------- */
+function HairBeforeAfter() {
+  const { t } = useI18n();
+  const images = [
+    hairBlondeCurls.url,
+    hairGrayBalayage.url,
+    hairHighlights.url,
+    hairAshBlonde.url,
+  ];
+  return (
+    <section className="bg-blush py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="text-center mb-14">
+          <SectionLabel>{t.hair.label}</SectionLabel>
+          <RoseLine center />
+          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl leading-[1.1]">
+            {t.hair.title}
+          </h2>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6">
+          {images.map((src, i) => (
+            <BeforeAfter key={src} src={src} alt={t.hair.alts[i]} />
+          ))}
         </div>
       </div>
     </section>
