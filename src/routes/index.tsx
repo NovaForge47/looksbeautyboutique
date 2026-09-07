@@ -8,6 +8,9 @@ import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
 import beforeAfterImg from "@/assets/before-after.png.asset.json";
 import beforeAfterHairImg from "@/assets/before-after-hair.png.asset.json";
+import beforeAfterBlue from "@/assets/before-after-blue.jpg.asset.json";
+import beforeAfterNude from "@/assets/before-after-nude.jpg.asset.json";
+import beforeAfterDark from "@/assets/before-after-dark.jpg.asset.json";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
 import {
   ArrowRight,
