@@ -373,12 +373,6 @@ function About() {
 /* -------------------- HAIR BEFORE/AFTER -------------------- */
 function HairBeforeAfter() {
   const { t } = useI18n();
-  const images = [
-    hairBlondeCurls.url,
-    hairGrayBalayage.url,
-    hairHighlights.url,
-    hairAshBlonde.url,
-  ];
   return (
     <section className="bg-blush py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -389,11 +383,14 @@ function HairBeforeAfter() {
             {t.hair.title}
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2 gap-6">
-          {images.map((src, i) => (
-            <BeforeAfter key={src} src={src} alt={t.hair.alts[i]} />
-          ))}
-        </div>
+        <BeforeAfterCarousel
+          slides={[
+            { src: hairBlondeCurls.url, alt: t.hair.alts[0] },
+            { src: hairGrayBalayage.url, alt: t.hair.alts[1] },
+            { src: hairHighlights.url, alt: t.hair.alts[2] },
+            { src: hairAshBlonde.url, alt: t.hair.alts[3] },
+          ]}
+        />
       </div>
     </section>
   );
