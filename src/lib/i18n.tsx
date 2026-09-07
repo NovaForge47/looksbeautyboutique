@@ -14,6 +14,7 @@ type Dict = {
     after: string;
     altNails: string;
     altHair: string;
+    carouselAlts: string[];
   };
   stats: { rating: string; reviews: string; days: string; online: string };
   booking: {
