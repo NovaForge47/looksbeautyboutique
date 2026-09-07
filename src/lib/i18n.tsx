@@ -14,6 +14,7 @@ type Dict = {
     after: string;
     altNails: string;
     altHair: string;
+    carouselAlts: string[];
   };
   stats: { rating: string; reviews: string; days: string; online: string };
   booking: {
@@ -57,6 +58,11 @@ const el: Dict = {
     after: "Μετά",
     altNails: "Πριν και μετά manicure στο Looks Beauty Boutique",
     altHair: "Πριν και μετά θεραπεία μαλλιών στο Looks Beauty Boutique",
+    carouselAlts: [
+      "Πριν και μετά μπλε γαλλικό manicure στο Looks Beauty Boutique",
+      "Πριν και μετά nude manicure στο Looks Beauty Boutique",
+      "Πριν και μετά σκούρο manicure στο Looks Beauty Boutique",
+    ],
   },
   stats: {
     rating: "Αξιολόγηση Google",
@@ -145,6 +151,11 @@ const en: Dict = {
     after: "After",
     altNails: "Before and after manicure at Looks Beauty Boutique",
     altHair: "Before and after hair treatment at Looks Beauty Boutique",
+    carouselAlts: [
+      "Before and after blue French manicure at Looks Beauty Boutique",
+      "Before and after nude manicure at Looks Beauty Boutique",
+      "Before and after dark manicure at Looks Beauty Boutique",
+    ],
   },
   stats: {
     rating: "Google Rating",

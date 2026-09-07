@@ -8,6 +8,9 @@ import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
 import beforeAfterImg from "@/assets/before-after.png.asset.json";
 import beforeAfterHairImg from "@/assets/before-after-hair.png.asset.json";
+import beforeAfterBlue from "@/assets/before-after-blue.jpg.asset.json";
+import beforeAfterNude from "@/assets/before-after-nude.jpg.asset.json";
+import beforeAfterDark from "@/assets/before-after-dark.jpg.asset.json";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
 import {
   ArrowRight,
@@ -249,6 +252,66 @@ function BeforeAfter({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+function BeforeAfterCarousel({ slides }: { slides: { src: string; alt: string }[] }) {
+  const { t } = useI18n();
+  const [active, setActive] = useState(0);
+
+  const prev = () => setActive((i) => (i === 0 ? slides.length - 1 : i - 1));
+  const next = () => setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
+
+  return (
+    <div className="relative w-full">
+      <div className="relative w-full overflow-hidden rounded-sm border-2 border-rose-gold">
+        <div
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${active * 100}%)` }}
+        >
+          {slides.map((slide) => (
+            <div key={slide.src} className="w-full shrink-0">
+              <img src={slide.src} alt={slide.alt} className="block w-full h-auto" />
+            </div>
+          ))}
+        </div>
+        <span className="absolute top-4 left-4 rounded-full bg-ink/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1">
+          {t.about.before}
+        </span>
+        <span className="absolute top-4 right-4 rounded-full bg-rose-gold text-ink text-[10px] uppercase tracking-[0.25em] px-3 py-1">
+          {t.about.after}
+        </span>
+      </div>
+
+      <div className="mt-4 flex items-center justify-between gap-4">
+        <button
+          onClick={prev}
+          aria-label={t.gallery.prev}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <div className="flex gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              aria-label={`${t.gallery.next} ${i + 1}`}
+              className={`h-2 rounded-full transition-all ${
+                i === active ? "w-6 bg-rose-gold" : "w-2 bg-rose-gold/40 hover:bg-rose-gold/70"
+              }`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={next}
+          aria-label={t.gallery.next}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function SectionLabel({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
   return (
     <p
@@ -271,8 +334,13 @@ function About() {
     <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
         <div className="flex flex-col gap-6">
-          <BeforeAfter src={beforeAfterImg.url} alt={t.about.altNails} />
-          <BeforeAfter src={beforeAfterHairImg.url} alt={t.about.altHair} />
+          <BeforeAfterCarousel
+            slides={[
+              { src: beforeAfterBlue.url, alt: t.about.carouselAlts[0] },
+              { src: beforeAfterNude.url, alt: t.about.carouselAlts[1] },
+              { src: beforeAfterDark.url, alt: t.about.carouselAlts[2] },
+            ]}
+          />
         </div>
         <div>
           <SectionLabel>{t.about.label}</SectionLabel>
