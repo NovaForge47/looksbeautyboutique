@@ -11,6 +11,10 @@ import beforeAfterHairImg from "@/assets/before-after-hair.png.asset.json";
 import beforeAfterBlue from "@/assets/before-after-blue.jpg.asset.json";
 import beforeAfterNude from "@/assets/before-after-nude.jpg.asset.json";
 import beforeAfterDark from "@/assets/before-after-dark.jpg.asset.json";
+import hairBlondeCurls from "@/assets/hair-blonde-curls.jpg.asset.json";
+import hairGrayBalayage from "@/assets/hair-gray-balayage.jpg.asset.json";
+import hairHighlights from "@/assets/hair-highlights.jpg.asset.json";
+import hairAshBlonde from "@/assets/hair-ash-blonde.jpg.asset.json";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
 import {
   ArrowRight,
