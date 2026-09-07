@@ -334,8 +334,13 @@ function About() {
     <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
         <div className="flex flex-col gap-6">
-          <BeforeAfter src={beforeAfterImg.url} alt={t.about.altNails} />
-          <BeforeAfter src={beforeAfterHairImg.url} alt={t.about.altHair} />
+          <BeforeAfterCarousel
+            slides={[
+              { src: beforeAfterBlue.url, alt: t.about.carouselAlts[0] },
+              { src: beforeAfterNude.url, alt: t.about.carouselAlts[1] },
+              { src: beforeAfterDark.url, alt: t.about.carouselAlts[2] },
+            ]}
+          />
         </div>
         <div>
           <SectionLabel>{t.about.label}</SectionLabel>
