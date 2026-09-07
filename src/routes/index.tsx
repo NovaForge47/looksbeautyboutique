@@ -198,7 +198,7 @@ function Hero() {
           <img
             src={heroLogo.url}
             alt="looks. beauty boutique"
-            className="w-40 sm:w-48 lg:w-56 h-auto object-contain"
+            className="w-48 sm:w-60 lg:w-72 h-auto object-contain"
           />
         </a>
       </div>

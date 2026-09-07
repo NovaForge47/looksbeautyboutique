@@ -44,7 +44,7 @@ const el: Dict = {
   nav: { home: "Αρχική", about: "Σχετικά", gallery: "Γκαλερί", book: "BOOK NOW", menu: "Μενού" },
   hero: {
     line1: "Beauty is in the details, we make it yours!",
-    line2: "15+ χρόνια εμπιστοσύνης στην καρδιά του Συντάγματος!",
+    line2: "15+ χρόνια εμπιστοσύνης, στην καρδιά του Συντάγματος!",
     about: "Σχετικά",
   },
   about: {
@@ -132,7 +132,7 @@ const en: Dict = {
   nav: { home: "Home", about: "About", gallery: "Gallery", book: "BOOK NOW", menu: "Menu" },
   hero: {
     line1: "Beauty is in the details, we make it yours!",
-    line2: "15+ χρόνια εμπιστοσύνης στην καρδιά του Συντάγματος!",
+    line2: "15+ χρόνια εμπιστοσύνης, στην καρδιά του Συντάγματος!",
     about: "About",
   },
   about: {
