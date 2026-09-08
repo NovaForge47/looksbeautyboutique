@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 
-import heroLogo from "@/assets/looks-logo-new.png.asset.json";
+import heroLogo from "@/assets/looks-logo-clean.png";
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
@@ -204,7 +204,7 @@ function Hero() {
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
         <a href="#home" aria-label={t.nav.home}>
           <img
-            src={heroLogo.url}
+            src={heroLogo}
             alt="looks. beauty boutique"
             className="w-48 sm:w-60 lg:w-72 h-auto object-contain"
           />
