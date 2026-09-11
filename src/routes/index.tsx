@@ -209,19 +209,21 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-40 sm:w-52 lg:w-64 h-auto object-contain"
+            className="w-48 sm:w-64 lg:w-80 h-auto object-contain"
           />
         </a>
       </div>
 
-      {/* 15+ years line — upper area, next to the logo */}
-      <p className="absolute z-10 top-[24%] sm:top-[22%] lg:top-[20%] left-1/2 -translate-x-1/2 lg:left-[30%] lg:translate-x-0 w-max max-w-[80vw] text-center lg:text-left font-display italic font-bold text-white text-base sm:text-lg lg:text-2xl">
+      {/* 15+ years line — upper-left, clear of the woman's hair */}
+      <p className="absolute z-10 top-[22%] sm:top-[20%] lg:top-[18%] left-6 sm:left-10 lg:left-[9%] max-w-[70vw] text-left font-display italic font-bold text-white text-base sm:text-lg lg:text-2xl">
         {t.hero.line2}
       </p>
 
-      {/* Main phrase — center-left, clear of the woman */}
-      <h1 className="absolute z-10 top-1/2 -translate-y-1/2 left-6 sm:left-10 lg:left-[9%] font-display italic font-bold text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.25] max-w-[16ch]">
-        {t.hero.line1}
+      {/* Main phrase — stacked like the reference, second line indented */}
+      <h1 className="absolute z-10 top-1/2 -translate-y-1/2 left-6 sm:left-10 lg:left-[9%] font-display italic font-bold text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.25]">
+        {t.hero.line1a}
+        <br />
+        <span className="block pl-10 sm:pl-16 lg:pl-24">{t.hero.line1b}</span>
       </h1>
 
       {/* Buttons — bottom-left */}
@@ -660,7 +662,7 @@ function FinalCTA() {
         <p className="mt-6 text-ink/80 text-lg">{t.cta.subtitle}</p>
         <a
           href="#booking"
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-taupe px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
+          className="mt-10 inline-flex items-center gap-2 rounded-full bg-taupe text-ink px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-taupe/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
         >
           {t.nav.book} <ArrowRight size={16} />
         </a>
