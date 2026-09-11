@@ -219,9 +219,10 @@ function Hero() {
         {t.hero.line2}
       </p>
 
-      {/* Main phrase — center-left, clear of the woman */}
-      <h1 className="absolute z-10 top-1/2 -translate-y-1/2 left-6 sm:left-10 lg:left-[9%] font-display italic font-bold text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.25] max-w-[16ch]">
-        {t.hero.line1}
+      {/* Main phrase — centered in the middle of the hero */}
+      <h1 className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.25] text-center">
+        <span className="block">{t.hero.line1.first}</span>
+        <span className="block pl-8 sm:pl-16">{t.hero.line1.second}</span>
       </h1>
 
       {/* Buttons — bottom-left */}
