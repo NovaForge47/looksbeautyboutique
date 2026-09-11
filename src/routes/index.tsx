@@ -241,7 +241,7 @@ function Hero() {
       </div>
 
       {/* Tagline — aligned with the ΣΧΕΤΙΚΑ button */}
-      <p className="absolute z-10 bottom-6 sm:bottom-10 left-[38%] sm:left-[34%] lg:left-[30%] font-display italic text-taupe text-sm sm:text-lg lg:text-2xl text-left">
+      <p className="absolute z-10 bottom-6 sm:bottom-10 left-[38%] sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe text-sm sm:text-lg lg:text-2xl text-left">
         {t.hero.tagline}
       </p>
     </section>
