@@ -48,7 +48,7 @@ const el: Dict = {
     line1: "Beauty is in the details, we make it yours!",
     line2: "15+ χρόνια εμπιστοσύνης, στην καρδιά του Συντάγματος!",
     about: "Σχετικά",
-    tagline: "All about Nails- Hair and more!",
+    tagline: "All about Nails-Hair and more!",
   },
   about: {
     label: "Το Salon μας",
@@ -152,7 +152,7 @@ const en: Dict = {
     line1: "Beauty is in the details, we make it yours!",
     line2: "15+ χρόνια εμπιστοσύνης, στην καρδιά του Συντάγματος!",
     about: "About",
-    tagline: "All about Nails- Hair and more!",
+    tagline: "All about Nails-Hair and more!",
   },
   about: {
     label: "Our Salon",
