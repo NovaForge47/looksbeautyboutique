@@ -92,7 +92,7 @@ function LangSwitch({ compact = false }: { compact?: boolean }) {
   const { lang, setLang } = useI18n();
   return (
     <div
-      className={`inline-flex items-center rounded-full border border-rose-gold/60 overflow-hidden ${
+      className={`inline-flex items-center rounded-full border border-taupe/60 overflow-hidden ${
         compact ? "text-[11px]" : "text-[11px] lg:text-[12px]"
       }`}
     >
@@ -102,7 +102,7 @@ function LangSwitch({ compact = false }: { compact?: boolean }) {
           onClick={() => setLang(l)}
           aria-pressed={lang === l}
           className={`px-3 py-1.5 uppercase tracking-[0.15em] transition ${
-            lang === l ? "bg-rose-gold text-ink" : "text-inherit hover:text-rose-gold"
+            lang === l ? "bg-taupe text-ink" : "text-inherit hover:text-taupe"
           }`}
         >
           {l === "el" ? "ΕΛ" : "EN"}
@@ -120,6 +120,7 @@ function HeroNav() {
     { href: "#home", label: t.nav.home },
     { href: "#about", label: t.nav.about },
     { href: "#gallery", label: t.nav.gallery },
+    { href: "#gallery", label: t.nav.events, outline: true },
     { href: "#booking", label: t.nav.book, cta: true },
   ];
 
@@ -135,8 +136,10 @@ function HeroNav() {
               href={l.href}
               className={
                 l.cta
-                  ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
-                  : "hover:text-rose-gold transition"
+                  ? "rounded-full bg-taupe text-ink px-4 lg:px-5 py-2 hover:bg-taupe/90 transition"
+                  : l.outline
+                    ? "rounded-full border border-taupe/60 text-taupe px-4 lg:px-5 py-2 hover:bg-taupe/10 transition"
+                    : "hover:text-taupe transition"
               }
             >
               {l.label}
@@ -168,8 +171,10 @@ function HeroNav() {
               onClick={() => setOpen(false)}
               className={
                 l.cta
-                  ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
-                  : "text-ink/80 text-sm uppercase tracking-[0.18em]"
+                  ? "inline-flex items-center justify-center rounded-full bg-taupe text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
+                  : l.outline
+                    ? "inline-flex items-center justify-center rounded-full border border-taupe text-taupe px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
+                    : "text-ink/80 text-sm uppercase tracking-[0.18em]"
               }
             >
               {l.label}
