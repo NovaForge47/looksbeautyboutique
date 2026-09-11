@@ -93,7 +93,7 @@ function LangSwitch({ compact = false }: { compact?: boolean }) {
   const { lang, setLang } = useI18n();
   return (
     <div
-      className={`inline-flex items-center rounded-full border border-taupe/60 overflow-hidden ${
+      className={`inline-flex items-center rounded-full border border-rose-gold/60 overflow-hidden ${
         compact ? "text-[11px]" : "text-[11px] lg:text-[12px]"
       }`}
     >
@@ -103,7 +103,7 @@ function LangSwitch({ compact = false }: { compact?: boolean }) {
           onClick={() => setLang(l)}
           aria-pressed={lang === l}
           className={`px-3 py-1.5 uppercase tracking-[0.15em] transition ${
-            lang === l ? "bg-taupe text-ink" : "text-inherit hover:text-taupe"
+            lang === l ? "bg-rose-gold text-ink" : "text-inherit hover:text-rose-gold"
           }`}
         >
           {l === "el" ? "ΕΛ" : "EN"}
