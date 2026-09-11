@@ -220,7 +220,7 @@ function Hero() {
       </p>
 
       {/* Main phrase — centered in the middle of the hero */}
-      <h1 className="absolute z-10 top-1/2 left-[38%] sm:left-[42%] lg:left-[45%] -translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.5] text-left w-max">
+      <h1 className="absolute z-10 top-1/2 left-[30%] sm:left-[34%] lg:left-[38%] -translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-3xl sm:text-5xl lg:text-6xl leading-[1.5] text-left w-max">
         <span className="block">{t.hero.line1.first}</span>
         <span className="block pl-8 sm:pl-16 lg:pl-20">{t.hero.line1.second}</span>
       </h1>
