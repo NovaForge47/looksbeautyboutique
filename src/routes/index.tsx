@@ -200,7 +200,7 @@ function Hero() {
         src={heroHairBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-contain object-center lg:object-right"
+        className="absolute inset-0 h-full w-full object-contain object-right"
       />
       <HeroNav />
 
@@ -209,42 +209,42 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-48 sm:w-64 lg:w-80 h-auto object-contain"
+            className="w-36 sm:w-52 lg:w-80 h-auto object-contain"
           />
         </a>
       </div>
 
       {/* 15+ years line — upper area, next to the logo */}
-      <p className="absolute z-10 top-[24%] sm:top-[22%] lg:top-[20%] left-[48%] -translate-x-1/2 w-max max-w-[80vw] text-center font-display italic font-bold text-white text-base sm:text-lg lg:text-2xl">
+      <p className="absolute z-10 top-[26%] sm:top-[22%] lg:top-[20%] left-4 sm:left-[45%] lg:left-[48%] sm:-translate-x-1/2 w-max max-w-[80vw] text-left sm:text-center font-display italic font-bold text-white text-sm sm:text-lg lg:text-2xl">
         {t.hero.line2}
       </p>
 
       {/* Main phrase — centered in the middle of the hero */}
-      <h1 className="absolute z-10 top-1/2 left-[30%] sm:left-[34%] lg:left-[38%] -translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-3xl sm:text-5xl lg:text-6xl leading-[1.15] text-left w-max">
+      <h1 className="absolute z-10 top-1/2 left-4 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-xl sm:text-5xl lg:text-6xl leading-[1.15] text-left w-max">
         <span className="block">{t.hero.line1.first}</span>
-        <span className="block pl-24 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
+        <span className="block pl-12 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
+      {/* Tagline — stacked above buttons on mobile, aligned with ΣΧΕΤΙΚΑ on desktop */}
+      <p className="absolute z-10 bottom-20 sm:bottom-10 left-4 sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe text-xs sm:text-lg lg:text-2xl text-left">
+        {t.hero.tagline}
+      </p>
+
       {/* Buttons — bottom-left */}
-      <div className="absolute z-10 bottom-6 sm:bottom-10 left-4 sm:left-8 flex flex-wrap gap-3">
+      <div className="absolute z-10 bottom-4 sm:bottom-10 left-4 sm:left-8 flex flex-wrap gap-2 sm:gap-3">
         <a
           href="#booking"
-          className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
+          className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-5 sm:px-7 py-2.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
         >
           {t.nav.book}
         </a>
         <a
           href="#about"
-          className="inline-flex items-center justify-center rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
+          className="inline-flex items-center justify-center rounded-full border border-rose-gold/60 text-pearl px-5 sm:px-7 py-2.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
         >
           {t.hero.about}
         </a>
       </div>
-
-      {/* Tagline — aligned with the ΣΧΕΤΙΚΑ button */}
-      <p className="absolute z-10 bottom-6 sm:bottom-10 left-[38%] sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe text-sm sm:text-lg lg:text-2xl text-left">
-        {t.hero.tagline}
-      </p>
     </section>
   );
 }
