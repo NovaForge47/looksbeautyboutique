@@ -3,8 +3,8 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 export type Lang = "el" | "en";
 
 type Dict = {
-  nav: { home: string; about: string; gallery: string; book: string; menu: string };
-  hero: { line1: string; line2: string; about: string };
+  nav: { home: string; about: string; gallery: string; events: string; book: string; menu: string };
+  hero: { line1: string; line2: string; about: string; tagline: string };
   about: {
     label: string;
     title: string;
@@ -43,11 +43,12 @@ type Dict = {
 };
 
 const el: Dict = {
-  nav: { home: "Αρχική", about: "Σχετικά", gallery: "Γκαλερί", book: "BOOK NOW", menu: "Μενού" },
+  nav: { home: "Αρχική", about: "Σχετικά", gallery: "Gallery", events: "Events", book: "BOOK NOW", menu: "Μενού" },
   hero: {
     line1: "Beauty is in the details, we make it yours!",
     line2: "15+ χρόνια εμπιστοσύνης, στην καρδιά του Συντάγματος!",
     about: "Σχετικά",
+    tagline: "All about Nails- Hair and more!",
   },
   about: {
     label: "Το Salon μας",
@@ -146,11 +147,12 @@ const el: Dict = {
 };
 
 const en: Dict = {
-  nav: { home: "Home", about: "About", gallery: "Gallery", book: "BOOK NOW", menu: "Menu" },
+  nav: { home: "Home", about: "About", gallery: "Gallery", events: "Events", book: "BOOK NOW", menu: "Menu" },
   hero: {
     line1: "Beauty is in the details, we make it yours!",
     line2: "15+ χρόνια εμπιστοσύνης, στην καρδιά του Συντάγματος!",
     about: "About",
+    tagline: "All about Nails- Hair and more!",
   },
   about: {
     label: "Our Salon",
