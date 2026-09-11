@@ -649,7 +649,7 @@ function FinalCTA() {
     <section
       className="py-28 lg:py-36 text-center text-ink"
       style={{
-        background: "linear-gradient(135deg, #F0E6D2 0%, #EFE4CE 50%, #F0E6D2 100%)",
+        background: "linear-gradient(135deg, #988B84 0%, #EFE4CE 50%, #988B84 100%)",
       }}
     >
       <div className="mx-auto max-w-3xl px-6">
