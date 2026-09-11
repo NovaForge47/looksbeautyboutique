@@ -92,7 +92,7 @@ function LangSwitch({ compact = false }: { compact?: boolean }) {
   const { lang, setLang } = useI18n();
   return (
     <div
-      className={`inline-flex items-center rounded-full border border-rose-gold/60 overflow-hidden ${
+      className={`inline-flex items-center rounded-full border border-taupe/60 overflow-hidden ${
         compact ? "text-[11px]" : "text-[11px] lg:text-[12px]"
       }`}
     >
@@ -102,7 +102,7 @@ function LangSwitch({ compact = false }: { compact?: boolean }) {
           onClick={() => setLang(l)}
           aria-pressed={lang === l}
           className={`px-3 py-1.5 uppercase tracking-[0.15em] transition ${
-            lang === l ? "bg-rose-gold text-ink" : "text-inherit hover:text-rose-gold"
+            lang === l ? "bg-taupe text-ink" : "text-inherit hover:text-taupe"
           }`}
         >
           {l === "el" ? "ΕΛ" : "EN"}
@@ -120,6 +120,7 @@ function HeroNav() {
     { href: "#home", label: t.nav.home },
     { href: "#about", label: t.nav.about },
     { href: "#gallery", label: t.nav.gallery },
+    { href: "#gallery", label: t.nav.events, outline: true },
     { href: "#booking", label: t.nav.book, cta: true },
   ];
 
@@ -135,8 +136,10 @@ function HeroNav() {
               href={l.href}
               className={
                 l.cta
-                  ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
-                  : "hover:text-rose-gold transition"
+                  ? "rounded-full bg-taupe text-ink px-4 lg:px-5 py-2 hover:bg-taupe/90 transition"
+                  : l.outline
+                    ? "rounded-full border border-taupe/60 text-taupe px-4 lg:px-5 py-2 hover:bg-taupe/10 transition"
+                    : "hover:text-taupe transition"
               }
             >
               {l.label}
@@ -168,8 +171,10 @@ function HeroNav() {
               onClick={() => setOpen(false)}
               className={
                 l.cta
-                  ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
-                  : "text-ink/80 text-sm uppercase tracking-[0.18em]"
+                  ? "inline-flex items-center justify-center rounded-full bg-taupe text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
+                  : l.outline
+                    ? "inline-flex items-center justify-center rounded-full border border-taupe text-taupe px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
+                    : "text-ink/80 text-sm uppercase tracking-[0.18em]"
               }
             >
               {l.label}
@@ -189,15 +194,12 @@ function Hero() {
       id="home"
       className="relative bg-black text-white overflow-hidden min-h-[100svh]"
     >
+      {/* Woman fully visible on mobile (contain, black bars blend into bg), cover on desktop */}
       <img
         src={heroHairBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover object-[80%_center] sm:object-[60%_center]"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+        className="absolute inset-0 h-full w-full object-contain object-center lg:object-cover lg:object-[82%_center]"
       />
       <HeroNav />
 
@@ -206,35 +208,41 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-48 sm:w-60 lg:w-72 h-auto object-contain"
+            className="w-40 sm:w-52 lg:w-64 h-auto object-contain"
           />
         </a>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 min-h-[100svh] flex items-end">
-        <div className="max-w-xl pb-10 sm:pb-14 lg:pb-16 pt-40 text-left">
-          <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.1]">
-            {t.hero.line1}
-            <span className="block italic text-rose-gold mt-2 text-base sm:text-lg lg:text-xl font-normal">
-              {t.hero.line2}
-            </span>
-          </h1>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="#booking"
-              className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
-            >
-              {t.nav.book}
-            </a>
-            <a
-              href="#about"
-              className="inline-flex items-center justify-center rounded-full border border-white/40 text-white px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-white/10 transition"
-            >
-              {t.hero.about}
-            </a>
-          </div>
-        </div>
+      {/* 15+ years line — upper area, next to the logo */}
+      <p className="absolute z-10 top-[24%] sm:top-[22%] lg:top-[20%] left-1/2 -translate-x-1/2 lg:left-[30%] lg:translate-x-0 w-max max-w-[80vw] text-center lg:text-left font-display italic text-taupe text-base sm:text-lg lg:text-2xl">
+        {t.hero.line2}
+      </p>
+
+      {/* Main phrase — center-left, clear of the woman */}
+      <h1 className="absolute z-10 top-1/2 -translate-y-1/2 left-6 sm:left-10 lg:left-[9%] font-display italic font-bold text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.25] max-w-[16ch]">
+        {t.hero.line1}
+      </h1>
+
+      {/* Buttons — bottom-left */}
+      <div className="absolute z-10 bottom-6 sm:bottom-10 left-4 sm:left-8 flex flex-wrap gap-3">
+        <a
+          href="#booking"
+          className="inline-flex items-center justify-center rounded-full bg-taupe text-ink px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-taupe/90 transition"
+        >
+          {t.nav.book}
+        </a>
+        <a
+          href="#about"
+          className="inline-flex items-center justify-center rounded-full border border-taupe/60 text-pearl px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-taupe/10 transition"
+        >
+          {t.hero.about}
+        </a>
       </div>
+
+      {/* Tagline — bottom-right italic */}
+      <p className="absolute z-10 bottom-24 sm:bottom-10 right-4 sm:right-8 font-display italic text-taupe text-sm sm:text-lg lg:text-2xl text-right">
+        {t.hero.tagline}
+      </p>
     </section>
   );
 }
@@ -651,7 +659,7 @@ function FinalCTA() {
         <p className="mt-6 text-ink/80 text-lg">{t.cta.subtitle}</p>
         <a
           href="#booking"
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-rose-gold px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
+          className="mt-10 inline-flex items-center gap-2 rounded-full bg-ink text-taupe px-8 py-4 text-sm font-medium hover:scale-[1.03] hover:bg-ink/90 transition-all shadow-[0_20px_45px_-15px_rgba(0,0,0,0.35)]"
         >
           {t.nav.book} <ArrowRight size={16} />
         </a>

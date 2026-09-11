@@ -64,6 +64,7 @@
   --color-ink: var(--ink);
   --color-pearl: var(--pearl);
   --color-gold: var(--gold);
+  --color-taupe: var(--taupe);
   --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
@@ -75,6 +76,7 @@
   --ink: #0A0A0A;
   --pearl: #F7F1E3;
   --gold: #C8A97E;
+  --taupe: #9D9B96; /* CMYK C37 M38 Y40 K2 */
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
