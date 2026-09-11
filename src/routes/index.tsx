@@ -137,10 +137,10 @@ function HeroNav() {
               href={l.href}
               className={
                 l.cta
-                  ? "rounded-full bg-taupe text-ink px-4 lg:px-5 py-2 hover:bg-taupe/90 transition"
+                  ? "rounded-full bg-rose-gold text-ink px-4 lg:px-5 py-2 hover:bg-rose-gold/90 transition"
                   : l.outline
-                    ? "rounded-full border border-taupe/60 text-taupe px-4 lg:px-5 py-2 hover:bg-taupe/10 transition"
-                    : "hover:text-taupe transition"
+                    ? "rounded-full border border-rose-gold/60 text-rose-gold px-4 lg:px-5 py-2 hover:bg-rose-gold/10 transition"
+                    : "hover:text-rose-gold transition"
               }
             >
               {l.label}
@@ -172,9 +172,9 @@ function HeroNav() {
               onClick={() => setOpen(false)}
               className={
                 l.cta
-                  ? "inline-flex items-center justify-center rounded-full bg-taupe text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
+                  ? "inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
                   : l.outline
-                    ? "inline-flex items-center justify-center rounded-full border border-taupe text-taupe px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
+                    ? "inline-flex items-center justify-center rounded-full border border-rose-gold text-rose-gold px-6 py-3 font-medium text-sm uppercase tracking-[0.18em]"
                     : "text-ink/80 text-sm uppercase tracking-[0.18em]"
               }
             >
@@ -228,13 +228,13 @@ function Hero() {
       <div className="absolute z-10 bottom-6 sm:bottom-10 left-4 sm:left-8 flex flex-wrap gap-3">
         <a
           href="#booking"
-          className="inline-flex items-center justify-center rounded-full bg-taupe text-ink px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-taupe/90 transition"
+          className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
         >
           {t.nav.book}
         </a>
         <a
           href="#about"
-          className="inline-flex items-center justify-center rounded-full border border-taupe/60 text-pearl px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-taupe/10 transition"
+          className="inline-flex items-center justify-center rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
         >
           {t.hero.about}
         </a>
