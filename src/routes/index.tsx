@@ -199,7 +199,7 @@ function Hero() {
         src={heroHairBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-contain object-center lg:object-cover lg:object-[82%_center]"
+        className="absolute inset-0 h-full w-full object-contain object-center lg:object-right"
       />
       <HeroNav />
 
