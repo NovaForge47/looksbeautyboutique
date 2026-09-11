@@ -195,7 +195,7 @@ function Hero() {
       id="home"
       className="relative bg-black text-white overflow-hidden min-h-[100svh]"
     >
-      {/* Woman fully visible on mobile (contain, black bars blend into bg), cover on desktop */}
+      {/* Woman fully visible on mobile (contain, black bars blend into bg) */}
       <img
         src={heroHairBg.url}
         alt=""
@@ -204,43 +204,43 @@ function Hero() {
       />
       <HeroNav />
 
-      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
+      <div className="absolute top-3 left-3 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
         <a href="#home" aria-label={t.nav.home}>
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-36 sm:w-52 lg:w-80 h-auto object-contain"
+            className="w-28 sm:w-52 lg:w-80 h-auto object-contain"
           />
         </a>
       </div>
 
-      {/* 15+ years line — upper area, next to the logo */}
-      <p className="absolute z-10 top-[26%] sm:top-[22%] lg:top-[20%] left-4 sm:left-[45%] lg:left-[48%] sm:-translate-x-1/2 w-max max-w-[80vw] text-left sm:text-center font-display italic font-bold text-white text-sm sm:text-lg lg:text-2xl">
+      {/* 15+ years line — upper-left on mobile, centered on desktop */}
+      <p className="absolute z-10 top-20 sm:top-[22%] lg:top-[20%] left-3 sm:left-[45%] lg:left-[48%] sm:-translate-x-1/2 max-w-[55%] sm:max-w-[80vw] text-left sm:text-center font-display italic font-bold text-white text-xs sm:text-lg lg:text-2xl">
         {t.hero.line2}
       </p>
 
-      {/* Main phrase — centered in the middle of the hero */}
-      <h1 className="absolute z-10 top-1/2 left-4 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-xl sm:text-5xl lg:text-6xl leading-[1.15] text-left w-max">
+      {/* Main phrase — kept to the left black space on mobile, centered on desktop */}
+      <h1 className="absolute z-10 top-[28%] sm:top-1/2 left-3 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic font-black text-pearl text-2xl sm:text-5xl lg:text-6xl leading-[1.15] text-left max-w-[55%] sm:max-w-none">
         <span className="block">{t.hero.line1.first}</span>
-        <span className="block pl-12 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
+        <span className="block pl-8 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
-      {/* Tagline — stacked above buttons on mobile, aligned with ΣΧΕΤΙΚΑ on desktop */}
-      <p className="absolute z-10 bottom-20 sm:bottom-10 left-4 sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe text-xs sm:text-lg lg:text-2xl text-left">
+      {/* Tagline — bottom-left on mobile, between button and shoulder on desktop */}
+      <p className="absolute z-10 bottom-24 sm:bottom-10 left-3 sm:left-[34%] lg:left-[30%] max-w-[55%] sm:max-w-none font-display italic font-bold text-taupe text-[10px] sm:text-lg lg:text-2xl text-left">
         {t.hero.tagline}
       </p>
 
       {/* Buttons — bottom-left */}
-      <div className="absolute z-10 bottom-4 sm:bottom-10 left-4 sm:left-8 flex flex-wrap gap-2 sm:gap-3">
+      <div className="absolute z-10 bottom-3 sm:bottom-10 left-3 sm:left-8 flex flex-wrap gap-2 sm:gap-3">
         <a
           href="#booking"
-          className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-5 sm:px-7 py-2.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
+          className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-4 sm:px-7 py-2 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
         >
           {t.nav.book}
         </a>
         <a
           href="#about"
-          className="inline-flex items-center justify-center rounded-full border border-rose-gold/60 text-pearl px-5 sm:px-7 py-2.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
+          className="inline-flex items-center justify-center rounded-full border border-rose-gold/60 text-pearl px-4 sm:px-7 py-2 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
         >
           {t.hero.about}
         </a>
