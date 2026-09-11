@@ -222,7 +222,7 @@ function Hero() {
       {/* Main phrase — centered in the middle of the hero */}
       <h1 className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-xl sm:text-2xl lg:text-3xl leading-[1.5] text-left w-max">
         <span className="block">{t.hero.line1.first}</span>
-        <span className="block pl-12 sm:pl-24 lg:pl-36">{t.hero.line1.second}</span>
+        <span className="block pl-8 sm:pl-16 lg:pl-20">{t.hero.line1.second}</span>
       </h1>
 
       {/* Buttons — bottom-left */}
