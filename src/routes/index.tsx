@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 
-import heroLogo from "@/assets/looks-logo-clean.png";
+import heroLogoAsset from "@/assets/looks-logo-final.png.asset.json";
+const heroLogo = heroLogoAsset.url;
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
 import nailsFrench from "@/assets/nails-french.jpg.asset.json";
