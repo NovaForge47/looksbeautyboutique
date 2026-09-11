@@ -209,7 +209,7 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-40 sm:w-52 lg:w-64 h-auto object-contain"
+            className="w-48 sm:w-64 lg:w-80 h-auto object-contain"
           />
         </a>
       </div>
@@ -220,9 +220,9 @@ function Hero() {
       </p>
 
       {/* Main phrase — centered in the middle of the hero */}
-      <h1 className="absolute z-10 top-1/2 left-[30%] sm:left-[34%] lg:left-[38%] -translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-3xl sm:text-5xl lg:text-6xl leading-[1.5] text-left w-max">
+      <h1 className="absolute z-10 top-1/2 left-[30%] sm:left-[34%] lg:left-[38%] -translate-x-1/2 -translate-y-1/2 font-display italic font-bold text-pearl text-3xl sm:text-5xl lg:text-6xl leading-[1.15] text-left w-max">
         <span className="block">{t.hero.line1.first}</span>
-        <span className="block pl-8 sm:pl-16 lg:pl-20">{t.hero.line1.second}</span>
+        <span className="block pl-24 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
       {/* Buttons — bottom-left */}
