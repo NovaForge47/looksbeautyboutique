@@ -215,7 +215,7 @@ function Hero() {
       </div>
 
       {/* 15+ years line — upper area, next to the logo */}
-      <p className="absolute z-10 top-[24%] sm:top-[22%] lg:top-[20%] left-1/2 -translate-x-1/2 lg:left-[16%] lg:translate-x-0 w-max max-w-[80vw] text-center lg:text-left font-display italic font-bold text-white text-base sm:text-lg lg:text-2xl">
+      <p className="absolute z-10 top-[24%] sm:top-[22%] lg:top-[20%] left-1/2 -translate-x-1/2 w-max max-w-[80vw] text-center font-display italic font-bold text-white text-base sm:text-lg lg:text-2xl">
         {t.hero.line2}
       </p>
 
