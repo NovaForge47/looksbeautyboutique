@@ -209,24 +209,27 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-28 sm:w-52 lg:w-80 h-auto object-contain"
+            className="w-32 sm:w-60 lg:w-[28rem] h-auto object-contain"
           />
         </a>
       </div>
 
       {/* 15+ years line — upper-left on mobile, centered on desktop */}
-      <p className="absolute z-10 top-20 sm:top-[22%] lg:top-[20%] left-3 sm:left-[45%] lg:left-[48%] sm:-translate-x-1/2 max-w-[55%] sm:max-w-[80vw] text-left sm:text-center font-display italic font-bold text-white text-xs sm:text-lg lg:text-2xl">
+      <p
+        className="absolute z-10 top-20 sm:top-[22%] lg:top-[20%] left-3 sm:left-[45%] lg:left-[48%] sm:-translate-x-1/2 max-w-[55%] sm:max-w-[80vw] text-left sm:text-center italic font-bold text-white text-xs sm:text-lg lg:text-2xl"
+        style={{ fontFamily: "'Times New Roman', Times, serif" }}
+      >
         {t.hero.line2}
       </p>
 
       {/* Main phrase — kept to the left black space on mobile, centered on desktop */}
-      <h1 className="absolute z-10 top-[28%] sm:top-1/2 left-3 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic font-black text-pearl text-2xl sm:text-5xl lg:text-6xl leading-[1.15] text-left max-w-[55%] sm:max-w-none">
+      <h1 className="absolute z-10 top-[28%] sm:top-1/2 left-3 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.15] text-left max-w-[55%] sm:max-w-none">
         <span className="block">{t.hero.line1.first}</span>
         <span className="block pl-8 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
       {/* Tagline — bottom-left on mobile, between button and shoulder on desktop */}
-      <p className="absolute z-10 bottom-24 sm:bottom-10 left-3 sm:left-[34%] lg:left-[30%] max-w-[55%] sm:max-w-none font-display italic font-bold text-taupe text-[10px] sm:text-lg lg:text-2xl text-left">
+      <p className="absolute z-10 bottom-24 sm:bottom-10 left-3 sm:left-[34%] lg:left-[30%] max-w-[55%] sm:max-w-none font-display italic font-bold text-taupe text-xs sm:text-xl lg:text-3xl text-left">
         {t.hero.tagline}
       </p>
 
