@@ -216,7 +216,7 @@ function Hero() {
 
       {/* 15+ years line — upper-left on mobile, centered on desktop */}
       <p
-        className="absolute z-10 top-20 sm:top-[22%] lg:top-[20%] left-3 sm:left-[45%] lg:left-[56%] sm:-translate-x-1/2 max-w-[55%] sm:max-w-[80vw] text-left sm:text-center italic font-bold text-white text-xs sm:text-lg lg:text-2xl"
+        className="absolute z-10 top-20 sm:top-[22%] lg:top-[20%] left-3 sm:left-[45%] lg:left-[56%] sm:-translate-x-1/2 max-w-[60%] sm:max-w-[85vw] text-left sm:text-center italic font-bold text-white text-xs sm:text-lg lg:text-2xl tracking-[0.18em] leading-relaxed"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         {t.hero.line2}
