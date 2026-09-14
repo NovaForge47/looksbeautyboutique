@@ -46,7 +46,7 @@ const el: Dict = {
   nav: { home: "Αρχική", about: "Σχετικά", gallery: "Gallery", events: "Events", book: "BOOK NOW", menu: "Μενού" },
   hero: {
     line1: { first: "Beauty is in the details...", second: "we make it yours !" },
-    line2: "15+  χρόνια εμπιστοσύνης,  στην  καρδιά  του  Συντάγματος!",
+    line2: "15+  χρόνια  εμπιστοσύνης,  στην  καρδιά  του  Συντάγματος!",
     about: "Σχετικά",
     tagline: "All about Nails-Hair and more!",
   },
@@ -150,7 +150,7 @@ const en: Dict = {
   nav: { home: "Home", about: "About", gallery: "Gallery", events: "Events", book: "BOOK NOW", menu: "Menu" },
   hero: {
     line1: { first: "Beauty is in the details...", second: "we make it yours !" },
-    line2: "15+  χρόνια εμπιστοσύνης,  στην  καρδιά  του  Συντάγματος!",
+    line2: "15+  χρόνια  εμπιστοσύνης,  στην  καρδιά  του  Συντάγματος!",
     about: "About",
     tagline: "All about Nails-Hair and more!",
   },
