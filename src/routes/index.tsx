@@ -211,7 +211,7 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-64 sm:w-60 lg:w-[28rem] h-auto object-contain"
+            className="w-48 min-[430px]:w-56 sm:w-60 lg:w-[28rem] h-auto object-contain"
           />
         </a>
       </div>
@@ -237,7 +237,10 @@ function Hero() {
         <span className="block sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
-      {/* Tagline — desktop only (removed from mobile) */}
+      {/* Tagline — in the top-bar gap between logo and ΕΛ/EN controls on mobile; bottom-left on desktop */}
+      <p className="sm:hidden absolute z-10 top-6 right-[9.25rem] max-w-[44px] min-[430px]:top-5 min-[430px]:right-[9.75rem] min-[430px]:max-w-[64px] text-right font-display italic text-taupe text-[9px] min-[430px]:text-[10px] leading-[1.4]">
+        {t.hero.tagline}
+      </p>
       <p className="hidden sm:block absolute z-10 sm:bottom-10 left-6 sm:left-[34%] lg:left-[30%] sm:max-w-none font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
         {t.hero.tagline}
       </p>
