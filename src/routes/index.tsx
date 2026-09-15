@@ -200,8 +200,10 @@ function Hero() {
         src={heroHairBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover object-[88%_center] sm:object-contain sm:object-right"
+        className="absolute inset-0 h-full w-full object-cover object-right sm:object-contain sm:object-right"
       />
+      {/* Readability scrim on mobile only */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent sm:hidden" />
       <HeroNav />
 
       <div className="absolute top-3 left-3 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
