@@ -218,7 +218,7 @@ function Hero() {
 
       {/* 15+ years line — desktop only (mobile hero stays pure/minimal) */}
       <p
-        className="hidden sm:block absolute z-10 sm:top-[14%] lg:top-[16%] sm:left-1/2 sm:-translate-x-1/2 sm:max-w-[28%] text-center italic text-white sm:text-xl lg:text-[1.75rem]"
+        className="hidden sm:block absolute z-10 sm:top-[14%] lg:top-[16%] sm:left-[52%] sm:-translate-x-1/2 sm:max-w-[28%] text-center italic text-white sm:text-xl lg:text-[1.75rem]"
         style={{
           fontFamily: "'Times New Roman', Times, serif",
           letterSpacing: "0.05em",
