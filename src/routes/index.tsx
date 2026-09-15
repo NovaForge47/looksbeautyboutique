@@ -195,13 +195,15 @@ function Hero() {
       id="home"
       className="relative bg-black text-white overflow-hidden min-h-[100svh]"
     >
-      {/* Woman fully visible on mobile (contain, black bars blend into bg) */}
+      {/* Fills the screen on mobile (face kept in frame), contained on desktop */}
       <img
         src={heroHairBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-contain object-right"
+        className="absolute inset-0 h-full w-full object-cover object-right sm:object-contain sm:object-right"
       />
+      {/* Readability scrim on mobile only */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent sm:hidden" />
       <HeroNav />
 
       <div className="absolute top-3 left-3 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
@@ -214,9 +216,9 @@ function Hero() {
         </a>
       </div>
 
-      {/* 15+ years line — upper-left on mobile, centered on desktop */}
+      {/* 15+ years line — same spot as desktop, scaled down on mobile */}
       <p
-        className="absolute z-10 top-20 sm:top-[14%] lg:top-[16%] left-3 sm:left-[52%] sm:-translate-x-1/2 max-w-[58%] sm:max-w-[28%] text-center italic text-white text-xs sm:text-xl lg:text-[1.75rem]"
+        className="absolute z-10 top-[14%] left-1/2 -translate-x-1/2 max-w-[55%] sm:max-w-[28%] text-center italic text-white text-[11px] sm:text-xl lg:text-[1.75rem]"
         style={{
           fontFamily: "'Times New Roman', Times, serif",
           letterSpacing: "0.05em",
@@ -229,14 +231,14 @@ function Hero() {
       </p>
 
 
-      {/* Main phrase — kept to the left black space on mobile, centered on desktop */}
-      <h1 className="absolute z-10 top-[28%] sm:top-1/2 left-3 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic text-pearl text-2xl sm:text-4xl lg:text-5xl leading-[1.15] text-left max-w-[55%] sm:max-w-none">
+      {/* Main phrase — same centered position as desktop, scaled down on mobile */}
+      <h1 className="absolute z-10 top-1/2 left-[34%] -translate-x-1/2 -translate-y-1/2 sm:left-[34%] lg:left-[38%] font-display italic text-pearl text-xl sm:text-4xl lg:text-5xl leading-[1.15] text-left max-w-[55%] sm:max-w-none">
         <span className="block">{t.hero.line1.first}</span>
-        <span className="block pl-8 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
+        <span className="block pl-6 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
-      {/* Tagline — bottom-left on mobile, between button and shoulder on desktop */}
-      <p className="absolute z-10 bottom-24 sm:bottom-10 left-3 sm:left-[34%] lg:left-[30%] max-w-[55%] sm:max-w-none font-display italic font-bold text-taupe text-xs sm:text-xl lg:text-3xl text-left">
+      {/* Tagline — above the buttons, same as desktop */}
+      <p className="absolute z-10 bottom-16 sm:bottom-10 left-3 sm:left-[34%] lg:left-[30%] max-w-[58%] sm:max-w-none font-display italic font-bold text-taupe text-xs sm:text-xl lg:text-3xl text-left">
         {t.hero.tagline}
       </p>
 
