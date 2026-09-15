@@ -238,7 +238,7 @@ function Hero() {
       </h1>
 
       {/* Tagline — below the ΕΛ/EN toggle in the empty top-right area on mobile; bottom-left on desktop */}
-      <p className="sm:hidden absolute z-10 top-9 right-6 max-w-[150px] min-[430px]:top-10 min-[430px]:max-w-[170px] text-right font-display italic text-taupe text-[11px] min-[430px]:text-[12px] leading-[1.4]">
+      <p className="sm:hidden absolute z-10 top-11 right-6 max-w-[150px] min-[430px]:top-12 min-[430px]:max-w-[170px] text-right font-display italic text-taupe text-[11px] min-[430px]:text-[12px] leading-[1.4]">
         {t.hero.tagline}
       </p>
       <p className="hidden sm:block absolute z-10 sm:bottom-10 left-6 sm:left-[34%] lg:left-[30%] sm:max-w-none font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
