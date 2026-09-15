@@ -211,7 +211,7 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-48 sm:w-60 lg:w-[28rem] h-auto object-contain"
+            className="w-64 sm:w-60 lg:w-[28rem] h-auto object-contain"
           />
         </a>
       </div>
@@ -259,7 +259,7 @@ function Hero() {
         </a>
         </div>
         <p
-          className="sm:hidden text-white italic text-[11px] leading-[1.5] max-w-[150px]"
+          className="sm:hidden text-white italic text-[14px] leading-[1.45] max-w-[190px]"
           style={{ fontFamily: "'Times New Roman', Times, serif" }}
         >
           <span className="block">{t.hero.line2.first}</span>
