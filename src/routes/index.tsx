@@ -211,7 +211,7 @@ function Hero() {
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-32 sm:w-60 lg:w-[28rem] h-auto object-contain"
+            className="w-48 sm:w-60 lg:w-[28rem] h-auto object-contain"
           />
         </a>
       </div>
@@ -237,13 +237,14 @@ function Hero() {
         <span className="block sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
-      {/* Tagline — above the stacked buttons on mobile, same as desktop on larger screens */}
-      <p className="absolute z-10 bottom-[7.5rem] sm:bottom-10 left-6 sm:left-[34%] lg:left-[30%] sm:max-w-none font-display italic font-bold text-taupe text-[17px] sm:text-xl lg:text-3xl text-left">
+      {/* Tagline — desktop only (removed from mobile) */}
+      <p className="hidden sm:block absolute z-10 sm:bottom-10 left-6 sm:left-[34%] lg:left-[30%] sm:max-w-none font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
         {t.hero.tagline}
       </p>
 
-      {/* Buttons — stacked bottom-left on mobile, row on desktop */}
-      <div className="absolute z-10 bottom-6 sm:bottom-10 left-6 sm:left-8 flex flex-col sm:flex-row gap-3">
+      {/* Buttons — stacked bottom-left on mobile, row on desktop; 15+ line sits beside them on mobile */}
+      <div className="absolute z-10 bottom-6 sm:bottom-10 left-6 sm:left-8 flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
         <a
           href="#booking"
           className="inline-flex items-center justify-center w-44 sm:w-auto rounded-full bg-rose-gold text-ink px-4 sm:px-7 py-3.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.25em] sm:tracking-[0.18em] hover:bg-rose-gold/90 transition"
