@@ -216,9 +216,9 @@ function Hero() {
         </a>
       </div>
 
-      {/* 15+ years line — same spot as desktop, scaled down on mobile */}
+      {/* 15+ years line — desktop only (mobile hero stays pure/minimal) */}
       <p
-        className="absolute z-10 top-[14%] left-1/2 -translate-x-1/2 max-w-[55%] sm:max-w-[28%] text-center italic text-white text-[11px] sm:text-xl lg:text-[1.75rem]"
+        className="hidden sm:block absolute z-10 sm:top-[14%] lg:top-[16%] sm:left-[52%] sm:-translate-x-1/2 sm:max-w-[28%] text-center italic text-white sm:text-xl lg:text-[1.75rem]"
         style={{
           fontFamily: "'Times New Roman', Times, serif",
           letterSpacing: "0.05em",
@@ -231,28 +231,28 @@ function Hero() {
       </p>
 
 
-      {/* Main phrase — same centered position as desktop, scaled down on mobile */}
-      <h1 className="absolute z-10 top-1/2 left-[34%] -translate-x-1/2 -translate-y-1/2 sm:left-[34%] lg:left-[38%] font-display italic text-pearl text-xl sm:text-4xl lg:text-5xl leading-[1.15] text-left max-w-[55%] sm:max-w-none">
+      {/* Main phrase — desktop only (mobile hero stays pure/minimal) */}
+      <h1 className="hidden sm:block absolute z-10 sm:top-1/2 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic text-pearl sm:text-4xl lg:text-5xl leading-[1.15] text-left sm:max-w-none">
         <span className="block">{t.hero.line1.first}</span>
-        <span className="block pl-6 sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
+        <span className="block sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
-      {/* Tagline — above the buttons, same as desktop */}
-      <p className="absolute z-10 bottom-16 sm:bottom-10 left-3 sm:left-[34%] lg:left-[30%] max-w-[58%] sm:max-w-none font-display italic font-bold text-taupe text-xs sm:text-xl lg:text-3xl text-left">
+      {/* Tagline — above the stacked buttons on mobile, same as desktop on larger screens */}
+      <p className="absolute z-10 bottom-[7.5rem] sm:bottom-10 left-6 sm:left-[34%] lg:left-[30%] sm:max-w-none font-display italic font-bold text-taupe text-[17px] sm:text-xl lg:text-3xl text-left">
         {t.hero.tagline}
       </p>
 
-      {/* Buttons — bottom-left */}
-      <div className="absolute z-10 bottom-3 sm:bottom-10 left-3 sm:left-8 flex flex-wrap gap-2 sm:gap-3">
+      {/* Buttons — stacked bottom-left on mobile, row on desktop */}
+      <div className="absolute z-10 bottom-6 sm:bottom-10 left-6 sm:left-8 flex flex-col sm:flex-row gap-3">
         <a
           href="#booking"
-          className="inline-flex items-center justify-center rounded-full bg-rose-gold text-ink px-4 sm:px-7 py-2 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
+          className="inline-flex items-center justify-center w-44 sm:w-auto rounded-full bg-rose-gold text-ink px-4 sm:px-7 py-3.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.25em] sm:tracking-[0.18em] hover:bg-rose-gold/90 transition"
         >
           {t.nav.book}
         </a>
         <a
           href="#about"
-          className="inline-flex items-center justify-center rounded-full border border-rose-gold/60 text-pearl px-4 sm:px-7 py-2 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
+          className="inline-flex items-center justify-center w-44 sm:w-auto rounded-full border border-rose-gold/60 text-pearl px-4 sm:px-7 py-3.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.25em] sm:tracking-[0.18em] hover:bg-rose-gold/10 transition"
         >
           {t.hero.about}
         </a>
