@@ -257,6 +257,14 @@ function Hero() {
         >
           {t.hero.about}
         </a>
+        </div>
+        <p
+          className="sm:hidden text-white italic text-[11px] leading-[1.5] max-w-[150px]"
+          style={{ fontFamily: "'Times New Roman', Times, serif" }}
+        >
+          <span className="block">{t.hero.line2.first}</span>
+          <span className="block">{t.hero.line2.second}</span>
+        </p>
       </div>
     </section>
   );
