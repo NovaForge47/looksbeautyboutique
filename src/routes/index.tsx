@@ -224,7 +224,8 @@ function Hero() {
           lineHeight: 1.25,
         }}
       >
-        {t.hero.line2}
+        <span className="block">{t.hero.line2.first}</span>
+        <span className="block">{t.hero.line2.second}</span>
       </p>
 
 
