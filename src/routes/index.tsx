@@ -259,7 +259,7 @@ function Hero() {
         </a>
         </div>
         <p
-          className="sm:hidden text-white italic text-[14px] leading-[1.45] max-w-[190px]"
+          className="sm:hidden text-white italic text-[16px] leading-[1.4] max-w-[200px]"
           style={{ fontFamily: "'Times New Roman', Times, serif" }}
         >
           <span className="block">{t.hero.line2.first}</span>
