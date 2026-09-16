@@ -237,6 +237,11 @@ function Hero() {
         <span className="block sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
+      {/* Main phrase — small line in the gap under the EL/EN toggle on mobile */}
+      <p className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[200px] min-[430px]:top-[50px] min-[430px]:max-w-[220px] text-right font-display italic text-pearl text-[10px] min-[430px]:text-[12px] leading-[1.25]">
+        {t.hero.line1.first} {t.hero.line1.second}
+      </p>
+
       {/* Tagline — bigger, lower, on the same line as the dot in the logo on mobile; bottom-left on desktop */}
       <p className="sm:hidden absolute z-10 top-[74px] right-6 max-w-[170px] min-[430px]:top-[80px] min-[430px]:max-w-[190px] text-right font-display italic text-taupe text-[13px] min-[430px]:text-[14px] leading-[1.4]">
         {t.hero.tagline}
