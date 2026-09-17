@@ -126,7 +126,7 @@ function HeroNav() {
   ];
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-30">
+    <div className="hidden sm:block absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
         <a href="#home" aria-label={t.nav.home} className="shrink-0 w-8 h-8" />
 
@@ -188,30 +188,113 @@ function HeroNav() {
 }
 
 /* -------------------- HERO -------------------- */
+function MobileHero() {
+  const { t } = useI18n();
+  const [open, setOpen] = useState(false);
+  const links = [
+    { href: "#about", label: t.nav.about },
+    { href: "#gallery", label: t.nav.gallery },
+    { href: "#booking", label: t.nav.book },
+  ];
+
+  return (
+    <section className="sm:hidden min-h-[100svh] bg-ink text-pearl grid grid-rows-[4.5rem_46svh_1fr] overflow-hidden">
+      <header className="relative z-30 flex items-center justify-between gap-3 bg-pearl px-4 text-ink border-b border-rose-gold/30">
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          aria-label={t.nav.menu}
+          aria-expanded={open}
+          className="flex h-10 w-10 shrink-0 items-center justify-center text-ink"
+        >
+          {open ? <X size={23} /> : <Menu size={23} />}
+        </button>
+
+        <a href="#home" aria-label={t.nav.home} className="flex min-w-0 flex-1 justify-center">
+          <img
+            src={heroLogo}
+            alt="looks. beauty boutique"
+            className="w-40 max-w-full object-contain"
+          />
+        </a>
+
+        <div className="shrink-0 text-ink">
+          <LangSwitch compact />
+        </div>
+
+        {open && (
+          <nav className="absolute left-0 right-0 top-full flex flex-col gap-1 bg-pearl px-5 py-4 shadow-lg">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="border-b border-rose-gold/25 py-3 text-center text-xs font-medium uppercase tracking-[0.18em] last:border-0"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        )}
+      </header>
+
+      <div className="relative overflow-hidden bg-black">
+        <img
+          src={heroHairBg.url}
+          alt="Looks Beauty Boutique hair and beauty styling"
+          className="h-full w-full object-cover object-right-top"
+        />
+      </div>
+
+      <div className="flex min-h-0 flex-col items-center justify-center bg-ink px-6 py-6 text-center">
+        <p
+          className="max-w-[330px] text-[1.35rem] italic leading-[1.28] text-pearl"
+          style={{ fontFamily: "'Times New Roman', Times, serif" }}
+        >
+          <span className="block">{t.hero.line2.first}</span>
+          <span className="block mt-1">{t.hero.line2.second}</span>
+        </p>
+
+        <div className="mt-6 flex w-full max-w-[330px] items-center justify-center gap-3">
+          <a
+            href="#booking"
+            className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-rose-gold px-4 text-[10px] font-medium uppercase tracking-[0.18em] text-ink transition hover:bg-rose-gold/90"
+          >
+            {t.nav.book}
+          </a>
+          <a
+            href="#about"
+            className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-rose-gold/70 px-4 text-[10px] font-medium uppercase tracking-[0.18em] text-pearl transition hover:bg-rose-gold/10"
+          >
+            {t.hero.about}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Hero() {
   const { t } = useI18n();
   return (
-    <section
-      id="home"
-      className="relative bg-black text-white overflow-hidden min-h-[100svh]"
-    >
+    <div id="home">
+      <MobileHero />
+      <section className="hidden sm:block relative bg-black text-white overflow-hidden min-h-[100svh]">
       {/* Fills the screen on mobile (face kept in frame), contained on desktop */}
       <img
         src={heroHairBg.url}
         alt=""
         aria-hidden
-        className="absolute inset-0 h-full w-full object-cover object-right sm:object-contain sm:object-right"
+        className="absolute inset-0 h-full w-full object-contain object-right"
       />
-      {/* Readability scrim on mobile only */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent sm:hidden" />
       <HeroNav />
 
-      <div className="absolute top-3 left-3 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-40">
+      <div className="absolute top-6 left-6 lg:top-8 lg:left-8 z-40">
         <a href="#home" aria-label={t.nav.home}>
           <img
             src={heroLogo}
             alt="looks. beauty boutique"
-            className="w-48 min-[430px]:w-56 sm:w-60 lg:w-[28rem] h-auto object-contain"
+            className="w-60 lg:w-[28rem] h-auto object-contain"
           />
         </a>
       </div>
@@ -237,44 +320,28 @@ function Hero() {
         <span className="block sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
       </h1>
 
-      {/* Main phrase — small line in the gap under the EL/EN toggle on mobile */}
-      <p className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[200px] min-[430px]:top-[50px] min-[430px]:max-w-[220px] text-right font-display italic text-pearl text-[10px] min-[430px]:text-[12px] leading-[1.25]">
-        {t.hero.line1.first} {t.hero.line1.second}
-      </p>
-
-      {/* Tagline — bigger, lower, on the same line as the dot in the logo on mobile; bottom-left on desktop */}
-      <p className="sm:hidden absolute z-10 top-[74px] right-6 max-w-[170px] min-[430px]:top-[80px] min-[430px]:max-w-[190px] text-right font-display italic text-taupe text-[13px] min-[430px]:text-[14px] leading-[1.4]">
-        {t.hero.tagline}
-      </p>
       <p className="hidden sm:block absolute z-10 sm:bottom-10 left-6 sm:left-[34%] lg:left-[30%] sm:max-w-none font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
         {t.hero.tagline}
       </p>
 
-      {/* Buttons — stacked bottom-left on mobile, row on desktop; 15+ line sits beside them on mobile */}
-      <div className="absolute z-10 bottom-6 sm:bottom-10 left-6 sm:left-8 flex items-center gap-3">
-        <div className="flex flex-col sm:flex-row gap-3">
+      <div className="absolute z-10 bottom-10 left-8 flex items-center gap-3">
+        <div className="flex flex-row gap-3">
         <a
           href="#booking"
-          className="inline-flex items-center justify-center w-44 sm:w-auto rounded-full bg-rose-gold text-ink px-4 sm:px-7 py-3.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.25em] sm:tracking-[0.18em] hover:bg-rose-gold/90 transition"
+          className="inline-flex items-center justify-center w-auto rounded-full bg-rose-gold text-ink px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
         >
           {t.nav.book}
         </a>
         <a
           href="#about"
-          className="inline-flex items-center justify-center w-44 sm:w-auto rounded-full border border-rose-gold/60 text-pearl px-4 sm:px-7 py-3.5 sm:py-3 text-[10px] sm:text-sm font-medium uppercase tracking-[0.25em] sm:tracking-[0.18em] hover:bg-rose-gold/10 transition"
+          className="inline-flex items-center justify-center w-auto rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
         >
           {t.hero.about}
         </a>
         </div>
-        <p
-          className="sm:hidden text-white italic text-[19px] leading-[1.35] max-w-[230px]"
-          style={{ fontFamily: "'Times New Roman', Times, serif" }}
-        >
-          <span className="block">{t.hero.line2.first}</span>
-          <span className="block">{t.hero.line2.second}</span>
-        </p>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
