@@ -4,4 +4,4 @@
 - [x] Desktop hero refinements: larger logo, lighter/smaller headline, larger tagline, Times New Roman Italic for 15+ line, double-spaced text.
 
 ## Pending
-- [ ] Present mobile hero design options that keep the existing woman as the full background.
+- [ ] Present reversible mobile hero options with the existing woman above and the 15+ sentence plus BOOK NOW / ΣΧΕΤΙΚΑ in a lower content section.
