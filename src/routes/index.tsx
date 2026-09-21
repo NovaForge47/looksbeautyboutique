@@ -211,13 +211,17 @@ function Hero() {
         </a>
       </div>
 
-      {/* Mobile-only: headline under the EL/EN toggle */}
-      <p className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[200px] min-[430px]:top-[50px] min-[430px]:max-w-[220px] text-right font-display italic text-pearl text-[10px] min-[430px]:text-[12px] leading-[1.25]">
-        {t.hero.line1.first} {t.hero.line1.second}
+      {/* Mobile-only: 15+ line under the EL/EN toggle */}
+      <p
+        className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[200px] min-[430px]:top-[50px] min-[430px]:max-w-[220px] text-right italic text-white text-[11px] min-[430px]:text-[13px] leading-[1.3]"
+        style={{ fontFamily: "'Times New Roman', Times, serif" }}
+      >
+        <span className="block">{t.hero.line2.first}</span>
+        <span className="block">{t.hero.line2.second}</span>
       </p>
 
-      {/* Mobile-only: tagline aligned with the logo dot */}
-      <p className="sm:hidden absolute z-10 top-[78px] right-6 max-w-[210px] min-[430px]:top-[84px] min-[430px]:max-w-[230px] text-right font-display italic text-taupe text-[11px] min-[430px]:text-[13px] leading-[1.25]">
+      {/* Mobile-only: tagline right under the logo, white and larger */}
+      <p className="sm:hidden absolute z-10 top-[120px] left-6 max-w-[230px] min-[430px]:top-[126px] min-[430px]:max-w-[250px] text-left font-display italic text-white text-[13px] min-[430px]:text-[15px] leading-[1.25]">
         {t.hero.tagline}
       </p>
 
@@ -249,7 +253,7 @@ function Hero() {
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="#booking"
-            className="inline-flex items-center justify-center w-auto rounded-full bg-rose-gold text-ink px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
+            className="inline-flex items-center justify-center w-auto rounded-full bg-rose-gold text-ink px-7 py-3 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] hover:bg-rose-gold/90 transition"
           >
             {t.nav.book}
           </a>
@@ -261,13 +265,10 @@ function Hero() {
           </a>
         </div>
 
-        {/* Mobile-only: 15+ line beside the stacked buttons */}
-        <p
-          className="sm:hidden italic text-pearl text-[19px] leading-[1.35] max-w-[230px]"
-          style={{ fontFamily: "'Times New Roman', Times, serif" }}
-        >
-          <span className="block">{t.hero.line2.first}</span>
-          <span className="block">{t.hero.line2.second}</span>
+        {/* Mobile-only: headline beside the stacked buttons */}
+        <p className="sm:hidden font-display italic text-pearl text-[19px] leading-[1.35] max-w-[230px]">
+          <span className="block">{t.hero.line1.first}</span>
+          <span className="block">{t.hero.line1.second}</span>
         </p>
       </div>
     </section>
