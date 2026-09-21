@@ -211,18 +211,18 @@ function Hero() {
         </a>
       </div>
 
-      {/* Mobile-only: 15+ line under the EL/EN toggle */}
+      {/* Mobile-only: tagline right under the logo, white and larger */}
+      <p className="sm:hidden absolute z-10 top-[130px] left-6 max-w-[260px] min-[430px]:top-[138px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
+        {t.hero.tagline}
+      </p>
+
+      {/* Mobile-only: 15+ line below the tagline — exactly 2 lines, larger */}
       <p
-        className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[150px] min-[430px]:top-[50px] min-[430px]:max-w-[190px] text-right italic text-white text-[13px] min-[430px]:text-[15px] leading-[1.3]"
+        className="sm:hidden absolute z-10 top-[176px] left-6 right-6 min-[430px]:top-[184px] text-right italic text-white text-[17px] min-[430px]:text-[19px] leading-[1.35]"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2.first}</span>
         <span className="block">{t.hero.line2.second}</span>
-      </p>
-
-      {/* Mobile-only: tagline right under the logo, white and larger */}
-      <p className="sm:hidden absolute z-10 top-[120px] left-6 max-w-[240px] min-[430px]:top-[126px] min-[430px]:max-w-[260px] text-left font-display italic text-white text-[16px] min-[430px]:text-[18px] leading-[1.25]">
-        {t.hero.tagline}
       </p>
 
       {/* 15+ years line — desktop */}
@@ -266,7 +266,7 @@ function Hero() {
         </div>
 
         {/* Mobile-only: headline beside the stacked buttons */}
-        <p className="sm:hidden font-display italic text-pearl text-[24px] min-[430px]:text-[26px] leading-[1.3] max-w-[240px] min-[430px]:max-w-[260px]">
+        <p className="sm:hidden font-display italic text-pearl text-[27px] min-[430px]:text-[30px] leading-[1.3] max-w-[260px] min-[430px]:max-w-[290px]">
           <span className="block">{t.hero.line1.first}</span>
           <span className="block">{t.hero.line1.second}</span>
         </p>
