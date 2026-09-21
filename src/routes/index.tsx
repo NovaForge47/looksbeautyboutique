@@ -213,7 +213,7 @@ function Hero() {
 
       {/* Mobile-only: 15+ line under the EL/EN toggle */}
       <p
-        className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[200px] min-[430px]:top-[50px] min-[430px]:max-w-[220px] text-right italic text-white text-[11px] min-[430px]:text-[13px] leading-[1.3]"
+        className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[140px] min-[430px]:top-[50px] min-[430px]:max-w-[180px] text-right italic text-white text-[11px] min-[430px]:text-[13px] leading-[1.3]"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2.first}</span>
