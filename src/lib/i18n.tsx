@@ -4,7 +4,7 @@ export type Lang = "el" | "en";
 
 type Dict = {
   nav: { home: string; about: string; gallery: string; events: string; book: string; menu: string };
-  hero: { line1: { first: string; second: string }; line2: { first: string; second: string }; about: string; tagline: string };
+  hero: { line1: { first: string; second: string }; line2: { first: string; second: string }; line2Short: { first: string; second: string }; about: string; tagline: string };
   about: {
     label: string;
     title: string;
@@ -47,6 +47,7 @@ const el: Dict = {
   hero: {
     line1: { first: "Beauty is in the details...", second: "we make it yours !" },
     line2: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας στο Σύνταγμα!" },
+    line2Short: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας!" },
     about: "Σχετικά",
     tagline: "All about Nails-Hair and more!",
   },
@@ -151,6 +152,7 @@ const en: Dict = {
   hero: {
     line1: { first: "Beauty is in the details...", second: "we make it yours !" },
     line2: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας στο Σύνταγμα!" },
+    line2Short: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας!" },
     about: "About",
     tagline: "All about Nails-Hair and more!",
   },

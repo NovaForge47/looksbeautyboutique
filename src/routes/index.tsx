@@ -218,11 +218,11 @@ function Hero() {
 
       {/* Mobile-only: 15+ line right under the EL/EN toggle — exactly 2 lines */}
       <p
-        className="sm:hidden absolute z-10 top-[48px] right-6 max-w-[145px] min-[430px]:top-[50px] min-[430px]:max-w-[180px] text-right italic text-white text-[17px] min-[430px]:text-[19px] leading-[1.35]"
+        className="sm:hidden absolute z-10 top-[48px] right-6 min-[430px]:top-[50px] text-right italic text-white text-[14px] min-[430px]:text-[15px] leading-[1.4] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
-        <span className="block">{t.hero.line2.first}</span>
-        <span className="block">{t.hero.line2.second}</span>
+        <span className="block">{t.hero.line2Short.first}</span>
+        <span className="block">{t.hero.line2Short.second}</span>
       </p>
 
       {/* 15+ years line — desktop */}
