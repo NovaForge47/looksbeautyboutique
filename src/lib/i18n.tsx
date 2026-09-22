@@ -47,7 +47,7 @@ const el: Dict = {
   hero: {
     line1: { first: "Beauty is in the details !", second: "...we make it yours !" },
     line2: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας στο Σύνταγμα!" },
-    line2Short: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας!" },
+    line2Short: { first: "15+ χρόνια εμπιστοσύνης στο Σύνταγμα,", second: "στην καρδιά της Αθήνας!" },
     about: "Σχετικά",
     tagline: "All about Nails-Hair and more!",
   },

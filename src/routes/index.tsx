@@ -216,9 +216,9 @@ function Hero() {
         {t.hero.tagline}
       </p>
 
-      {/* Mobile-only: 15+ line right under the EL/EN toggle — exactly 2 lines */}
+      {/* Mobile-only: 15+ line below the tagline — exactly 2 lines */}
       <p
-        className="sm:hidden absolute z-10 top-[48px] right-4 min-[430px]:top-[50px] text-right italic text-white text-[16px] min-[430px]:text-[18px] leading-[1.35] whitespace-nowrap"
+        className="sm:hidden absolute z-10 top-[200px] right-4 min-[430px]:top-[210px] text-right italic text-white text-[16px] min-[430px]:text-[18px] leading-[1.35] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
