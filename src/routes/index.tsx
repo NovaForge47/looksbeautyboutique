@@ -212,13 +212,13 @@ function Hero() {
       </div>
 
       {/* Mobile-only: tagline right under the logo, white and larger */}
-      <p className="sm:hidden absolute z-10 top-[130px] left-6 max-w-[260px] min-[430px]:top-[138px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
+      <p className="sm:hidden absolute z-10 top-[152px] left-6 max-w-[260px] min-[430px]:top-[162px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
         {t.hero.tagline}
       </p>
 
       {/* Mobile-only: 15+ line up beside the logo space — compact 3 lines */}
       <p
-        className="sm:hidden absolute z-10 top-[62px] right-4 min-[430px]:top-[66px] text-right italic text-white text-[17px] min-[430px]:text-[20px] leading-[1.3] whitespace-nowrap"
+        className="sm:hidden absolute z-10 top-[74px] right-4 min-[430px]:top-[80px] text-right italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
