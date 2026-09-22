@@ -218,7 +218,7 @@ function Hero() {
 
       {/* Mobile-only: 15+ line up beside the logo space — compact 3 lines */}
       <p
-        className="sm:hidden absolute z-10 top-[64px] right-4 min-[430px]:top-[68px] text-right italic text-white text-[14px] min-[430px]:text-[16px] leading-[1.35] whitespace-nowrap"
+        className="sm:hidden absolute z-10 top-[62px] right-4 min-[430px]:top-[66px] text-right italic text-white text-[17px] min-[430px]:text-[20px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
