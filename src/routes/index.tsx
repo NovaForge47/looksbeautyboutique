@@ -216,14 +216,13 @@ function Hero() {
         {t.hero.tagline}
       </p>
 
-      {/* Mobile-only: 15+ line up beside the logo space — compact 3 lines */}
+      {/* Mobile-only: 15+ line up beside the logo space — compact 2 lines */}
       <p
         className="sm:hidden absolute z-10 top-[74px] right-4 min-[430px]:top-[80px] text-right italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
         <span className="block">{t.hero.line2Short.second}</span>
-        <span className="block">{t.hero.line2Short.third}</span>
       </p>
 
       {/* 15+ years line — desktop */}
@@ -266,10 +265,10 @@ function Hero() {
           </a>
         </div>
 
-        {/* Mobile-only: headline beside the stacked buttons */}
-        <p className="sm:hidden font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
+        {/* Mobile-only: headline beside the stacked buttons, pushed all the way right */}
+        <p className="sm:hidden ml-auto text-right font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
           <span className="block">{t.hero.line1.first}</span>
-          <span className="block pl-14 min-[430px]:pl-16 text-[21px] min-[430px]:text-[27px] whitespace-nowrap">
+          <span className="block text-[21px] min-[430px]:text-[27px] whitespace-nowrap">
             {t.hero.line1.second}
           </span>
         </p>
