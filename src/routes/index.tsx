@@ -266,9 +266,9 @@ function Hero() {
         </div>
 
         {/* Mobile-only: headline beside the stacked buttons */}
-        <p className="sm:hidden font-display italic text-pearl text-[27px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
+        <p className="sm:hidden font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
           <span className="block">{t.hero.line1.first}</span>
-          <span className="block pl-8 min-[430px]:pl-10 text-[25px] min-[430px]:text-[30px]">
+          <span className="block pl-12 min-[430px]:pl-16 text-[21px] min-[430px]:text-[28px]">
             {t.hero.line1.second}
           </span>
         </p>
