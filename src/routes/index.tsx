@@ -211,19 +211,18 @@ function Hero() {
         </a>
       </div>
 
-      {/* Mobile-only: tagline right under the logo, white and larger */}
-      <p className="sm:hidden absolute z-10 top-[130px] left-6 max-w-[260px] min-[430px]:top-[138px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
-        {t.hero.tagline}
-      </p>
-
-      {/* Mobile-only: 15+ line up beside the logo space — compact 3 lines */}
+      {/* Mobile-only: 15+ line right under the logo, 2 lines */}
       <p
-        className="sm:hidden absolute z-10 top-[64px] right-4 min-[430px]:top-[68px] text-right italic text-white text-[14px] min-[430px]:text-[16px] leading-[1.35] whitespace-nowrap"
+        className="sm:hidden absolute z-10 top-[122px] right-4 min-[430px]:top-[136px] text-right italic text-white text-[15px] min-[430px]:text-[17px] leading-[1.35] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
         <span className="block">{t.hero.line2Short.second}</span>
-        <span className="block">{t.hero.line2Short.third}</span>
+      </p>
+
+      {/* Mobile-only: tagline below the 15+ line, white and larger */}
+      <p className="sm:hidden absolute z-10 top-[176px] left-6 max-w-[260px] min-[430px]:top-[192px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
+        {t.hero.tagline}
       </p>
 
       {/* 15+ years line — desktop */}
