@@ -242,7 +242,7 @@ function Hero() {
       {/* Main phrase — desktop */}
       <h1 className="hidden sm:block absolute z-10 sm:top-1/2 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic text-pearl sm:text-4xl lg:text-5xl leading-[1.15] text-left sm:max-w-none">
         <span className="block">{t.hero.line1.first}</span>
-        <span className="block sm:pl-48 lg:pl-64">{t.hero.line1.second}</span>
+        <span className="block sm:pl-64 lg:pl-80">{t.hero.line1.second}</span>
       </h1>
 
       <p className="hidden sm:block absolute z-10 sm:bottom-10 sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
@@ -268,7 +268,7 @@ function Hero() {
         {/* Mobile-only: headline beside the stacked buttons */}
         <p className="sm:hidden font-display italic text-pearl text-[27px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
           <span className="block">{t.hero.line1.first}</span>
-          <span className="block pl-4 min-[430px]:pl-5 text-[25px] min-[430px]:text-[30px]">
+          <span className="block pl-8 min-[430px]:pl-10 text-[25px] min-[430px]:text-[30px]">
             {t.hero.line1.second}
           </span>
         </p>
