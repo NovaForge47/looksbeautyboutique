@@ -218,7 +218,7 @@ function Hero() {
 
       {/* Mobile-only: 15+ line — under the EL/EN toggle, over the woman's hair */}
       <p
-        className="shimmer-text sm:hidden absolute z-10 top-[74px] right-[8%] min-[430px]:top-[80px] text-right italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
+        className="shimmer-text sm:hidden absolute z-10 top-[74px] right-[8%] min-[430px]:top-[80px] text-center italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
@@ -265,8 +265,8 @@ function Hero() {
           </a>
         </div>
 
-        {/* Mobile-only: headline beside the stacked buttons, pushed all the way right */}
-        <p className="sm:hidden ml-auto text-right font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
+        {/* Mobile-only: headline beside the stacked buttons, sitting right next to them */}
+        <p className="sm:hidden text-left font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
           <span className="block">{t.hero.line1.first}</span>
           <span className="block text-[21px] min-[430px]:text-[27px] whitespace-nowrap">
             {t.hero.line1.second}
