@@ -216,9 +216,9 @@ function Hero() {
         {t.hero.tagline}
       </p>
 
-      {/* Mobile-only: 15+ line up beside the logo space — compact 2 lines */}
+      {/* Mobile-only: 15+ line — in the top bar beside the menu icon on wide phones, under the toggle on narrow ones */}
       <p
-        className="sm:hidden absolute z-10 top-[74px] right-4 min-[430px]:top-[80px] text-right italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
+        className="sm:hidden absolute z-10 top-[74px] right-4 min-[430px]:top-[80px] text-right italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap min-[535px]:top-[13px] min-[535px]:right-[150px] min-[535px]:text-[13px] min-[560px]:top-[12px] min-[560px]:right-[152px] min-[560px]:text-[15px]"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
@@ -249,7 +249,7 @@ function Hero() {
         {t.hero.tagline}
       </p>
 
-      <div className="absolute z-10 bottom-10 left-6 sm:left-8 flex items-center gap-4">
+      <div className="absolute z-10 bottom-10 left-6 right-4 min-[450px]:right-6 sm:left-8 flex items-center gap-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="#booking"
