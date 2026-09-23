@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 
-import heroLogoAsset from "@/assets/looks-logo-final.png.asset.json";
+import heroLogoAsset from "@/assets/looks-logo-sharp.png.asset.json";
 const heroLogo = heroLogoAsset.url;
 import nailsBlackRed from "@/assets/nails-black-red.jpg.asset.json";
 import nailsNudeOmbre from "@/assets/nails-nude-ombre.jpg.asset.json";
@@ -212,13 +212,13 @@ function Hero() {
       </div>
 
       {/* Mobile-only: tagline right under the logo, white and larger */}
-      <p className="sm:hidden absolute z-10 top-[120px] left-6 max-w-[260px] min-[430px]:top-[140px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
+      <p className="sm:hidden absolute z-10 top-[142px] left-6 max-w-[260px] min-[430px]:top-[158px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
         {t.hero.tagline}
       </p>
 
       {/* Mobile-only: 15+ line — under the EL/EN toggle, over the woman's hair */}
       <p
-        className="shimmer-text sm:hidden absolute z-10 top-[74px] right-[8%] min-[430px]:top-[80px] text-center italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
+        className="shimmer-text sm:hidden absolute z-10 top-[96px] right-[8%] min-[430px]:top-[102px] text-center italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
