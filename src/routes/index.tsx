@@ -218,7 +218,7 @@ function Hero() {
 
       {/* Mobile-only: 15+ line — under the EL/EN toggle, over the woman's hair */}
       <p
-        className="shimmer-text sm:hidden absolute z-10 top-[80px] right-3 min-[430px]:top-[88px] text-center italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
+        className="shimmer-text sm:hidden absolute z-10 top-[62px] right-3 min-[430px]:top-[68px] text-center italic text-white text-[14px] min-[430px]:text-[16px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
