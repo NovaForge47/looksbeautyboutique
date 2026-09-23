@@ -46,7 +46,7 @@ const el: Dict = {
   nav: { home: "Αρχική", about: "Σχετικά", gallery: "Gallery", events: "Events", book: "BOOK NOW", menu: "Μενού" },
   hero: {
     line1: { first: "Beauty is in the details", second: "...we make it yours !" },
-    line2: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας στο Σύνταγμα!" },
+    line2: { first: "15 χρόνια εμπιστοσύνης", second: "Syntagma-Athens" },
     line2Short: { first: "15 χρόνια εμπιστοσύνης", second: "Syntagma-Athens" },
     about: "Σχετικά",
     tagline: "All about Nails-Hair and more!",
@@ -151,7 +151,7 @@ const en: Dict = {
   nav: { home: "Home", about: "About", gallery: "Gallery", events: "Events", book: "BOOK NOW", menu: "Menu" },
   hero: {
     line1: { first: "Beauty is in the details", second: "...we make it yours !" },
-    line2: { first: "15+χρόνια εμπιστοσύνης,", second: "στην καρδιά της Αθήνας στο Σύνταγμα!" },
+    line2: { first: "15 years of trust", second: "Syntagma-Athens" },
     line2Short: { first: "15 years of trust", second: "Syntagma-Athens" },
     about: "About",
     tagline: "All about Nails-Hair and more!",
