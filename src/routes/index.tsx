@@ -212,13 +212,13 @@ function Hero() {
       </div>
 
       {/* Mobile-only: tagline right under the logo, white and larger */}
-      <p className="sm:hidden absolute z-10 top-[140px] left-6 max-w-[260px] min-[430px]:top-[158px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
+      <p className="sm:hidden absolute z-10 top-[120px] left-6 max-w-[260px] min-[430px]:top-[140px] min-[430px]:max-w-[290px] text-left font-display italic text-white text-[18px] min-[430px]:text-[20px] leading-[1.25]">
         {t.hero.tagline}
       </p>
 
-      {/* Mobile-only: 15+ line — in the top bar beside the menu icon on wide phones, under the toggle on narrow ones */}
+      {/* Mobile-only: 15+ line — under the EL/EN toggle, over the woman's hair */}
       <p
-        className="sm:hidden absolute z-10 top-[74px] right-4 min-[430px]:top-[80px] text-right italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap min-[535px]:top-[13px] min-[535px]:right-[150px] min-[535px]:text-[13px] min-[560px]:top-[12px] min-[560px]:right-[152px] min-[560px]:text-[15px]"
+        className="sm:hidden absolute z-10 top-[74px] right-4 min-[430px]:top-[80px] text-right italic text-white text-[16px] min-[430px]:text-[19px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
         <span className="block">{t.hero.line2Short.first}</span>
