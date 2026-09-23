@@ -265,10 +265,10 @@ function Hero() {
           </a>
         </div>
 
-        {/* Mobile-only: headline beside the stacked buttons, sitting right next to them */}
-        <p className="sm:hidden text-left font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3] max-w-[300px] min-[430px]:max-w-[330px]">
+        {/* Mobile-only: headline beside the stacked buttons, second line pushed right */}
+        <p className="sm:hidden flex-1 text-left font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3]">
           <span className="block">{t.hero.line1.first}</span>
-          <span className="block text-[21px] min-[430px]:text-[27px] whitespace-nowrap">
+          <span className="block text-right pr-4 min-[430px]:pr-6 text-[21px] min-[430px]:text-[27px] whitespace-nowrap">
             {t.hero.line1.second}
           </span>
         </p>
