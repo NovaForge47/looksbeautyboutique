@@ -249,7 +249,7 @@ function Hero() {
         {t.hero.tagline}
       </p>
 
-      <div className="absolute z-10 bottom-10 left-6 min-[450px]:right-6 sm:left-8 flex items-center gap-4">
+      <div className="absolute z-10 bottom-10 left-4 min-[450px]:right-6 sm:left-8 flex items-center gap-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="#booking"
@@ -266,7 +266,7 @@ function Hero() {
         </div>
 
         {/* Mobile-only: headline beside the stacked buttons, second line pushed right */}
-        <p className="sm:hidden flex-1 text-left font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3]">
+        <p className="sm:hidden relative -left-3 flex-1 text-left font-display italic text-pearl text-[24px] min-[430px]:text-[30px] leading-[1.3]">
           <span className="block">{t.hero.line1.first}</span>
           <span className="block text-right pr-4 min-[430px]:pr-6 text-[21px] min-[430px]:text-[27px] whitespace-nowrap">
             {t.hero.line1.second}
