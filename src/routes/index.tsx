@@ -227,7 +227,7 @@ function Hero() {
 
       {/* 15+ years line — desktop */}
       <p
-        className="hidden sm:block absolute z-10 sm:top-[11%] sm:left-[34%] sm:w-[36%] lg:top-[19%] lg:left-[46%] lg:w-[38%] xl:left-[34%] xl:w-[36%] text-center italic text-taupe sm:text-2xl lg:text-[2rem]"
+        className="hidden sm:block absolute z-10 sm:top-[8.5%] sm:left-[34%] sm:w-[36%] lg:top-[17%] lg:left-[46%] lg:w-[38%] xl:left-[34%] xl:w-[36%] text-center italic text-taupe sm:text-2xl lg:text-[2rem]"
         style={{
           fontFamily: "'Times New Roman', Times, serif",
           letterSpacing: "0.05em",
