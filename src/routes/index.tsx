@@ -212,7 +212,7 @@ function Hero() {
       </div>
 
       {/* Mobile-only: tagline right under the logo, white and larger */}
-      <p className="sm:hidden absolute z-10 top-[114px] left-6 w-48 min-[430px]:top-[130px] min-[430px]:w-56 text-justify [text-align-last:justify] whitespace-nowrap font-display italic text-white text-[11px] min-[430px]:text-[12px] leading-[1.25]">
+      <p className="sm:hidden absolute z-10 top-[114px] left-6 w-48 min-[430px]:top-[130px] min-[430px]:w-56 text-left whitespace-nowrap font-display italic text-white text-[11px] min-[430px]:text-[12px] tracking-[0.12em] leading-[1.25]">
         {t.hero.tagline}
       </p>
 
