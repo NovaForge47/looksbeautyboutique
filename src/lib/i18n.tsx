@@ -49,7 +49,7 @@ const el: Dict = {
     line2: { first: "15 χρόνια εμπιστοσύνης", second: "Syntagma-Athens" },
     line2Short: { first: "15 χρόνια εμπιστοσύνης", second: "Syntagma-Athens" },
     about: "Σχετικά",
-    tagline: "All about Nails-Hair and more!",
+    tagline: "All about Nails-Hair & more!",
   },
   about: {
     label: "Το Salon μας",
@@ -154,7 +154,7 @@ const en: Dict = {
     line2: { first: "15 years of trust", second: "Syntagma-Athens" },
     line2Short: { first: "15 years of trust", second: "Syntagma-Athens" },
     about: "About",
-    tagline: "All about Nails-Hair and more!",
+    tagline: "All about Nails-Hair & more!",
   },
   about: {
     label: "Our Salon",
