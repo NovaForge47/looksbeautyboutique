@@ -188,6 +188,20 @@ function HeroNav() {
 }
 
 /* -------------------- HERO -------------------- */
+function Tagline() {
+  const { t } = useI18n();
+  const [before, after] = t.hero.tagline.split("&");
+  return (
+    <>
+      {before}
+      <span className="not-italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+        &amp;
+      </span>
+      {after}
+    </>
+  );
+}
+
 function Hero() {
   const { t } = useI18n();
   return (
