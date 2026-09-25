@@ -188,6 +188,20 @@ function HeroNav() {
 }
 
 /* -------------------- HERO -------------------- */
+function Tagline() {
+  const { t } = useI18n();
+  const [before, after] = t.hero.tagline.split("&");
+  return (
+    <>
+      {before}
+      <span className="not-italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+        &amp;
+      </span>
+      {after}
+    </>
+  );
+}
+
 function Hero() {
   const { t } = useI18n();
   return (
@@ -213,7 +227,7 @@ function Hero() {
 
       {/* Mobile-only: tagline right under the logo, white and larger */}
       <p className="sm:hidden absolute z-10 top-[114px] left-6 w-48 min-[430px]:top-[130px] min-[430px]:w-56 text-left whitespace-nowrap font-display italic text-white text-[14px] min-[430px]:text-[16px] tracking-[0.12em] leading-[1.25]">
-        {t.hero.tagline}
+        <Tagline />
       </p>
 
       {/* Mobile-only: 15+ line — under the EL/EN toggle, over the woman's hair */}
@@ -246,7 +260,7 @@ function Hero() {
       </h1>
 
       <p className="hidden sm:block absolute z-10 sm:bottom-10 sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
-        {t.hero.tagline}
+        <Tagline />
       </p>
 
       <div className="absolute z-10 bottom-10 left-4 min-[450px]:right-6 sm:left-8 flex items-center gap-4">
