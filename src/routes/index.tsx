@@ -246,7 +246,7 @@ function Hero() {
       </h1>
 
       <p className="hidden sm:block absolute z-10 sm:bottom-10 sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
-        {t.hero.tagline}
+        <Tagline />
       </p>
 
       <div className="absolute z-10 bottom-10 left-4 min-[450px]:right-6 sm:left-8 flex items-center gap-4">
