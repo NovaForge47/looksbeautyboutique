@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 
 import heroLogoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
@@ -16,6 +16,12 @@ import hairBlondeCurls from "@/assets/hair-blonde-curls.jpg.asset.json";
 import hairGrayBalayage from "@/assets/hair-gray-balayage.jpg.asset.json";
 import hairHighlights from "@/assets/hair-highlights.jpg.asset.json";
 import hairAshBlonde from "@/assets/hair-ash-blonde.jpg.asset.json";
+import salonReception from "@/assets/salon-01-reception.jpg.asset.json";
+import salonStations from "@/assets/salon-02-stations.jpg.asset.json";
+import salonPedicure from "@/assets/salon-03-pedicure.jpg.asset.json";
+import salonOverview from "@/assets/salon-04-overview.jpg.asset.json";
+import salonManicure from "@/assets/salon-05-manicure.jpg.asset.json";
+import salonPolishWall from "@/assets/salon-06-polish-wall.jpg.asset.json";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
 import {
   ArrowRight,
@@ -60,7 +66,6 @@ const MAPS_EMBED =
   "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
 
 const hourTimes = [
-  "10:00 – 18:00",
   "09:00 – 20:00",
   "09:00 – 20:00",
   "09:00 – 20:00",
@@ -241,7 +246,7 @@ function Hero() {
 
       {/* 15+ years line — desktop */}
       <p
-        className="hidden sm:block absolute z-10 sm:top-[8.5%] sm:left-[34%] sm:w-[36%] lg:top-[17%] lg:left-[46%] lg:w-[38%] xl:left-[34%] xl:w-[36%] text-center italic text-taupe sm:text-2xl lg:text-[2rem]"
+        className="desktop-shimmer-text hidden sm:block absolute z-10 sm:top-[8.5%] sm:left-[34%] sm:w-[36%] lg:top-[17%] lg:left-[46%] lg:w-[38%] xl:left-[34%] xl:w-[36%] text-center italic sm:text-2xl lg:text-[2rem]"
         style={{
           fontFamily: "'Times New Roman', Times, serif",
           letterSpacing: "0.05em",
@@ -263,7 +268,7 @@ function Hero() {
         <Tagline />
       </p>
 
-      <div className="absolute z-10 bottom-10 left-4 min-[450px]:right-6 sm:left-8 flex items-center gap-4">
+      <div className="absolute z-10 bottom-10 left-4 min-[450px]:right-6 sm:left-auto sm:right-8 flex items-center gap-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="#booking"
@@ -273,7 +278,7 @@ function Hero() {
           </a>
           <a
             href="#about"
-            className="inline-flex items-center justify-center w-auto rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-xs sm:text-sm font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
+            className="sm:hidden inline-flex items-center justify-center w-auto rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-xs font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
           >
             {t.hero.about}
           </a>
@@ -391,11 +396,14 @@ function About() {
     <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
         <div className="flex flex-col gap-6">
-          <BeforeAfterCarousel
+          <PhotoCarousel
             slides={[
-              { src: beforeAfterBlue.url, alt: t.about.carouselAlts[0] },
-              { src: beforeAfterNude.url, alt: t.about.carouselAlts[1] },
-              { src: beforeAfterDark.url, alt: t.about.carouselAlts[2] },
+              { src: salonReception.url, alt: t.about.salonAlts[0] },
+              { src: salonStations.url, alt: t.about.salonAlts[1] },
+              { src: salonPedicure.url, alt: t.about.salonAlts[2] },
+              { src: salonOverview.url, alt: t.about.salonAlts[3] },
+              { src: salonManicure.url, alt: t.about.salonAlts[4] },
+              { src: salonPolishWall.url, alt: t.about.salonAlts[5] },
             ]}
           />
         </div>
@@ -454,7 +462,7 @@ function Stats() {
   const items = [
     { n: "4.6★", l: t.stats.rating },
     { n: "164+", l: t.stats.reviews },
-    { n: "6", l: t.stats.days },
+    { n: "5", l: t.stats.days },
     { n: "Online", l: t.stats.online },
   ];
   return (
@@ -505,7 +513,7 @@ function Booking() {
               <h3 className="font-display text-3xl">{t.booking.hours}</h3>
             </div>
             <ul className="mt-6 divide-y divide-rose-gold/20 text-sm">
-              {t.booking.days.map((day, i) => {
+              {t.booking.days.slice(1).map((day, i) => {
                 const time = hourTimes[i];
                 return (
                   <li key={day} className="flex items-center justify-between py-2.5">
