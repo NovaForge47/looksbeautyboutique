@@ -347,17 +347,17 @@ function PhotoCarousel({
           ))}
         </div>
       </div>
-      <div className="mt-5 flex items-center justify-center gap-4">
+      <div className="mt-5 flex min-w-0 items-center justify-center gap-2 sm:gap-4">
         <button onClick={prev} aria-label={t.gallery.prev} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition">
           <ChevronLeft size={20} />
         </button>
-        <div className="flex gap-2">
+        <div className="flex min-w-0 gap-1 sm:gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
               aria-label={`${t.gallery.next} ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-rose-gold" : "w-2 bg-rose-gold/40 hover:bg-rose-gold/70"}`}
+              className={`h-1.5 rounded-full transition-all sm:h-2 ${i === active ? "w-4 bg-rose-gold sm:w-6" : "w-1.5 bg-rose-gold/40 hover:bg-rose-gold/70 sm:w-2"}`}
             />
           ))}
         </div>
