@@ -5,11 +5,12 @@
 - [x] Built the selected mobile hero with the existing woman above and the 15+ sentence plus BOOK NOW / ΣΧΕΤΙΚΑ below.
 
 ## Pending
-- [ ] Replace the temporary Hair gallery images when the new set arrives. (Nails done 2026-09-30: 13 new photos from the supplied collages.)
 
 ## Completed
 - [x] Desktop hero: removed About beside BOOK NOW and moved BOOK NOW right.
 - [x] Updated open-days count, removed Monday hours, and renamed the story heading.
 - [x] Added the six salon photos in reverse upload order as a carousel.
 - [x] Added a slower desktop shimmer to the 15-year line.
-- [x] Split the work gallery into Hair and Nails carousels with temporary images.
+- [x] Split the work gallery into Hair and Nails carousels.
+- [x] Nails carousel: 13 new photos from the supplied collages (2026-09-30).
+- [x] Hair carousel: 23 new photos split from the 8 supplied collages, uploaded and wired in (2026-09-30).
