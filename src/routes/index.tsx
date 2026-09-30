@@ -397,32 +397,6 @@ function About() {
   );
 }
 
-/* -------------------- HAIR BEFORE/AFTER -------------------- */
-function HairBeforeAfter() {
-  const { t } = useI18n();
-  return (
-    <section className="bg-blush py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="text-center mb-14">
-          <SectionLabel>{t.hair.label}</SectionLabel>
-          <RoseLine center />
-          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl leading-[1.1]">
-            {t.hair.title}
-          </h2>
-        </div>
-        <BeforeAfterCarousel
-          slides={[
-            { src: hairBlondeCurls.url, alt: t.hair.alts[0] },
-            { src: hairGrayBalayage.url, alt: t.hair.alts[1] },
-            { src: hairHighlights.url, alt: t.hair.alts[2] },
-            { src: hairAshBlonde.url, alt: t.hair.alts[3] },
-          ]}
-        />
-      </div>
-    </section>
-  );
-}
-
 /* -------------------- STATS -------------------- */
 function Stats() {
   const { t } = useI18n();
