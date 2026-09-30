@@ -14,6 +14,15 @@ import nails07 from "@/assets/nails-new-07.jpg.asset.json";
 import nails08 from "@/assets/nails-new-08.jpg.asset.json";
 import nails09 from "@/assets/nails-new-09.jpg.asset.json";
 import nails10 from "@/assets/nails-new-10.jpg.asset.json";
+import nails11 from "@/assets/nails-new-11.jpg.asset.json";
+import nails12 from "@/assets/nails-new-12.jpg.asset.json";
+import nails13 from "@/assets/nails-new-13.jpg.asset.json";
+import nails14 from "@/assets/nails-new-14.jpg.asset.json";
+import nails15 from "@/assets/nails-new-15.jpg.asset.json";
+import nails16 from "@/assets/nails-new-16.jpg.asset.json";
+import nails17 from "@/assets/nails-new-17.jpg.asset.json";
+import nails18 from "@/assets/nails-new-18.jpg.asset.json";
+import nails19 from "@/assets/nails-new-19.jpg.asset.json";
 import hair01 from "@/assets/hair-01-dark-before.jpg.asset.json";
 import hair02 from "@/assets/hair-02-blue-bob.jpg.asset.json";
 import hair03 from "@/assets/hair-03-blue-wash.jpg.asset.json";
@@ -544,6 +553,15 @@ function Gallery() {
     { src: nails08.url, alt: t.gallery.alts[7] },
     { src: nails09.url, alt: t.gallery.alts[8] },
     { src: nails10.url, alt: t.gallery.alts[9] },
+    { src: nails11.url, alt: t.gallery.alts[10] },
+    { src: nails12.url, alt: t.gallery.alts[11] },
+    { src: nails13.url, alt: t.gallery.alts[12] },
+    { src: nails14.url, alt: t.gallery.alts[13] },
+    { src: nails15.url, alt: t.gallery.alts[14] },
+    { src: nails16.url, alt: t.gallery.alts[15] },
+    { src: nails17.url, alt: t.gallery.alts[16] },
+    { src: nails18.url, alt: t.gallery.alts[17] },
+    { src: nails19.url, alt: t.gallery.alts[18] },
 
   ];
   const hairSlides = [
