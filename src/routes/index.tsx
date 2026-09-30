@@ -74,13 +74,13 @@ function LumierePage() {
     <LanguageProvider>
       <div className="font-body bg-pearl text-ink">
         <Hero />
-        <About />
-        <HairBeforeAfter />
-        <Stats />
-        <Booking />
         <Story />
         <Gallery />
+        <Stats />
+        <Booking />
         <Reviews />
+        <About />
+        <HairBeforeAfter />
         <FinalCTA />
         <Footer />
       </div>
@@ -263,7 +263,7 @@ function Hero() {
         <Tagline />
       </p>
 
-      <div className="absolute z-10 bottom-10 left-4 min-[450px]:right-6 sm:left-auto sm:right-8 flex items-center gap-4">
+      <div className="absolute z-10 bottom-10 left-4 min-[450px]:left-6 flex items-center gap-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="#booking"
