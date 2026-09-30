@@ -15,6 +15,7 @@ type Dict = {
     altNails: string;
     altHair: string;
     carouselAlts: string[];
+    salonAlts: string[];
   };
   stats: { rating: string; reviews: string; days: string; online: string };
   hair: { label: string; title: string; alts: string[] };
@@ -27,7 +28,7 @@ type Dict = {
     days: string[];
   };
   story: { label: string; paragraphs: string[]; quote: string };
-  gallery: { title: string; prev: string; next: string; alts: string[] };
+  gallery: { title: string; hair: string; nails: string; prev: string; next: string; alts: string[] };
   reviews: { label: string; title: string; items: { text: string; name: string }[] };
   cta: { title: string; subtitle: string };
   footer: {
@@ -66,6 +67,14 @@ const el: Dict = {
       "Πριν και μετά nude manicure στο Looks Beauty Boutique",
       "Πριν και μετά σκούρο manicure στο Looks Beauty Boutique",
     ],
+    salonAlts: [
+      "Η υποδοχή του Looks Beauty Boutique",
+      "Οι θέσεις manicure του salon",
+      "Ο χώρος pedicure του salon",
+      "Πανοραμική άποψη του Looks Beauty Boutique",
+      "Οι φωτεινές θέσεις περιποίησης νυχιών",
+      "Η συλλογή βερνικιών του salon",
+    ],
   },
   stats: {
     rating: "Αξιολόγηση Google",
@@ -92,7 +101,7 @@ const el: Dict = {
     days: ["Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή", "Σάββατο", "Κυριακή"],
   },
   story: {
-    label: "Η Ιστορία μας",
+    label: "Σχετικά με εμάς",
     paragraphs: [
       "Στην καρδιά της Αθήνας στο Σύνταγμα, λίγα μόλις βήματα από το σταθμό του μετρό, το LOOKS Beauty Boutique αποτελεί εδώ και περισσότερα από 15 χρόνια έναν σταθερό προορισμό ομορφιάς όπου η ποιότητα, η αισθητική και η προσωπική φροντίδα συναντιούνται.",
       "Με ανανεωμένη φιλοσοφία και σύγχρονη προσέγγιση στην ομορφιά, εξελίσσουμε καθημερινά τον χώρο και τις υπηρεσίες μας, παραμένοντας πιστοί σε όσα έχουν αξία για εμάς: επαγγελματισμό, συνέπεια, υψηλή ποιότητα και μια εμπειρία που κάνει την κάθε επίσκεψη ξεχωριστή...",
@@ -104,6 +113,8 @@ const el: Dict = {
   },
   gallery: {
     title: "Η δουλειά μας μιλάει από μόνη της",
+    hair: "Μαλλιά",
+    nails: "Νύχια",
     prev: "Προηγούμενο",
     next: "Επόμενο",
     alts: [
@@ -171,6 +182,14 @@ const en: Dict = {
       "Before and after nude manicure at Looks Beauty Boutique",
       "Before and after dark manicure at Looks Beauty Boutique",
     ],
+    salonAlts: [
+      "Looks Beauty Boutique reception",
+      "Salon manicure stations",
+      "Salon pedicure area",
+      "Overview of Looks Beauty Boutique",
+      "Bright nail-care stations",
+      "Salon nail-polish collection",
+    ],
   },
   stats: {
     rating: "Google Rating",
@@ -197,7 +216,7 @@ const en: Dict = {
     days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
   },
   story: {
-    label: "Our Story",
+    label: "About us",
     paragraphs: [
       "In the heart of Athens at Syntagma, just a few steps from the metro station, LOOKS Beauty Boutique has been a lasting beauty destination for more than 15 years — a place where quality, aesthetics and personal care meet.",
       "With a renewed philosophy and a modern approach to beauty, we evolve our space and our services every day, staying true to what matters to us: professionalism, consistency, high quality and an experience that makes every visit special...",
@@ -209,6 +228,8 @@ const en: Dict = {
   },
   gallery: {
     title: "Our work speaks for itself",
+    hair: "Hair",
+    nails: "Nails",
     prev: "Previous",
     next: "Next",
     alts: [
