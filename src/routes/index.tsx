@@ -23,6 +23,7 @@ import {
   Star,
   MapPin,
   Phone,
+  Mail,
   Clock,
   Instagram,
   Facebook,
@@ -80,7 +81,6 @@ function LumierePage() {
         <Booking />
         <Reviews />
         <About />
-        <HairBeforeAfter />
         <FinalCTA />
         <Footer />
       </div>
@@ -119,7 +119,7 @@ function HeroNav() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#home", label: t.nav.home },
-    { href: "#about", label: t.nav.about },
+    { href: "#story", label: t.nav.about },
     { href: "#gallery", label: t.nav.gallery },
     { href: "#gallery", label: t.nav.events, outline: true },
     { href: "#booking", label: t.nav.book, cta: true },
@@ -272,7 +272,7 @@ function Hero() {
             {t.nav.book}
           </a>
           <a
-            href="#about"
+            href="#story"
             className="sm:hidden inline-flex items-center justify-center w-auto rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-xs font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
           >
             {t.hero.about}
