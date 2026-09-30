@@ -292,7 +292,7 @@ function Hero() {
         <Tagline />
       </p>
 
-      <div className="absolute z-10 bottom-10 left-4 min-[450px]:left-6 flex items-center gap-4">
+      <div className="absolute z-10 bottom-10 left-4 min-[450px]:left-6 min-[450px]:right-6 flex items-center gap-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="#booking"
@@ -586,11 +586,11 @@ function Gallery() {
         </div>
 
         <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-10">
-          <div>
+          <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
             <PhotoCarousel slides={hairSlides} portrait />
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
             <PhotoCarousel slides={nailSlides} portrait />
           </div>
