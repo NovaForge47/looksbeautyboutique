@@ -5,7 +5,7 @@
 - [x] Built the selected mobile hero with the existing woman above and the 15+ sentence plus BOOK NOW / ΣΧΕΤΙΚΑ below.
 
 ## Pending
-- [ ] Replace the temporary Hair and Nails gallery images when the new sets arrive.
+- [ ] Replace the temporary Hair gallery images when the new set arrives. (Nails done 2026-09-30: 13 new photos from the supplied collages.)
 
 ## Completed
 - [x] Desktop hero: removed About beside BOOK NOW and moved BOOK NOW right.
