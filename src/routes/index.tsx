@@ -194,7 +194,7 @@ function Tagline() {
   return (
     <>
       {before}
-      <span className="not-italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+      <span className="not-italic font-normal" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 400 }}>
         &amp;
       </span>
       {after}
