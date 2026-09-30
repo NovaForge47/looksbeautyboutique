@@ -23,6 +23,7 @@ import {
   Star,
   MapPin,
   Phone,
+  Mail,
   Clock,
   Instagram,
   Facebook,
@@ -80,7 +81,6 @@ function LumierePage() {
         <Booking />
         <Reviews />
         <About />
-        <HairBeforeAfter />
         <FinalCTA />
         <Footer />
       </div>
@@ -119,7 +119,7 @@ function HeroNav() {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#home", label: t.nav.home },
-    { href: "#about", label: t.nav.about },
+    { href: "#story", label: t.nav.about },
     { href: "#gallery", label: t.nav.gallery },
     { href: "#gallery", label: t.nav.events, outline: true },
     { href: "#booking", label: t.nav.book, cta: true },
@@ -272,7 +272,7 @@ function Hero() {
             {t.nav.book}
           </a>
           <a
-            href="#about"
+            href="#story"
             className="sm:hidden inline-flex items-center justify-center w-auto rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-xs font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
           >
             {t.hero.about}
@@ -292,82 +292,6 @@ function Hero() {
 }
 
 /* -------------------- ABOUT -------------------- */
-function BeforeAfter({ src, alt }: { src: string; alt: string }) {
-  const { t } = useI18n();
-  return (
-    <div className="w-full">
-      <div className="relative w-full overflow-hidden rounded-sm border-2 border-rose-gold">
-        <img src={src} alt={alt} className="block w-full h-auto" />
-        <span className="absolute top-4 left-4 rounded-full bg-ink/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1">
-          {t.about.before}
-        </span>
-        <span className="absolute top-4 right-4 rounded-full bg-rose-gold text-ink text-[10px] uppercase tracking-[0.25em] px-3 py-1">
-          {t.about.after}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function BeforeAfterCarousel({ slides }: { slides: { src: string; alt: string }[] }) {
-  const { t } = useI18n();
-  const [active, setActive] = useState(0);
-
-  const prev = () => setActive((i) => (i === 0 ? slides.length - 1 : i - 1));
-  const next = () => setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
-
-  return (
-    <div className="relative w-full">
-      <div className="relative w-full overflow-hidden rounded-sm border-2 border-rose-gold">
-        <div
-          className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${active * 100}%)` }}
-        >
-          {slides.map((slide) => (
-            <div key={slide.src} className="w-full shrink-0">
-              <img src={slide.src} alt={slide.alt} className="block w-full h-auto" />
-            </div>
-          ))}
-        </div>
-        <span className="absolute top-4 left-4 rounded-full bg-ink/70 text-white text-[10px] uppercase tracking-[0.25em] px-3 py-1">
-          {t.about.before}
-        </span>
-        <span className="absolute top-4 right-4 rounded-full bg-rose-gold text-ink text-[10px] uppercase tracking-[0.25em] px-3 py-1">
-          {t.about.after}
-        </span>
-      </div>
-
-      <div className="mt-4 flex items-center justify-between gap-4">
-        <button
-          onClick={prev}
-          aria-label={t.gallery.prev}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <div className="flex gap-2">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              aria-label={`${t.gallery.next} ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${
-                i === active ? "w-6 bg-rose-gold" : "w-2 bg-rose-gold/40 hover:bg-rose-gold/70"
-              }`}
-            />
-          ))}
-        </div>
-        <button
-          onClick={next}
-          aria-label={t.gallery.next}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition"
-        >
-          <ChevronRight size={20} />
-        </button>
-      </div>
-    </div>
-  );
-}
 
 function PhotoCarousel({
   slides,
@@ -468,32 +392,6 @@ function About() {
             ))}
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* -------------------- HAIR BEFORE/AFTER -------------------- */
-function HairBeforeAfter() {
-  const { t } = useI18n();
-  return (
-    <section className="bg-blush py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="text-center mb-14">
-          <SectionLabel>{t.hair.label}</SectionLabel>
-          <RoseLine center />
-          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl leading-[1.1]">
-            {t.hair.title}
-          </h2>
-        </div>
-        <BeforeAfterCarousel
-          slides={[
-            { src: hairBlondeCurls.url, alt: t.hair.alts[0] },
-            { src: hairGrayBalayage.url, alt: t.hair.alts[1] },
-            { src: hairHighlights.url, alt: t.hair.alts[2] },
-            { src: hairAshBlonde.url, alt: t.hair.alts[3] },
-          ]}
-        />
       </div>
     </section>
   );
@@ -758,7 +656,7 @@ function Footer() {
             <div className="mt-5 h-px w-10 bg-rose-gold" />
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li><a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a></li>
-              <li><a href="#about" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
+              <li><a href="#story" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
               <li><a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a></li>
               <li><a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a></li>
             </ul>
@@ -776,6 +674,10 @@ function Footer() {
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-rose-gold shrink-0" />
                 <a href="tel:+302117409989" className="hover:text-rose-gold">21 1740 9989</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="text-rose-gold shrink-0" />
+                <a href="mailto:Looksbb-syntagma@hotmail.com" className="hover:text-rose-gold">Looksbb-syntagma@hotmail.com</a>
               </li>
             </ul>
             <a
