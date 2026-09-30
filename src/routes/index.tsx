@@ -758,7 +758,7 @@ function Footer() {
             <div className="mt-5 h-px w-10 bg-rose-gold" />
             <ul className="mt-5 space-y-3 text-sm text-white/80">
               <li><a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a></li>
-              <li><a href="#about" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
+              <li><a href="#story" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
               <li><a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a></li>
               <li><a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a></li>
             </ul>
@@ -776,6 +776,10 @@ function Footer() {
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-rose-gold shrink-0" />
                 <a href="tel:+302117409989" className="hover:text-rose-gold">21 1740 9989</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="text-rose-gold shrink-0" />
+                <a href="mailto:Looksbb-syntagma@hotmail.com" className="hover:text-rose-gold">Looksbb-syntagma@hotmail.com</a>
               </li>
             </ul>
             <a
