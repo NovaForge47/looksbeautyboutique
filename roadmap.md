@@ -13,4 +13,4 @@
 - [x] Added a slower desktop shimmer to the 15-year line.
 - [x] Split the work gallery into Hair and Nails carousels.
 - [x] Nails carousel: 13 new photos from the supplied collages (2026-09-30).
-- [x] Hair carousel: 23 new photos split from the 8 supplied collages, uploaded and wired in (2026-09-30).
+- [x] Hair carousel: restored the 10 supplied original collages unchanged and displayed without cropping or zooming (2026-09-30).
