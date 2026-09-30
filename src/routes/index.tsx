@@ -271,12 +271,6 @@ function Hero() {
           >
             {t.nav.book}
           </a>
-          <a
-            href="#story"
-            className="sm:hidden inline-flex items-center justify-center w-auto rounded-full border border-rose-gold/60 text-pearl px-7 py-3 text-xs font-medium uppercase tracking-[0.18em] hover:bg-rose-gold/10 transition"
-          >
-            {t.hero.about}
-          </a>
         </div>
 
         {/* Mobile-only: headline beside the stacked buttons, second line pushed right */}
