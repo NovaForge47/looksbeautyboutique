@@ -18,29 +18,16 @@ import nails11 from "@/assets/nails-new-11.jpg.asset.json";
 import nails12 from "@/assets/nails-new-12.jpg.asset.json";
 import nails13 from "@/assets/nails-new-13.jpg.asset.json";
 import nails14 from "@/assets/nails-new-14.jpg.asset.json";
-import hair01 from "@/assets/hair-01-dark-before.jpg.asset.json";
-import hair02 from "@/assets/hair-02-blue-bob.jpg.asset.json";
-import hair03 from "@/assets/hair-03-blue-wash.jpg.asset.json";
-import hair04 from "@/assets/hair-04-red-bob-angled.jpg.asset.json";
-import hair05 from "@/assets/hair-05-red-bob-side.jpg.asset.json";
-import hair06 from "@/assets/hair-06-red-bob-back.jpg.asset.json";
-import hair07 from "@/assets/hair-07-frizzy-before.jpg.asset.json";
-import hair08 from "@/assets/hair-08-silver-waves.jpg.asset.json";
-import hair09 from "@/assets/hair-09-silver-blonde.jpg.asset.json";
-import hair10 from "@/assets/hair-10-brunette-before.jpg.asset.json";
-import hair11 from "@/assets/hair-11-blonde-curls.jpg.asset.json";
-import hair12 from "@/assets/hair-12-grey-curly-before.jpg.asset.json";
-import hair13 from "@/assets/hair-13-grey-straight.jpg.asset.json";
-import hair14 from "@/assets/hair-14-brassy-before.jpg.asset.json";
-import hair15 from "@/assets/hair-15-copper-curls.jpg.asset.json";
-import hair16 from "@/assets/hair-16-ombre-before.jpg.asset.json";
-import hair17 from "@/assets/hair-17-ash-blonde.jpg.asset.json";
-import hair18 from "@/assets/hair-18-short-before.jpg.asset.json";
-import hair19 from "@/assets/hair-19-short-cut.jpg.asset.json";
-import hair20 from "@/assets/hair-20-straight-brown.jpg.asset.json";
-import hair21 from "@/assets/hair-21-balayage-wavy.jpg.asset.json";
-import hair22 from "@/assets/hair-22-roots-before.jpg.asset.json";
-import hair23 from "@/assets/hair-23-caramel-waves.jpg.asset.json";
+import hair01 from "@/assets/hair-original-01.jpg.asset.json";
+import hair02 from "@/assets/hair-original-02.jpg.asset.json";
+import hair03 from "@/assets/hair-original-03.jpg.asset.json";
+import hair04 from "@/assets/hair-original-04.jpg.asset.json";
+import hair05 from "@/assets/hair-original-05.jpg.asset.json";
+import hair06 from "@/assets/hair-original-06.jpg.asset.json";
+import hair07 from "@/assets/hair-original-07.jpg.asset.json";
+import hair08 from "@/assets/hair-original-08.jpg.asset.json";
+import hair09 from "@/assets/hair-original-09.jpg.asset.json";
+import hair10 from "@/assets/hair-original-10.jpg.asset.json";
 import salonReception from "@/assets/salon-01-reception.jpg.asset.json";
 import salonStations from "@/assets/salon-02-stations.jpg.asset.json";
 import salonPedicure from "@/assets/salon-03-pedicure.jpg.asset.json";
@@ -565,19 +552,6 @@ function Gallery() {
     { src: hair08.url, alt: t.hair.alts[7] },
     { src: hair09.url, alt: t.hair.alts[8] },
     { src: hair10.url, alt: t.hair.alts[9] },
-    { src: hair11.url, alt: t.hair.alts[10] },
-    { src: hair12.url, alt: t.hair.alts[11] },
-    { src: hair13.url, alt: t.hair.alts[12] },
-    { src: hair14.url, alt: t.hair.alts[13] },
-    { src: hair15.url, alt: t.hair.alts[14] },
-    { src: hair16.url, alt: t.hair.alts[15] },
-    { src: hair17.url, alt: t.hair.alts[16] },
-    { src: hair18.url, alt: t.hair.alts[17] },
-    { src: hair19.url, alt: t.hair.alts[18] },
-    { src: hair20.url, alt: t.hair.alts[19] },
-    { src: hair21.url, alt: t.hair.alts[20] },
-    { src: hair22.url, alt: t.hair.alts[21] },
-    { src: hair23.url, alt: t.hair.alts[22] },
   ];
 
   return (
