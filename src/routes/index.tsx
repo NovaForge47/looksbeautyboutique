@@ -292,7 +292,7 @@ function Hero() {
         <Tagline />
       </p>
 
-      <div className="absolute z-10 bottom-10 left-4 min-[450px]:left-6 flex items-center gap-4">
+      <div className="absolute z-10 bottom-10 left-4 min-[450px]:left-6 min-[450px]:right-6 flex items-center gap-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <a
             href="#booking"
@@ -347,17 +347,17 @@ function PhotoCarousel({
           ))}
         </div>
       </div>
-      <div className="mt-5 flex items-center justify-center gap-4">
+      <div className="mt-5 flex min-w-0 items-center justify-center gap-2 sm:gap-4">
         <button onClick={prev} aria-label={t.gallery.prev} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition">
           <ChevronLeft size={20} />
         </button>
-        <div className="flex gap-2">
+        <div className="flex min-w-0 gap-1 sm:gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
               aria-label={`${t.gallery.next} ${i + 1}`}
-              className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-rose-gold" : "w-2 bg-rose-gold/40 hover:bg-rose-gold/70"}`}
+              className={`h-1.5 rounded-full transition-all sm:h-2 ${i === active ? "w-4 bg-rose-gold sm:w-6" : "w-1.5 bg-rose-gold/40 hover:bg-rose-gold/70 sm:w-2"}`}
             />
           ))}
         </div>
@@ -586,11 +586,11 @@ function Gallery() {
         </div>
 
         <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-10">
-          <div>
+          <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
             <PhotoCarousel slides={hairSlides} portrait />
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
             <PhotoCarousel slides={nailSlides} portrait />
           </div>
