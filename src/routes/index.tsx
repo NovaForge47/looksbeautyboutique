@@ -374,6 +374,54 @@ function BeforeAfterCarousel({ slides }: { slides: { src: string; alt: string }[
   );
 }
 
+function PhotoCarousel({
+  slides,
+  portrait = false,
+}: {
+  slides: { src: string; alt: string }[];
+  portrait?: boolean;
+}) {
+  const { t } = useI18n();
+  const [active, setActive] = useState(0);
+  const prev = () => setActive((i) => (i === 0 ? slides.length - 1 : i - 1));
+  const next = () => setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
+
+  return (
+    <div className="relative w-full">
+      <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+        <div
+          className="flex h-full transition-transform duration-700 ease-out"
+          style={{ transform: `translateX(-${active * 100}%)` }}
+        >
+          {slides.map((slide) => (
+            <div key={slide.src} className="h-full w-full shrink-0">
+              <img src={slide.src} alt={slide.alt} loading="lazy" className="h-full w-full object-cover" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-5 flex items-center justify-center gap-4">
+        <button onClick={prev} aria-label={t.gallery.prev} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition">
+          <ChevronLeft size={20} />
+        </button>
+        <div className="flex gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              aria-label={`${t.gallery.next} ${i + 1}`}
+              className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-rose-gold" : "w-2 bg-rose-gold/40 hover:bg-rose-gold/70"}`}
+            />
+          ))}
+        </div>
+        <button onClick={next} aria-label={t.gallery.next} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition">
+          <ChevronRight size={20} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function SectionLabel({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
   return (
     <p
@@ -567,28 +615,17 @@ function Story() {
 /* -------------------- GALLERY (CAROUSEL) -------------------- */
 function Gallery() {
   const { t } = useI18n();
-  const slides = [
+  const nailSlides = [
     { src: nailsBlackRed.url, alt: t.gallery.alts[0] },
     { src: nailsFrench.url, alt: t.gallery.alts[1] },
     { src: nailsNudeOmbre.url, alt: t.gallery.alts[2] },
   ];
-  const [index, setIndex] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const goTo = (i: number) => {
-    const next = (i + slides.length) % slides.length;
-    setIndex(next);
-    const track = trackRef.current;
-    if (track) {
-      const child = track.children[next] as HTMLElement | undefined;
-      if (child) track.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    const id = setInterval(() => goTo(index + 1), 6000);
-    return () => clearInterval(id);
-  }, [index]);
+  const hairSlides = [
+    { src: hairBlondeCurls.url, alt: t.hair.alts[0] },
+    { src: hairGrayBalayage.url, alt: t.hair.alts[1] },
+    { src: hairHighlights.url, alt: t.hair.alts[2] },
+    { src: hairAshBlonde.url, alt: t.hair.alts[3] },
+  ];
 
   return (
     <section id="gallery" className="bg-white py-24 lg:py-32">
@@ -598,54 +635,14 @@ function Gallery() {
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl">{t.gallery.title}</h2>
         </div>
 
-        <div className="mt-16 relative">
-          <div
-            ref={trackRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-6 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          >
-            {slides.map((s, i) => (
-              <div
-                key={i}
-                className="snap-center shrink-0 w-[85%] sm:w-[70%] lg:w-[55%] xl:w-[50%]"
-              >
-                <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden rounded-2xl border border-rose-gold bg-blush shadow-[0_25px_60px_-30px_rgba(194,178,128,0.6)]">
-                  <img
-                    src={s.src}
-                    alt={s.alt}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            ))}
+        <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-10">
+          <div>
+            <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
+            <PhotoCarousel slides={hairSlides} portrait />
           </div>
-
-          <button
-            onClick={() => goTo(index - 1)}
-            aria-label={t.gallery.prev}
-            className="absolute top-1/2 -translate-y-1/2 left-2 lg:-left-4 w-11 h-11 rounded-full bg-white border border-rose-gold text-rose-gold flex items-center justify-center shadow hover:bg-rose-gold hover:text-ink transition"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={() => goTo(index + 1)}
-            aria-label={t.gallery.next}
-            className="absolute top-1/2 -translate-y-1/2 right-2 lg:-right-4 w-11 h-11 rounded-full bg-white border border-rose-gold text-rose-gold flex items-center justify-center shadow hover:bg-rose-gold hover:text-ink transition"
-          >
-            <ChevronRight size={20} />
-          </button>
-
-          <div className="mt-8 flex justify-center gap-2">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                aria-label={`Slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === index ? "w-8 bg-rose-gold" : "w-3 bg-rose-gold/30"
-                }`}
-              />
-            ))}
+          <div>
+            <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
+            <PhotoCarousel slides={nailSlides} portrait />
           </div>
         </div>
       </div>
