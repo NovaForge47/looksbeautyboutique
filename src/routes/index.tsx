@@ -4,19 +4,16 @@ import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 
 import heroLogoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
 const heroLogo = heroLogoAsset.url;
-import nails01 from "@/assets/nails-01-red-white-hand.jpg.asset.json";
-import nails02 from "@/assets/nails-02-red-white-long.jpg.asset.json";
-import nails03 from "@/assets/nails-03-red-white-boutique.jpg.asset.json";
-import nails04 from "@/assets/nails-04-matte-black-hearts.jpg.asset.json";
-import nails05 from "@/assets/nails-05-black-magnetic-hand.jpg.asset.json";
-import nails06 from "@/assets/nails-06-black-magnetic-chain.jpg.asset.json";
-import nails07 from "@/assets/nails-07-black-magnetic-fingers.jpg.asset.json";
-import nails08 from "@/assets/nails-08-pink-blue-flowers.jpg.asset.json";
-import nails09 from "@/assets/nails-09-pink-blue-close.jpg.asset.json";
-import nails10 from "@/assets/nails-10-french-flower.jpg.asset.json";
-import nails11 from "@/assets/nails-11-french-blue.jpg.asset.json";
-import nails12 from "@/assets/nails-12-french-pink-hand.jpg.asset.json";
-import nails13 from "@/assets/nails-13-french-rings.jpg.asset.json";
+import nails01 from "@/assets/nails-new-01.jpg.asset.json";
+import nails02 from "@/assets/nails-new-02.jpg.asset.json";
+import nails03 from "@/assets/nails-new-03.jpg.asset.json";
+import nails04 from "@/assets/nails-new-04.jpg.asset.json";
+import nails05 from "@/assets/nails-new-05.jpg.asset.json";
+import nails06 from "@/assets/nails-new-06.jpg.asset.json";
+import nails07 from "@/assets/nails-new-07.jpg.asset.json";
+import nails08 from "@/assets/nails-new-08.jpg.asset.json";
+import nails09 from "@/assets/nails-new-09.jpg.asset.json";
+import nails10 from "@/assets/nails-new-10.jpg.asset.json";
 import hair01 from "@/assets/hair-01-dark-before.jpg.asset.json";
 import hair02 from "@/assets/hair-02-blue-bob.jpg.asset.json";
 import hair03 from "@/assets/hair-03-blue-wash.jpg.asset.json";
@@ -547,9 +544,7 @@ function Gallery() {
     { src: nails08.url, alt: t.gallery.alts[7] },
     { src: nails09.url, alt: t.gallery.alts[8] },
     { src: nails10.url, alt: t.gallery.alts[9] },
-    { src: nails11.url, alt: t.gallery.alts[10] },
-    { src: nails12.url, alt: t.gallery.alts[11] },
-    { src: nails13.url, alt: t.gallery.alts[12] },
+
   ];
   const hairSlides = [
     { src: hair01.url, alt: t.hair.alts[0] },
