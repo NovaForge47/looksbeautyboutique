@@ -406,6 +406,7 @@ function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
         <div className="flex flex-col gap-6">
           <PhotoCarousel
+            autoPlay
             portrait
             slides={[
               { src: salonReception.url, alt: t.about.salonAlts[0] },
@@ -457,7 +458,7 @@ function Stats() {
             key={s.l}
             className={`text-center px-6 ${i > 0 ? "lg:border-l lg:border-rose-gold/40" : ""}`}
           >
-            <div className="font-display text-rose-gold text-6xl md:text-7xl leading-none">
+            <div className="font-display text-rose-gold text-[clamp(2.25rem,10.5vw,3.75rem)] md:text-7xl leading-none">
               {s.n}
             </div>
             <div className="mt-4 text-white text-[11px] uppercase tracking-[0.25em]">{s.l}</div>
