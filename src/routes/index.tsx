@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 
 import heroLogoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
@@ -311,17 +311,39 @@ function Hero() {
 function PhotoCarousel({
   slides,
   portrait = false,
+  autoPlay = false,
 }: {
   slides: { src: string; alt: string }[];
   portrait?: boolean;
+  autoPlay?: boolean;
 }) {
   const { t } = useI18n();
   const [active, setActive] = useState(0);
+  const paused = useRef(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const prev = () => setActive((i) => (i === 0 ? slides.length - 1 : i - 1));
   const next = () => setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
 
+  useEffect(() => {
+    if (!autoPlay || slides.length < 2) return;
+    const id = window.setInterval(() => {
+      const hovered = wrapRef.current?.matches(":hover") ?? false;
+      if (!paused.current && !hovered && document.visibilityState === "visible") {
+        setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
+      }
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, [autoPlay, slides.length]);
+
   return (
-    <div className="relative w-full">
+    <div
+      ref={wrapRef}
+      className="relative w-full"
+      onMouseEnter={() => (paused.current = true)}
+      onMouseLeave={() => (paused.current = false)}
+      onTouchStart={() => (paused.current = true)}
+      onTouchEnd={() => (paused.current = false)}
+    >
       <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? "" : "aspect-[4/3]"}`}>
         <div
           className="flex items-center transition-transform duration-700 ease-out"
@@ -570,11 +592,11 @@ function Gallery() {
         <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-10">
           <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
-            <PhotoCarousel slides={hairSlides} portrait />
+            <PhotoCarousel autoPlay slides={hairSlides} portrait />
           </div>
           <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
-            <PhotoCarousel slides={nailSlides} portrait />
+            <PhotoCarousel autoPlay slides={nailSlides} portrait />
           </div>
         </div>
       </div>
