@@ -238,19 +238,19 @@
 
 /* Typewriter entrance for the 15+ years line — types in once when the site opens */
 @keyframes type-in {
-  from { clip-path: inset(-3% 100% -3% -5%); }
-  to   { clip-path: inset(-3% -5% -3% -5%); }
+  from { clip-path: polygon(-6% -20%, 0% -20%, 0% 120%, -6% 120%); }
+  to   { clip-path: polygon(-6% -20%, 106% -20%, 106% 120%, -6% 120%); }
 }
 
 .type-in-1 {
   display: block;
-  clip-path: inset(-3% 100% -3% -5%);
+  clip-path: polygon(-6% -20%, 0% -20%, 0% 120%, -6% 120%);
   animation: type-in 1.15s steps(23, end) 2.4s forwards;
 }
 
 .type-in-2 {
   display: block;
-  clip-path: inset(-3% 100% -3% -5%);
+  clip-path: polygon(-6% -20%, 0% -20%, 0% 120%, -6% 120%);
   animation: type-in 0.9s steps(16, end) 3.75s forwards;
 }
 
