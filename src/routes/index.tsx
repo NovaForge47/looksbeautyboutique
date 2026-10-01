@@ -380,6 +380,7 @@ function About() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
         <div className="flex flex-col gap-6">
           <PhotoCarousel
+            portrait
             slides={[
               { src: salonReception.url, alt: t.about.salonAlts[0] },
               { src: salonStations.url, alt: t.about.salonAlts[1] },
