@@ -91,6 +91,10 @@ function LumierePage() {
   return (
     <LanguageProvider>
       <div className="font-body bg-pearl text-ink">
+        <div className="intro-splash" aria-hidden="true">
+          <img src={heroLogo} alt="" className="intro-logo" />
+          <span className="intro-line" />
+        </div>
         <Hero />
         <Story />
         <Gallery />
@@ -738,6 +742,12 @@ function Footer() {
         </div>
         <div className="mt-16 h-px bg-rose-gold/40" />
         <p className="mt-6 text-center text-xs text-white/40">{t.footer.rights}</p>
+        <p className="mt-3 text-center text-xs text-white/40">
+          Designed by{" "}
+          <a href="https://nexusmedia.biz" target="_blank" rel="noopener noreferrer" className="text-rose-gold hover:underline">
+            Nexus Media
+          </a>
+        </p>
       </div>
     </footer>
   );
