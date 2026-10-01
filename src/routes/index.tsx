@@ -256,8 +256,8 @@ function Hero() {
         className="shimmer-text sm:hidden absolute z-10 top-[62px] right-3 min-[430px]:top-[68px] text-center italic text-white text-[14px] min-[430px]:text-[16px] leading-[1.3] whitespace-nowrap"
         style={{ fontFamily: "'Times New Roman', Times, serif" }}
       >
-        <span className="block">{t.hero.line2Short.first}</span>
-        <span className="block">{t.hero.line2Short.second}</span>
+        <span className="block type-in-1">{t.hero.line2Short.first}</span>
+        <span className="block type-in-2">{t.hero.line2Short.second}</span>
       </p>
 
       {/* 15+ years line — desktop */}
@@ -270,8 +270,8 @@ function Hero() {
           lineHeight: 1.25,
         }}
       >
-        <span className="block">{t.hero.line2.first}</span>
-        <span className="block">{t.hero.line2.second}</span>
+        <span className="block type-in-1">{t.hero.line2.first}</span>
+        <span className="block type-in-2">{t.hero.line2.second}</span>
       </p>
 
       {/* Main phrase — desktop */}

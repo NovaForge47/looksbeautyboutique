@@ -236,10 +236,33 @@
   animation: desktop-shimmer-sweep 8s ease-in-out infinite;
 }
 
+/* Typewriter entrance for the 15+ years line — types in once when the site opens */
+@keyframes type-in {
+  from { clip-path: inset(-3% 100% -3% -5%); }
+  to   { clip-path: inset(-3% -5% -3% -5%); }
+}
+
+.type-in-1 {
+  display: block;
+  clip-path: inset(-3% 100% -3% -5%);
+  animation: type-in 1.15s steps(23, end) 2.4s forwards;
+}
+
+.type-in-2 {
+  display: block;
+  clip-path: inset(-3% 100% -3% -5%);
+  animation: type-in 0.9s steps(16, end) 3.75s forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .shimmer-text,
   .desktop-shimmer-text {
     animation: none;
+  }
+  .type-in-1,
+  .type-in-2 {
+    animation: none;
+    clip-path: none;
   }
 }
 
