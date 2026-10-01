@@ -334,7 +334,13 @@ function PhotoCarousel({
   }, [autoPlay, slides.length]);
 
   return (
-    <div className="relative w-full">
+    <div
+      className="relative w-full"
+      onMouseEnter={() => (paused.current = true)}
+      onMouseLeave={() => (paused.current = false)}
+      onTouchStart={() => (paused.current = true)}
+      onTouchEnd={() => (paused.current = false)}
+    >
       <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? "" : "aspect-[4/3]"}`}>
         <div
           className="flex items-center transition-transform duration-700 ease-out"
