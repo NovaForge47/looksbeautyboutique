@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 
 import heroLogoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
@@ -311,14 +311,27 @@ function Hero() {
 function PhotoCarousel({
   slides,
   portrait = false,
+  autoPlay = false,
 }: {
   slides: { src: string; alt: string }[];
   portrait?: boolean;
+  autoPlay?: boolean;
 }) {
   const { t } = useI18n();
   const [active, setActive] = useState(0);
+  const paused = useRef(false);
   const prev = () => setActive((i) => (i === 0 ? slides.length - 1 : i - 1));
   const next = () => setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
+
+  useEffect(() => {
+    if (!autoPlay || slides.length < 2) return;
+    const id = window.setInterval(() => {
+      if (!paused.current && document.visibilityState === "visible") {
+        setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
+      }
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, [autoPlay, slides.length]);
 
   return (
     <div className="relative w-full">
