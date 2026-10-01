@@ -458,7 +458,7 @@ function Stats() {
             key={s.l}
             className={`text-center px-6 ${i > 0 ? "lg:border-l lg:border-rose-gold/40" : ""}`}
           >
-            <div className="font-display text-rose-gold text-[clamp(2.25rem,10.5vw,3.75rem)] md:text-6xl lg:text-7xl leading-none">
+            <div className="font-display text-rose-gold text-[clamp(2.25rem,10.5vw,3.75rem)] md:text-7xl leading-none">
               {s.n}
             </div>
             <div className="mt-4 text-white text-[11px] uppercase tracking-[0.25em]">{s.l}</div>
