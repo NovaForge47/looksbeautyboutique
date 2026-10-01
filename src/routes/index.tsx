@@ -320,13 +320,15 @@ function PhotoCarousel({
   const { t } = useI18n();
   const [active, setActive] = useState(0);
   const paused = useRef(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const prev = () => setActive((i) => (i === 0 ? slides.length - 1 : i - 1));
   const next = () => setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
 
   useEffect(() => {
     if (!autoPlay || slides.length < 2) return;
     const id = window.setInterval(() => {
-      if (!paused.current && document.visibilityState === "visible") {
+      const hovered = wrapRef.current?.matches(":hover") ?? false;
+      if (!paused.current && !hovered && document.visibilityState === "visible") {
         setActive((i) => (i === slides.length - 1 ? 0 : i + 1));
       }
     }, 4000);
@@ -335,6 +337,7 @@ function PhotoCarousel({
 
   return (
     <div
+      ref={wrapRef}
       className="relative w-full"
       onMouseEnter={() => (paused.current = true)}
       onMouseLeave={() => (paused.current = false)}
