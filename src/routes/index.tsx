@@ -356,18 +356,18 @@ function PhotoCarousel({
       onTouchStart={() => (paused.current = true)}
       onTouchEnd={() => (paused.current = false)}
     >
-      <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? "" : "aspect-[4/3]"}`}>
+      <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? (fit ? "aspect-square" : "") : "aspect-[4/3]"}`}>
         <div
           className="flex items-center transition-transform duration-700 ease-out"
           style={{ transform: `translateX(-${active * 100}%)` }}
         >
           {slides.map((slide) => (
-            <div key={slide.src} className={portrait ? "flex w-full shrink-0 justify-center" : "h-full w-full shrink-0"}>
+            <div key={slide.src} className={portrait && !fit ? "flex w-full shrink-0 justify-center" : "h-full w-full shrink-0"}>
               <img
                 src={slide.src}
                 alt={slide.alt}
                 loading="lazy"
-                className={portrait ? "h-auto w-full" : "h-full w-full object-cover"}
+                className={portrait ? (fit ? "h-full w-full object-contain" : "h-auto w-full") : "h-full w-full object-cover"}
               />
             </div>
           ))}
