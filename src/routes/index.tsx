@@ -321,10 +321,12 @@ function Hero() {
 function PhotoCarousel({
   slides,
   portrait = false,
+  fit = false,
   autoPlay = false,
 }: {
   slides: { src: string; alt: string }[];
   portrait?: boolean;
+  fit?: boolean;
   autoPlay?: boolean;
 }) {
   const { t } = useI18n();
