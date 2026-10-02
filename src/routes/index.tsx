@@ -18,6 +18,17 @@ import nails11 from "@/assets/nails-new-11.jpg.asset.json";
 import nails12 from "@/assets/nails-new-12.jpg.asset.json";
 import nails13 from "@/assets/nails-new-13.jpg.asset.json";
 import nails14 from "@/assets/nails-new-14.jpg.asset.json";
+import nails15 from "@/assets/nails-15-black-snowflake.jpg.asset.json";
+import nails16 from "@/assets/nails-16-white-lineart.jpg.asset.json";
+import nails17 from "@/assets/nails-17-french-glam.jpg.asset.json";
+import nails18 from "@/assets/nails-18-burgundy-stiletto.jpg.asset.json";
+import nails19 from "@/assets/nails-19-mauve-stiletto.jpg.asset.json";
+import nails20 from "@/assets/nails-20-pastel.jpg.asset.json";
+import nails21 from "@/assets/nails-21-galaxy-stiletto.jpg.asset.json";
+import nails22 from "@/assets/nails-22-galaxy-stiletto-2.jpg.asset.json";
+import nails23 from "@/assets/nails-23-pink-flower.jpg.asset.json";
+import nails24 from "@/assets/nails-24-ladybug.jpg.asset.json";
+import nails25 from "@/assets/nails-25-black-red-hearts.jpg.asset.json";
 import hair01 from "@/assets/hair-original-01.jpg.asset.json";
 import hair02 from "@/assets/hair-original-02.jpg.asset.json";
 import hair03 from "@/assets/hair-original-03.jpg.asset.json";
@@ -311,10 +322,12 @@ function Hero() {
 function PhotoCarousel({
   slides,
   portrait = false,
+  fit = false,
   autoPlay = false,
 }: {
   slides: { src: string; alt: string }[];
   portrait?: boolean;
+  fit?: boolean;
   autoPlay?: boolean;
 }) {
   const { t } = useI18n();
@@ -344,18 +357,18 @@ function PhotoCarousel({
       onTouchStart={() => (paused.current = true)}
       onTouchEnd={() => (paused.current = false)}
     >
-      <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? "" : "aspect-[4/3]"}`}>
+      <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? (fit ? "aspect-square" : "") : "aspect-[4/3]"}`}>
         <div
           className="flex items-center transition-transform duration-700 ease-out"
           style={{ transform: `translateX(-${active * 100}%)` }}
         >
           {slides.map((slide) => (
-            <div key={slide.src} className={portrait ? "flex w-full shrink-0 justify-center" : "h-full w-full shrink-0"}>
+            <div key={slide.src} className={portrait && !fit ? "flex w-full shrink-0 justify-center" : "h-full w-full shrink-0"}>
               <img
                 src={slide.src}
                 alt={slide.alt}
                 loading="lazy"
-                className={portrait ? "h-auto w-full" : "h-full w-full object-cover"}
+                className={portrait ? (fit ? "h-full w-full object-contain" : "h-auto w-full") : "h-full w-full object-cover"}
               />
             </div>
           ))}
@@ -567,7 +580,17 @@ function Gallery() {
     { src: nails12.url, alt: t.gallery.alts[11] },
     { src: nails13.url, alt: t.gallery.alts[12] },
     { src: nails14.url, alt: t.gallery.alts[13] },
-
+    { src: nails15.url, alt: t.gallery.alts[14] },
+    { src: nails16.url, alt: t.gallery.alts[15] },
+    { src: nails17.url, alt: t.gallery.alts[16] },
+    { src: nails18.url, alt: t.gallery.alts[17] },
+    { src: nails19.url, alt: t.gallery.alts[18] },
+    { src: nails20.url, alt: t.gallery.alts[19] },
+    { src: nails21.url, alt: t.gallery.alts[20] },
+    { src: nails22.url, alt: t.gallery.alts[21] },
+    { src: nails23.url, alt: t.gallery.alts[22] },
+    { src: nails24.url, alt: t.gallery.alts[23] },
+    { src: nails25.url, alt: t.gallery.alts[24] },
   ];
   const hairSlides = [
     { src: hair01.url, alt: t.hair.alts[0] },
@@ -593,7 +616,7 @@ function Gallery() {
         <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-10">
           <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
-            <PhotoCarousel autoPlay slides={nailSlides} portrait />
+            <PhotoCarousel autoPlay slides={nailSlides} portrait fit />
           </div>
           <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
@@ -710,6 +733,14 @@ function Footer() {
                 TT
               </a>
             </div>
+          </div>
+          <div>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li><a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a></li>
+              <li><a href="#story" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
+              <li><a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a></li>
+              <li><a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a></li>
+            </ul>
           </div>
           <div>
             <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">
