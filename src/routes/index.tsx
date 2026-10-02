@@ -734,6 +734,14 @@ function Footer() {
             </div>
           </div>
           <div>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li><a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a></li>
+              <li><a href="#story" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
+              <li><a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a></li>
+              <li><a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a></li>
+            </ul>
+          </div>
+          <div>
             <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">
               {t.footer.contact}
             </div>
