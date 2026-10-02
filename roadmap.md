@@ -16,3 +16,4 @@
 - [x] Hair carousel: restored the 10 supplied original collages unchanged and displayed without cropping or zooming (2026-09-30).
 - [x] Nails carousel: removed the requested third and last photos, added nine new photos, and framed every manicure without cropping (2026-10-02).
 - [x] Visually audited the Nails gallery and removed the repeated white line-art manicure photo (2026-10-02).
+- [x] Hair carousel: added ten new before/after collages, checked for duplicates against the existing set (none found) (2026-10-02).
