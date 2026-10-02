@@ -24,10 +24,6 @@ import nails17 from "@/assets/nails-17-french-glam.jpg.asset.json";
 import nails18 from "@/assets/nails-18-burgundy-stiletto.jpg.asset.json";
 import nails19 from "@/assets/nails-19-mauve-stiletto.jpg.asset.json";
 import nails20 from "@/assets/nails-20-pastel.jpg.asset.json";
-import nails21 from "@/assets/nails-21-galaxy-stiletto.jpg.asset.json";
-import nails22 from "@/assets/nails-22-galaxy-stiletto-2.jpg.asset.json";
-import nails23 from "@/assets/nails-23-pink-flower.jpg.asset.json";
-import nails24 from "@/assets/nails-24-ladybug.jpg.asset.json";
 import nails25 from "@/assets/nails-25-black-red-hearts.jpg.asset.json";
 import hair01 from "@/assets/hair-original-01.jpg.asset.json";
 import hair02 from "@/assets/hair-original-02.jpg.asset.json";
@@ -368,7 +364,7 @@ function PhotoCarousel({
                 src={slide.src}
                 alt={slide.alt}
                 loading="lazy"
-                className={portrait ? (fit ? "h-full w-full object-contain" : "h-auto w-full") : "h-full w-full object-cover"}
+                className={portrait ? (fit ? "h-full w-full object-cover" : "h-auto w-full") : "h-full w-full object-cover"}
               />
             </div>
           ))}
@@ -586,10 +582,6 @@ function Gallery() {
     { src: nails18.url, alt: t.gallery.alts[17] },
     { src: nails19.url, alt: t.gallery.alts[18] },
     { src: nails20.url, alt: t.gallery.alts[19] },
-    { src: nails21.url, alt: t.gallery.alts[20] },
-    { src: nails22.url, alt: t.gallery.alts[21] },
-    { src: nails23.url, alt: t.gallery.alts[22] },
-    { src: nails24.url, alt: t.gallery.alts[23] },
     { src: nails25.url, alt: t.gallery.alts[24] },
   ];
   const hairSlides = [
