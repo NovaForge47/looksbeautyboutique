@@ -86,6 +86,7 @@ const MAPS_EMBED =
   "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
 
 const hourTimes = [
+  null,
   "09:00 – 20:00",
   "09:00 – 20:00",
   "09:00 – 20:00",
@@ -507,7 +508,7 @@ function Booking() {
               <h3 className="font-display text-3xl">{t.booking.hours}</h3>
             </div>
             <ul className="mt-6 divide-y divide-rose-gold/20 text-sm">
-              {t.booking.days.slice(1).map((day, i) => {
+              {t.booking.days.map((day, i) => {
                 const time = hourTimes[i];
                 return (
                   <li key={day} className="flex items-center justify-between py-2.5">
