@@ -6,7 +6,6 @@ import heroLogoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
 const heroLogo = heroLogoAsset.url;
 import nails01 from "@/assets/nails-new-01.jpg.asset.json";
 import nails02 from "@/assets/nails-new-02.jpg.asset.json";
-import nails03 from "@/assets/nails-new-03.jpg.asset.json";
 import nails04 from "@/assets/nails-new-04.jpg.asset.json";
 import nails05 from "@/assets/nails-new-05.jpg.asset.json";
 import nails06 from "@/assets/nails-new-06.jpg.asset.json";
@@ -24,7 +23,15 @@ import nails17 from "@/assets/nails-17-french-glam.jpg.asset.json";
 import nails18 from "@/assets/nails-18-burgundy-stiletto.jpg.asset.json";
 import nails19 from "@/assets/nails-19-mauve-stiletto.jpg.asset.json";
 import nails20 from "@/assets/nails-20-pastel.jpg.asset.json";
-import nails25 from "@/assets/nails-25-black-red-hearts.jpg.asset.json";
+import nails26 from "@/assets/nails-26-ivory-ombre.jpg.asset.json";
+import nails27 from "@/assets/nails-27-pink-orange-ombre.jpg.asset.json";
+import nails28 from "@/assets/nails-28-mint.jpg.asset.json";
+import nails29 from "@/assets/nails-29-silver.jpg.asset.json";
+import nails30 from "@/assets/nails-30-burgundy-before-after.jpg.asset.json";
+import nails31 from "@/assets/nails-31-colorful-dots.jpg.asset.json";
+import nails32 from "@/assets/nails-32-pink-purple-dots.jpg.asset.json";
+import nails33 from "@/assets/nails-33-nude-gloss.jpg.asset.json";
+import nails34 from "@/assets/nails-34-navy-french-before-after.jpg.asset.json";
 import hair01 from "@/assets/hair-original-01.jpg.asset.json";
 import hair02 from "@/assets/hair-original-02.jpg.asset.json";
 import hair03 from "@/assets/hair-original-03.jpg.asset.json";
@@ -360,12 +367,20 @@ function PhotoCarousel({
           style={{ transform: `translateX(-${active * 100}%)` }}
         >
           {slides.map((slide) => (
-            <div key={slide.src} className={portrait && !fit ? "flex w-full shrink-0 justify-center" : "h-full w-full shrink-0"}>
+            <div key={slide.src} className={portrait && !fit ? "flex w-full shrink-0 justify-center" : "relative h-full w-full shrink-0 overflow-hidden"}>
+              {fit && (
+                <img
+                  src={slide.src}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl opacity-35"
+                />
+              )}
               <img
                 src={slide.src}
                 alt={slide.alt}
                 loading="lazy"
-                className={portrait ? (fit ? "h-full w-full object-cover" : "h-auto w-full") : "h-full w-full object-cover"}
+                className={portrait ? (fit ? "relative h-full w-full object-contain" : "h-auto w-full") : "h-full w-full object-cover"}
               />
             </div>
           ))}
@@ -565,7 +580,6 @@ function Gallery() {
   const nailSlides = [
     { src: nails01.url, alt: t.gallery.alts[0] },
     { src: nails02.url, alt: t.gallery.alts[1] },
-    { src: nails03.url, alt: t.gallery.alts[2] },
     { src: nails04.url, alt: t.gallery.alts[3] },
     { src: nails05.url, alt: t.gallery.alts[4] },
     { src: nails06.url, alt: t.gallery.alts[5] },
@@ -583,7 +597,15 @@ function Gallery() {
     { src: nails18.url, alt: t.gallery.alts[17] },
     { src: nails19.url, alt: t.gallery.alts[18] },
     { src: nails20.url, alt: t.gallery.alts[19] },
-    { src: nails25.url, alt: t.gallery.alts[24] },
+    { src: nails26.url, alt: t.gallery.alts[25] },
+    { src: nails27.url, alt: t.gallery.alts[26] },
+    { src: nails28.url, alt: t.gallery.alts[27] },
+    { src: nails29.url, alt: t.gallery.alts[28] },
+    { src: nails30.url, alt: t.gallery.alts[29] },
+    { src: nails31.url, alt: t.gallery.alts[30] },
+    { src: nails32.url, alt: t.gallery.alts[31] },
+    { src: nails33.url, alt: t.gallery.alts[32] },
+    { src: nails34.url, alt: t.gallery.alts[33] },
   ];
   const hairSlides = [
     { src: hair01.url, alt: t.hair.alts[0] },
