@@ -603,7 +603,7 @@ function Gallery() {
         <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-10">
           <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
-            <PhotoCarousel autoPlay slides={nailSlides} portrait />
+            <PhotoCarousel autoPlay slides={nailSlides} portrait fit />
           </div>
           <div className="min-w-0">
             <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
