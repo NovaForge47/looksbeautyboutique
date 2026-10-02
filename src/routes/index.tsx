@@ -355,7 +355,7 @@ function PhotoCarousel({
     >
       <div className={`relative w-full overflow-hidden rounded-sm border border-rose-gold bg-blush ${portrait ? (fit ? "aspect-square" : "") : "aspect-[4/3]"}`}>
         <div
-          className="flex items-center transition-transform duration-700 ease-out"
+          className={`flex transition-transform duration-700 ease-out ${portrait && !fit ? "items-center" : "h-full"}`}
           style={{ transform: `translateX(-${active * 100}%)` }}
         >
           {slides.map((slide) => (
