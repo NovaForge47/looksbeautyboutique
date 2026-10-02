@@ -404,7 +404,7 @@ function About() {
   return (
     <section id="about" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-        <div className="flex flex-col gap-6">
+        <div className="order-2 flex flex-col gap-6 lg:order-1">
           <PhotoCarousel
             autoPlay
             portrait
@@ -418,7 +418,7 @@ function About() {
             ]}
           />
         </div>
-        <div>
+        <div className="order-1 lg:order-2">
           <SectionLabel>{t.about.label}</SectionLabel>
           <RoseLine />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl leading-[1.1]">
@@ -678,7 +678,7 @@ function Footer() {
   return (
     <footer id="contact" className="bg-ink text-white pt-20 pb-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">{t.footer.blurb}</p>
             <div className="mt-6 flex gap-3">
@@ -710,18 +710,6 @@ function Footer() {
                 TT
               </a>
             </div>
-          </div>
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">
-              {t.footer.nav}
-            </div>
-            <div className="mt-5 h-px w-10 bg-rose-gold" />
-            <ul className="mt-5 space-y-3 text-sm text-white/80">
-              <li><a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a></li>
-              <li><a href="#story" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
-              <li><a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a></li>
-              <li><a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a></li>
-            </ul>
           </div>
           <div>
             <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">

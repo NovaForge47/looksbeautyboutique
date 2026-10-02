@@ -189,8 +189,8 @@
 }
 
 @keyframes shimmer-sweep {
-  0% { background-position: 200% center; }
-  70%, 100% { background-position: -200% center; }
+  0%, 8% { background-position: 180% center; }
+  84%, 100% { background-position: -180% center; }
 }
 
 .shimmer-text {
@@ -198,23 +198,24 @@
   background-image: linear-gradient(
     100deg,
     #ffffff 0%,
-    #ffffff 28%,
-    var(--gold) 40%,
-    var(--pearl) 47%,
-    var(--gold) 54%,
-    #ffffff 66%,
+    #ffffff 24%,
+    var(--gold) 36%,
+    var(--pearl) 45%,
+    var(--pearl) 51%,
+    var(--gold) 60%,
+    #ffffff 72%,
     #ffffff 100%
   );
-  background-size: 200% 100%;
+  background-size: 180% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer-sweep 2.5s ease-in-out infinite;
+  animation: shimmer-sweep 5.5s ease-in-out infinite;
 }
 
 @keyframes desktop-shimmer-sweep {
-  0%, 12% { background-position: 220% center; }
-  78%, 100% { background-position: -220% center; }
+  0%, 8% { background-position: 190% center; }
+  86%, 100% { background-position: -190% center; }
 }
 
 .desktop-shimmer-text {
@@ -222,18 +223,19 @@
   background-image: linear-gradient(
     100deg,
     var(--taupe) 0%,
-    var(--taupe) 30%,
-    var(--gold) 42%,
-    var(--pearl) 49%,
-    var(--gold) 56%,
-    var(--taupe) 68%,
+    var(--taupe) 24%,
+    var(--gold) 36%,
+    var(--pearl) 45%,
+    var(--pearl) 52%,
+    var(--gold) 61%,
+    var(--taupe) 73%,
     var(--taupe) 100%
   );
-  background-size: 220% 100%;
+  background-size: 190% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: desktop-shimmer-sweep 8s ease-in-out infinite;
+  animation: desktop-shimmer-sweep 11s ease-in-out infinite;
 }
 
 /* Typewriter entrance for the 15+ years line — types in once when the site opens */
