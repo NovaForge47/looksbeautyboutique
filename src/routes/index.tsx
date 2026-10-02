@@ -16,6 +16,7 @@ import nails09 from "@/assets/nails-new-09.jpg.asset.json";
 import nails10 from "@/assets/nails-new-10.jpg.asset.json";
 import nails11 from "@/assets/nails-new-11.jpg.asset.json";
 import nails12 from "@/assets/nails-new-12.jpg.asset.json";
+import nails13 from "@/assets/nails-new-13.jpg.asset.json";
 import nails14 from "@/assets/nails-new-14.jpg.asset.json";
 import nails15 from "@/assets/nails-15-black-snowflake.jpg.asset.json";
 import nails16 from "@/assets/nails-16-white-lineart.jpg.asset.json";
