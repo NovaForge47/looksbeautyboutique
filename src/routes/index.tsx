@@ -577,7 +577,17 @@ function Gallery() {
     { src: nails12.url, alt: t.gallery.alts[11] },
     { src: nails13.url, alt: t.gallery.alts[12] },
     { src: nails14.url, alt: t.gallery.alts[13] },
-
+    { src: nails15.url, alt: t.gallery.alts[14] },
+    { src: nails16.url, alt: t.gallery.alts[15] },
+    { src: nails17.url, alt: t.gallery.alts[16] },
+    { src: nails18.url, alt: t.gallery.alts[17] },
+    { src: nails19.url, alt: t.gallery.alts[18] },
+    { src: nails20.url, alt: t.gallery.alts[19] },
+    { src: nails21.url, alt: t.gallery.alts[20] },
+    { src: nails22.url, alt: t.gallery.alts[21] },
+    { src: nails23.url, alt: t.gallery.alts[22] },
+    { src: nails24.url, alt: t.gallery.alts[23] },
+    { src: nails25.url, alt: t.gallery.alts[24] },
   ];
   const hairSlides = [
     { src: hair01.url, alt: t.hair.alts[0] },
