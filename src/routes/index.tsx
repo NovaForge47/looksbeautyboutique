@@ -41,6 +41,16 @@ import hair07 from "@/assets/hair-original-07.jpg.asset.json";
 import hair08 from "@/assets/hair-original-08.jpg.asset.json";
 import hair09 from "@/assets/hair-original-09.jpg.asset.json";
 import hair10 from "@/assets/hair-original-10.jpg.asset.json";
+import hair11 from "@/assets/hair-original-11.jpg.asset.json";
+import hair12 from "@/assets/hair-original-12.jpg.asset.json";
+import hair13 from "@/assets/hair-original-13.jpg.asset.json";
+import hair14 from "@/assets/hair-original-14.jpg.asset.json";
+import hair15 from "@/assets/hair-original-15.jpg.asset.json";
+import hair16 from "@/assets/hair-original-16.jpg.asset.json";
+import hair17 from "@/assets/hair-original-17.jpg.asset.json";
+import hair18 from "@/assets/hair-original-18.jpg.asset.json";
+import hair19 from "@/assets/hair-original-19.jpg.asset.json";
+import hair20 from "@/assets/hair-original-20.jpg.asset.json";
 import salonReception from "@/assets/salon-01-reception.jpg.asset.json";
 import salonStations from "@/assets/salon-02-stations.jpg.asset.json";
 import salonPedicure from "@/assets/salon-03-pedicure.jpg.asset.json";
@@ -616,6 +626,16 @@ function Gallery() {
     { src: hair08.url, alt: t.hair.alts[7] },
     { src: hair09.url, alt: t.hair.alts[8] },
     { src: hair10.url, alt: t.hair.alts[9] },
+    { src: hair11.url, alt: t.hair.alts[10] },
+    { src: hair12.url, alt: t.hair.alts[11] },
+    { src: hair13.url, alt: t.hair.alts[12] },
+    { src: hair14.url, alt: t.hair.alts[13] },
+    { src: hair15.url, alt: t.hair.alts[14] },
+    { src: hair16.url, alt: t.hair.alts[15] },
+    { src: hair17.url, alt: t.hair.alts[16] },
+    { src: hair18.url, alt: t.hair.alts[17] },
+    { src: hair19.url, alt: t.hair.alts[18] },
+    { src: hair20.url, alt: t.hair.alts[19] },
   ];
 
   return (
