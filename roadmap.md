@@ -5,7 +5,6 @@
 - [x] Built the selected mobile hero with the existing woman above and the 15+ sentence plus BOOK NOW / ΣΧΕΤΙΚΑ below.
 
 ## Pending
-- [ ] Update the Nails carousel: remove the current third and last photos, add the nine newly supplied photos, and keep every manicure fully visible.
 
 ## Completed
 - [x] Desktop hero: removed About beside BOOK NOW and moved BOOK NOW right.
@@ -15,3 +14,4 @@
 - [x] Split the work gallery into Hair and Nails carousels.
 - [x] Nails carousel: 13 new photos from the supplied collages (2026-09-30).
 - [x] Hair carousel: restored the 10 supplied original collages unchanged and displayed without cropping or zooming (2026-09-30).
+- [x] Nails carousel: removed the requested third and last photos, added nine new photos, and framed every manicure without cropping (2026-10-02).
