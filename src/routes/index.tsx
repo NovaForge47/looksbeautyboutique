@@ -18,7 +18,6 @@ import nails12 from "@/assets/nails-new-12.jpg.asset.json";
 import nails13 from "@/assets/nails-new-13.jpg.asset.json";
 import nails14 from "@/assets/nails-new-14.jpg.asset.json";
 import nails15 from "@/assets/nails-15-black-snowflake.jpg.asset.json";
-import nails16 from "@/assets/nails-16-white-lineart.jpg.asset.json";
 import nails17 from "@/assets/nails-17-french-glam.jpg.asset.json";
 import nails18 from "@/assets/nails-18-burgundy-stiletto.jpg.asset.json";
 import nails19 from "@/assets/nails-19-mauve-stiletto.jpg.asset.json";
@@ -592,7 +591,6 @@ function Gallery() {
     { src: nails13.url, alt: t.gallery.alts[12] },
     { src: nails14.url, alt: t.gallery.alts[13] },
     { src: nails15.url, alt: t.gallery.alts[14] },
-    { src: nails16.url, alt: t.gallery.alts[15] },
     { src: nails17.url, alt: t.gallery.alts[16] },
     { src: nails18.url, alt: t.gallery.alts[17] },
     { src: nails19.url, alt: t.gallery.alts[18] },
