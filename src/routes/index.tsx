@@ -5,11 +5,7 @@ import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
 import heroLogoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
 const heroLogo = heroLogoAsset.url;
 import nails01 from "@/assets/nails-new-01.jpg.asset.json";
-import nails02 from "@/assets/nails-new-02.jpg.asset.json";
-import nails04 from "@/assets/nails-new-04.jpg.asset.json";
-import nails05 from "@/assets/nails-new-05.jpg.asset.json";
 import nails06 from "@/assets/nails-new-06.jpg.asset.json";
-import nails07 from "@/assets/nails-new-07.jpg.asset.json";
 import nails08 from "@/assets/nails-new-08.jpg.asset.json";
 import nails09 from "@/assets/nails-new-09.jpg.asset.json";
 import nails10 from "@/assets/nails-new-10.jpg.asset.json";
@@ -588,11 +584,7 @@ function Gallery() {
   const { t } = useI18n();
   const nailSlides = [
     { src: nails01.url, alt: t.gallery.alts[0] },
-    { src: nails02.url, alt: t.gallery.alts[1] },
-    { src: nails04.url, alt: t.gallery.alts[3] },
-    { src: nails05.url, alt: t.gallery.alts[4] },
     { src: nails06.url, alt: t.gallery.alts[5] },
-    { src: nails07.url, alt: t.gallery.alts[6] },
     { src: nails08.url, alt: t.gallery.alts[7] },
     { src: nails09.url, alt: t.gallery.alts[8] },
     { src: nails10.url, alt: t.gallery.alts[9] },
