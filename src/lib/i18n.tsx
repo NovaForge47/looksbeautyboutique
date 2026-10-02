@@ -141,7 +141,7 @@ const el: Dict = {
       "«Γιατί η ομορφιά δεν είναι μόνο αυτό που βλέπουμε στον καθρέφτη. Είναι ο τρόπος που νιώθουμε όταν επιλέγουμε να φροντίσουμε τον εαυτό μας ..»",
   },
   gallery: {
-    title: "Η δουλειά μας μιλάει από μόνη της",
+    title: "A closer look...",
     hair: "Μαλλιά",
     nails: "Νύχια",
     prev: "Προηγούμενο",
@@ -316,7 +316,7 @@ const en: Dict = {
       "\u201CBecause beauty is not only what we see in the mirror. It is the way we feel when we choose to take care of ourselves ..\u201D",
   },
   gallery: {
-    title: "Our work speaks for itself",
+    title: "A closer look...",
     hair: "Hair",
     nails: "Nails",
     prev: "Previous",
