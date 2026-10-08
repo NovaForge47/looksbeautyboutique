@@ -4,10 +4,10 @@
 - [x] Desktop hero refinements: larger logo, lighter/smaller headline, larger tagline, Times New Roman Italic for 15+ line, double-spaced text.
 - [x] Built the selected mobile hero with the existing woman above and the 15+ sentence plus BOOK NOW / ΣΧΕΤΙΚΑ below.
 
-## Pending
+## Completed
 - [x] Move all photo carousel arrows onto the images; checked phone and desktop placement and clicks.
 - [x] Add the five supplied reviews and previous/next review browsing; checked navigation on phone and desktop.
-- [x] Reorganize the footer using the selected dark style, preserving all details and links; map rendering must be checked on the live domain.
+- [x] Reorganize the footer using the selected dark style, preserving all details and links; map, contact details, navigation and credit verified rendering on the live domain (2026-10-08).
 
 ## Completed
 - [x] Desktop hero: removed About beside BOOK NOW and moved BOOK NOW right.
