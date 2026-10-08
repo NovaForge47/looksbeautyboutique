@@ -58,9 +58,7 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Star,
-  MapPin,
   Phone,
-  Mail,
   Clock,
   Instagram,
   Facebook,
@@ -741,98 +739,65 @@ function FinalCTA() {
 /* -------------------- FOOTER -------------------- */
 function Footer() {
   const { t } = useI18n();
+  const socials = [
+    { name: "Instagram", href: "https://www.instagram.com/looks_beautyboutiquesyntagma/", icon: <Instagram size={15} /> },
+    { name: "Facebook", href: "https://www.facebook.com/looksbeautyboutique/", icon: <Facebook size={15} /> },
+    { name: "TikTok", href: "https://www.tiktok.com/@looksbbsyntagma", icon: null },
+  ];
   return (
-    <footer id="contact" className="bg-ink text-white pt-20 pb-10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid md:grid-cols-3 gap-12">
-          <div className="md:col-span-2">
-            <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-sm">{t.footer.blurb}</p>
-            <div className="mt-6 flex gap-3">
-              <a
-                href="https://www.instagram.com/looks_beautyboutiquesyntagma/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-ink transition-all"
-                aria-label="Instagram"
-              >
-                <Instagram size={16} />
-              </a>
-              <a
-                href="https://www.facebook.com/looksbeautyboutique/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-ink transition-all"
-                aria-label="Facebook"
-              >
-                <Facebook size={16} />
-              </a>
-              <a
-                href="https://www.tiktok.com/@looksbbsyntagma"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-rose-gold flex items-center justify-center text-rose-gold hover:bg-rose-gold hover:text-ink transition-all text-xs font-bold"
-                aria-label="TikTok"
-              >
-                TT
-              </a>
+    <footer id="contact" className="bg-ink py-12 text-primary-foreground font-body lg:py-16">
+      <div className="mx-auto max-w-6xl px-6 lg:px-10">
+        <div className="mb-8 text-center">
+          <h2 className="font-display text-4xl font-light md:text-5xl">{t.footer.title}</h2>
+          <RoseLine center />
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+          <div className="min-w-0 overflow-hidden rounded-lg border border-rose-gold/25 bg-review-surface">
+            <iframe title={t.footer.mapTitle} src={MAPS_EMBED} width="100%" height="420" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="block h-[300px] w-full grayscale transition-all duration-500 hover:grayscale-0 md:h-full md:min-h-[420px]" />
+          </div>
+          <div className="min-w-0 py-2 md:py-4">
+            <dl className="space-y-5">
+              <div>
+                <dt className="mb-2 text-xs font-medium uppercase text-rose-gold">{t.footer.addressLabel}</dt>
+                <dd className="text-base leading-relaxed md:text-lg">{t.footer.address}</dd>
+              </div>
+              <div>
+                <dt className="mb-2 text-xs font-medium uppercase text-rose-gold">{t.footer.phoneLabel}</dt>
+                <dd><a href="tel:+302117409989" className="text-2xl transition-colors hover:text-rose-gold">21 1740 9989</a></dd>
+              </div>
+              <div>
+                <dt className="mb-2 text-xs font-medium uppercase text-rose-gold">Email</dt>
+                <dd><a href="mailto:Looksbb-syntagma@hotmail.com" className="break-words text-base text-primary-foreground/80 transition-colors hover:text-rose-gold md:text-lg">Looksbb-syntagma@hotmail.com</a></dd>
+              </div>
+            </dl>
+            <Button asChild variant="carousel" className="mt-5 rounded-full px-5">
+              <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">{t.footer.directions}<ArrowRight size={15} /></a>
+            </Button>
+            <div className="mt-6 border-t border-rose-gold/20 pt-5">
+              <p className="mb-3 text-xs font-medium uppercase text-rose-gold">{t.footer.follow}</p>
+              <div className="flex flex-wrap gap-2">
+                {socials.map((social) => (
+                  <Button asChild key={social.name} variant="ghost" size="sm" className="rounded-full border border-rose-gold/30 text-primary-foreground/80 hover:bg-primary-foreground hover:text-ink">
+                    <a href={social.href} target="_blank" rel="noopener noreferrer">{social.icon}{social.name}</a>
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
-          <div>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li><a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a></li>
-              <li><a href="#story" className="hover:text-rose-gold">{t.footer.links.about}</a></li>
-              <li><a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a></li>
-              <li><a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a></li>
-            </ul>
-          </div>
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-rose-gold">
-              {t.footer.contact}
-            </div>
-            <div className="mt-5 h-px w-10 bg-rose-gold" />
-            <ul className="mt-5 space-y-3 text-sm text-white/80">
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-rose-gold mt-0.5 shrink-0" />
-                <span>{t.footer.address}</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-rose-gold shrink-0" />
-                <a href="tel:+302117409989" className="hover:text-rose-gold">21 1740 9989</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-rose-gold shrink-0" />
-                <a href="mailto:Looksbb-syntagma@hotmail.com" className="hover:text-rose-gold">Looksbb-syntagma@hotmail.com</a>
-              </li>
-            </ul>
-            <a
-              href={MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-full border border-rose-gold text-rose-gold px-4 py-2 text-xs uppercase tracking-[0.2em] hover:bg-rose-gold hover:text-ink transition-all"
-            >
-              {t.footer.directions} <ArrowRight size={14} />
-            </a>
-          </div>
         </div>
-        <div className="mt-14 rounded-2xl overflow-hidden border border-rose-gold/40 shadow-[0_25px_60px_-30px_rgba(194,178,128,0.6)]">
-          <iframe
-            title={t.footer.mapTitle}
-            src={MAPS_EMBED}
-            width="100%"
-            height="320"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="block w-full grayscale contrast-110 hover:grayscale-0 transition-all duration-500"
-          />
+        <div className="mt-8 flex flex-col gap-5 border-t border-rose-gold/20 pt-6 md:flex-row md:items-center md:justify-between">
+          <p className="max-w-md text-sm leading-relaxed text-primary-foreground/60">{t.footer.blurb}</p>
+          <nav aria-label={t.footer.contact} className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-primary-foreground/80">
+            <a href="#home" className="hover:text-rose-gold">{t.footer.links.home}</a>
+            <a href="#story" className="hover:text-rose-gold">{t.footer.links.about}</a>
+            <a href="#booking" className="hover:text-rose-gold">{t.footer.links.booking}</a>
+            <a href="#contact" className="hover:text-rose-gold">{t.footer.links.contact}</a>
+          </nav>
         </div>
-        <div className="mt-16 h-px bg-rose-gold/40" />
-        <p className="mt-6 text-center text-xs text-white/40">{t.footer.rights}</p>
-        <p className="mt-3 text-center text-xs text-white/40">
-          Designed by{" "}
-          <a href="https://nexusmedia.biz" target="_blank" rel="noopener noreferrer" className="text-rose-gold hover:underline">
-            Nexus Media
-          </a>
-        </p>
+        <div className="mt-6 flex flex-col gap-2 text-xs text-primary-foreground/60 md:flex-row md:justify-between">
+          <p>{t.footer.rights}</p>
+          <p>Designed by <a href="https://nexusmedia.biz" target="_blank" rel="noopener noreferrer" className="text-rose-gold underline underline-offset-4 hover:text-primary-foreground">Nexus Media</a></p>
+        </div>
       </div>
     </footer>
   );
