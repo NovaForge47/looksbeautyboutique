@@ -65,12 +65,14 @@
   --color-pearl: var(--pearl);
   --color-gold: var(--gold);
   --color-taupe: var(--taupe);
+  --color-review-surface: var(--review-surface);
   --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.625rem;
+  --review-surface: oklch(0.19 0 0);
   --blush: #EFE4CE;
   --rose-gold: #988B84;
   --ink: #0A0A0A;
@@ -112,6 +114,7 @@
 }
 
 .dark {
+  --review-surface: oklch(0.19 0 0);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);

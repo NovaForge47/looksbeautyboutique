@@ -54,6 +54,7 @@ import salonOverview from "@/assets/salon-04-overview.jpg.asset.json";
 import salonManicure from "@/assets/salon-05-manicure.jpg.asset.json";
 import salonPolishWall from "@/assets/salon-06-polish-wall.jpg.asset.json";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
+import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Star,
@@ -390,24 +391,26 @@ function PhotoCarousel({
             </div>
           ))}
         </div>
+        <Button variant="carousel" size="icon" onClick={prev} aria-label={t.gallery.prev} title={t.gallery.prev} className="absolute left-3 top-1/2 z-10 h-10 w-10 -translate-y-1/2 rounded-full">
+          <ChevronLeft size={20} />
+        </Button>
+        <Button variant="carousel" size="icon" onClick={next} aria-label={t.gallery.next} title={t.gallery.next} className="absolute right-3 top-1/2 z-10 h-10 w-10 -translate-y-1/2 rounded-full">
+          <ChevronRight size={20} />
+        </Button>
       </div>
       <div className="mt-5 flex min-w-0 items-center justify-center gap-2 sm:gap-4">
-        <button onClick={prev} aria-label={t.gallery.prev} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition">
-          <ChevronLeft size={20} />
-        </button>
         <div className="flex min-w-0 gap-1 sm:gap-2">
           {slides.map((_, i) => (
-            <button
+            <Button
+              variant="ghost"
               key={i}
               onClick={() => setActive(i)}
               aria-label={`${t.gallery.next} ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all sm:h-2 ${i === active ? "w-4 bg-rose-gold sm:w-6" : "w-1.5 bg-rose-gold/40 hover:bg-rose-gold/70 sm:w-2"}`}
+              aria-pressed={i === active}
+              className={`h-1.5 rounded-full p-0 transition-all sm:h-2 ${i === active ? "w-4 bg-rose-gold sm:w-6" : "w-1.5 bg-rose-gold/40 hover:bg-rose-gold/70 sm:w-2"}`}
             />
           ))}
         </div>
-        <button onClick={next} aria-label={t.gallery.next} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-rose-gold text-rose-gold hover:bg-rose-gold hover:text-ink transition">
-          <ChevronRight size={20} />
-        </button>
       </div>
     </div>
   );
@@ -656,36 +659,51 @@ function Gallery() {
 /* -------------------- REVIEWS -------------------- */
 function Reviews() {
   const { t } = useI18n();
+  const trackRef = useRef<HTMLDivElement>(null);
+  const scrollReviews = (direction: number) => {
+    const track = trackRef.current;
+    const card = track?.firstElementChild;
+    if (!track || !card) return;
+    const step = card.getBoundingClientRect().width + 24;
+    const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    const atStart = track.scrollLeft <= 2;
+    const left = direction > 0 && atEnd ? 0 : direction < 0 && atStart ? track.scrollWidth - track.clientWidth : track.scrollLeft + direction * step;
+    track.scrollTo({ left, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  };
   return (
-    <section className="bg-ink py-24 lg:py-32">
+    <section id="reviews" className="bg-ink py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="text-center">
           <SectionLabel>{t.reviews.label}</SectionLabel>
           <RoseLine center />
-          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl text-white">
+          <h2 className="mt-8 font-display font-light text-4xl md:text-5xl text-primary-foreground">
             {t.reviews.title}
           </h2>
         </div>
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
-          {t.reviews.items.map((r) => (
-            <div
-              key={r.name}
-              className="relative rounded-2xl p-10 pt-14"
-              style={{ background: "#141414" }}
+        <div className="mt-10 flex justify-end gap-3">
+          <Button variant="carousel" size="icon" onClick={() => scrollReviews(-1)} aria-label={t.gallery.prev} title={t.gallery.prev} className="h-10 w-10 rounded-full"><ChevronLeft /></Button>
+          <Button variant="carousel" size="icon" onClick={() => scrollReviews(1)} aria-label={t.gallery.next} title={t.gallery.next} className="h-10 w-10 rounded-full"><ChevronRight /></Button>
+        </div>
+        <div ref={trackRef} className="mt-6 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="region" aria-label={t.reviews.title} tabIndex={0}>
+          {t.reviews.items.map((r, index) => (
+            <article
+              key={`${index}-${r.name ?? "google"}`}
+              className="relative flex w-full shrink-0 snap-start flex-col rounded-lg bg-review-surface p-8 pt-14 md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]"
             >
               <span className="absolute top-4 left-8 font-display text-rose-gold text-[80px] leading-none">
                 “
               </span>
-              <p className="text-white text-base leading-[1.8]">{r.text}</p>
-              <div className="mt-6 flex gap-1 text-rose-gold">
+              <p className="mb-6 text-primary-foreground text-base leading-[1.8]">{r.text}</p>
+              <div className="mt-auto flex gap-1 text-rose-gold" aria-label="5/5">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
               <div className="mt-4 text-rose-gold text-[11px] uppercase tracking-[0.25em]">
-                {r.name}
+                {r.name ?? t.reviews.anonymous}
               </div>
-            </div>
+              {r.source && <div className="mt-2 text-xs text-primary-foreground/60">{r.source} · {r.age}</div>}
+            </article>
           ))}
         </div>
       </div>
