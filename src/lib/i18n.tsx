@@ -33,6 +33,10 @@ type Dict = {
   cta: { title: string; subtitle: string };
   footer: {
     blurb: string;
+    title: string;
+    addressLabel: string;
+    phoneLabel: string;
+    follow: string;
     nav: string;
     contact: string;
     links: { home: string; about: string; booking: string; contact: string };
@@ -219,6 +223,10 @@ const el: Dict = {
   footer: {
     blurb:
       "Σαλόνι νυχιών & μαλλιών στην καρδιά του Συντάγματος — μέσα στη στοά, Φιλελλήνων 3. Κάθε look είναι έργο τέχνης.",
+    title: "Τοποθεσία & Επικοινωνία",
+    addressLabel: "Διεύθυνση",
+    phoneLabel: "Τηλέφωνο",
+    follow: "Ακολουθήστε μας",
     nav: "Πλοήγηση",
     contact: "Επικοινωνία",
     links: { home: "Αρχική", about: "Σχετικά", booking: "Ραντεβού", contact: "Επικοινωνία" },
@@ -405,6 +413,10 @@ const en: Dict = {
   footer: {
     blurb:
       "Nail & hair salon in the heart of Syntagma — inside the arcade, Filellinon 3. Every look is a work of art.",
+    title: "Location & Contact",
+    addressLabel: "Address",
+    phoneLabel: "Phone",
+    follow: "Follow us",
     nav: "Navigation",
     contact: "Contact",
     links: { home: "Home", about: "About", booking: "Booking", contact: "Contact" },
