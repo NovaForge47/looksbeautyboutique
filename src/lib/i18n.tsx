@@ -29,7 +29,7 @@ type Dict = {
   };
   story: { label: string; paragraphs: string[]; quote: string };
   gallery: { title: string; hair: string; nails: string; prev: string; next: string; alts: string[] };
-  reviews: { label: string; title: string; items: { text: string; name: string }[] };
+  reviews: { label: string; title: string; anonymous: string; items: { text: string; name?: string; age?: string; source?: string }[] };
   cta: { title: string; subtitle: string };
   footer: {
     blurb: string;
@@ -186,6 +186,7 @@ const el: Dict = {
   reviews: {
     label: "Κριτικές",
     title: "Τι λένε οι πελάτες μας",
+    anonymous: "Κριτική Google",
     items: [
       {
         text:
@@ -202,6 +203,16 @@ const el: Dict = {
           "Είχα υπέροχη εμπειρία εδώ — mani/pedi. Ήρθα με μερικά σπασμένα νύχια σε λίγο επείγουσα κατάσταση. Η Σοφία ήταν φανταστική — τη συνιστώ ανεπιφύλακτα!",
         name: "MELINA PAPADOPOULOS",
       },
+      {
+        text: "Εξαιρετική ποιότητα υπηρεσιών, φιλικό προσωπικό, ασφαλές και υγιεινό περιβάλλον. Πηγαίνω εδώ για χρόνια και ούτε μία φορά δεν έφυγα δυσαρεστημένη ή δυστυχισμένη!",
+        name: "Konstantia Sotiropoulou",
+        source: "Google",
+        age: "Πριν από 4 χρόνια",
+      },
+      { text: "Καταπληκτική εμπειρία. Σας ευχαριστώ πολύ!", source: "Google", age: "Πριν από 3 χρόνια" },
+      { text: "Η Σοφία με περιποιήθηκε, ήταν εξαιρετικά επαγγελματίας και έκανε τα νύχια μου τέλεια.", source: "Google", age: "Πριν από 3 χρόνια" },
+      { text: "Συνιστώ ανεπιφύλακτα αυτό το salon. Έκανα συντήρηση νυχιών gel, ο χώρος ήταν πολύ επαγγελματικός και καθαρός. Η τεχνίτρια ήταν φιλική και έκανε εξαιρετική δουλειά.", source: "Google", age: "Πριν από 3 χρόνια" },
+      { text: "Είναι πολύ φιλικοί και υπομονετικοί, μου πρότειναν ένα όμορφο χρώμα, έδωσαν τέλειο σχήμα στα νύχια μου και εφάρμοσαν το gel πολύ ομοιόμορφα. Κορυφαία εξυπηρέτηση!", source: "Google", age: "Πριν από 4 χρόνια" },
     ],
   },
   cta: { title: "Έτοιμοι για το Τέλειο Look;", subtitle: "Κλείστε το ραντεβού σας online — 24/7" },
@@ -361,6 +372,7 @@ const en: Dict = {
   reviews: {
     label: "Reviews",
     title: "What our clients say",
+    anonymous: "Google review",
     items: [
       {
         text:
@@ -377,6 +389,16 @@ const en: Dict = {
           "Had a wonderful experience here — mani/pedi. I came with a few broken nails and a bit of an emergency situation. Sophia was amazing — I highly recommend!",
         name: "MELINA PAPADOPOULOS",
       },
+      {
+        text: "Excellent quality of service, friendly staff, safe and hygienic environment. I’ve been going there for years and not once did I leave this place displeased or unhappy!",
+        name: "Konstantia Sotiropoulou",
+        source: "Google",
+        age: "4 years ago",
+      },
+      { text: "Amazing experience. Thank you very much!", source: "Google", age: "3 years ago" },
+      { text: "Sophia did for me and she was extremely professional and did my nails just perfect.", source: "Google", age: "3 years ago" },
+      { text: "I highly recommend this salon. I had gel nail infill, the salon was very professional and clean. The lady was friendly and did a great job.", source: "Google", age: "3 years ago" },
+      { text: "They are very friendly and patient, advised me a beautiful color, made the shape of my nails perfectly and applied the gel very evenly. Top service!", source: "Google", age: "4 years ago" },
     ],
   },
   cta: { title: "Ready for the Perfect Look?", subtitle: "Book your appointment online — 24/7" },
