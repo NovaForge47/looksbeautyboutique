@@ -5,6 +5,9 @@
 - [x] Built the selected mobile hero with the existing woman above and the 15+ sentence plus BOOK NOW / ΣΧΕΤΙΚΑ below.
 
 ## Pending
+- [ ] Move all photo carousel arrows onto the images.
+- [ ] Add the five supplied reviews and previous/next review browsing.
+- [ ] Reorganize the footer compactly using the reference typography, preserving all details and links.
 
 ## Completed
 - [x] Desktop hero: removed About beside BOOK NOW and moved BOOK NOW right.
