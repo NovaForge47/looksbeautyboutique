@@ -430,6 +430,24 @@ function RoseLine({ center = false }: { center?: boolean }) {
   return <div className={`mt-5 h-[2px] w-[60px] bg-rose-gold ${center ? "mx-auto" : ""}`} />;
 }
 
+// Renders a heading with the word "look" in the logo's serif font
+function LookTitle({ text }: { text: string }) {
+  const parts = text.split(/(look)/i);
+  return (
+    <>
+      {parts.map((part, i) =>
+        /^look$/i.test(part) ? (
+          <em key={i} className="font-display italic font-medium not-italic:font-normal" style={{ fontStyle: "italic" }}>
+            {part}
+          </em>
+        ) : (
+          <span key={i}>{part}</span>
+        ),
+      )}
+    </>
+  );
+}
+
 function About() {
   const { t } = useI18n();
   return (
