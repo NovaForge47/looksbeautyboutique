@@ -213,7 +213,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer-sweep 5.5s ease-in-out infinite;
+  animation: shimmer-sweep 16s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
 
 @keyframes desktop-shimmer-sweep {
@@ -238,7 +238,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: desktop-shimmer-sweep 11s ease-in-out infinite;
+  animation: desktop-shimmer-sweep 24s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
 
 /* Typewriter entrance for the 15+ years line — types in once when the site opens */

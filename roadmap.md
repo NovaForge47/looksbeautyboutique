@@ -14,6 +14,7 @@
 - [x] Updated open-days count, removed Monday hours, and renamed the story heading.
 - [x] Added the six salon photos in reverse upload order as a carousel.
 - [x] Added a slower desktop shimmer to the 15-year line.
+- [x] Slowed the 15-year line shimmer to a deliberate sweep (16s mobile, 24s desktop) with a gentle ease; checked on phone and desktop (2026-10-21).
 - [x] Split the work gallery into Hair and Nails carousels.
 - [x] Nails carousel: 13 new photos from the supplied collages (2026-09-30).
 - [x] Hair carousel: restored the 10 supplied original collages unchanged and displayed without cropping or zooming (2026-09-30).
