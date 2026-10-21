@@ -24,3 +24,4 @@
 - [x] Published the slow deliberate shimmer and the bold logo-font "look" headings to the live domains (2026-10-21).
 - [x] Slowed the typing reveal of the 15-year line to 3.2s + 2.4s starting after the intro screen; checked on phone and desktop (2026-10-21).
 - [x] Published the slowed typing reveal to the live domains (2026-10-21).
+- [x] Made the "look" word in both headings heavier than bold by adding a hairline stroke on top of weight 700; checked on phone and desktop (2026-10-21).
