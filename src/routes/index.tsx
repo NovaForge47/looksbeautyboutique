@@ -437,7 +437,7 @@ function LookTitle({ text }: { text: string }) {
     <>
       {parts.map((part, i) =>
         /^look$/i.test(part) ? (
-          <em key={i} className="font-display italic font-medium">
+          <em key={i} className="font-display italic font-bold">
             {part}
           </em>
         ) : (
