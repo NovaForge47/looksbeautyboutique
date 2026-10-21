@@ -21,3 +21,4 @@
 - [x] Nails carousel: removed the requested third and last photos, added nine new photos, and framed every manicure without cropping (2026-10-02).
 - [x] Visually audited the Nails gallery and removed the repeated white line-art manicure photo (2026-10-02).
 - [x] Hair carousel: added ten new before/after collages, checked for duplicates against the existing set (none found) (2026-10-02).
+- [x] Published the slow deliberate shimmer and the bold logo-font "look" headings to the live domains (2026-10-21).
