@@ -250,13 +250,13 @@
 .type-in-1 {
   display: block;
   clip-path: polygon(-6% -20%, 0% -20%, 0% 120%, -6% 120%);
-  animation: type-in 1.15s steps(23, end) 2.4s forwards;
+  animation: type-in 3.2s steps(23, end) 3.3s forwards;
 }
 
 .type-in-2 {
   display: block;
   clip-path: polygon(-6% -20%, 0% -20%, 0% 120%, -6% 120%);
-  animation: type-in 0.9s steps(16, end) 3.75s forwards;
+  animation: type-in 2.4s steps(16, end) 6.6s forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
