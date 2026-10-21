@@ -471,7 +471,7 @@ function About() {
           <SectionLabel>{t.about.label}</SectionLabel>
           <RoseLine />
           <h2 className="mt-8 font-display font-light text-4xl md:text-5xl leading-[1.1]">
-            {t.about.title}
+            <LookTitle text={t.about.title} />
           </h2>
           <p className="mt-8 text-ink/70 text-base leading-[1.8] max-w-lg">{t.about.body}</p>
           <div className="mt-10 flex flex-wrap gap-3">
@@ -739,7 +739,7 @@ function FinalCTA() {
     >
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="font-display font-light text-5xl md:text-6xl leading-[1.05]">
-          {t.cta.title}
+          <LookTitle text={t.cta.title} />
         </h2>
         <div className="mt-6 h-[2px] w-[60px] bg-ink mx-auto" />
         <p className="mt-6 text-ink/80 text-lg">{t.cta.subtitle}</p>
