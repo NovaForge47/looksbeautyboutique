@@ -222,7 +222,7 @@ const el: Dict = {
   cta: { title: "Έτοιμοι για το Τέλειο Look;", subtitle: "Κλείστε το ραντεβού σας online — 24/7" },
   footer: {
     blurb:
-      "Σαλόνι νυχιών & μαλλιών στην καρδιά του Συντάγματος — μέσα στη στοά, Φιλελλήνων 3. Κάθε look είναι έργο τέχνης.",
+      "Σαλόνι νυχιών & μαλλιών στην καρδιά του Συντάγματος — Φιλελλήνων 3, Αθήνα 105 57 (Μέσα στη στοά). Κάθε look είναι έργο τέχνης.",
     title: "Τοποθεσία & Επικοινωνία",
     addressLabel: "Διεύθυνση",
     phoneLabel: "Τηλέφωνο",
@@ -412,7 +412,7 @@ const en: Dict = {
   cta: { title: "Ready for the Perfect Look?", subtitle: "Book your appointment online — 24/7" },
   footer: {
     blurb:
-      "Nail & hair salon in the heart of Syntagma — inside the arcade, Filellinon 3. Every look is a work of art.",
+      "Nail & hair salon in the heart of Syntagma — Filellinon 3, Athens 105 57 (Inside the arcade). Every look is a work of art.",
     title: "Location & Contact",
     addressLabel: "Address",
     phoneLabel: "Phone",
