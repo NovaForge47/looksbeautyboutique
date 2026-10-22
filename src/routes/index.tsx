@@ -438,7 +438,7 @@ function LookTitle({ text }: { text: string }) {
       {parts.map((part, i) =>
         /^look$/i.test(part) ? (
           <em key={i} className="font-bodoni italic font-black look-emphasis">
-            {part}
+            {part.toLowerCase()}
           </em>
         ) : (
           <span key={i}>{part}</span>

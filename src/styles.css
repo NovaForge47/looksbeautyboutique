@@ -242,9 +242,11 @@
   animation: desktop-shimmer-sweep 24s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
 
-/* The "look" word in headings — Bodoni Moda Black (900) in the logo's taupe colour. */
+/* The "look" word in headings — Bodoni Moda Black (900), always lowercase, in the logo's taupe colour. */
 .look-emphasis {
+  font-family: "Bodoni Moda", ui-serif, Georgia, serif;
   font-weight: 900;
+  text-transform: lowercase;
   color: var(--rose-gold);
 }
 
