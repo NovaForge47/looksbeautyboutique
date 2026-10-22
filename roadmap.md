@@ -1,7 +1,7 @@
 # Looks Beauty Boutique roadmap
 
 ## Pending
-- [ ] Recent wording and heading changes are not published yet: the footer address and description line now read "Φιλελλήνων 3, Αθήνα 105 57 (Μέσα στη στοά)" in Greek and "Filellinon 3, Athens 105 57 (Inside the arcade)" in English; the "look" word in both headings now renders lowercase in Bodoni Moda Black in the logo's taupe colour. Publish only when the user asks (2026-10-22).
+- [ ] Recent wording and heading changes are not published yet: the footer address and description line now read "Φιλελλήνων 3, Αθήνα 105 57 (Μέσα στη στοά)" in Greek and "Filellinon 3, Athens 105 57 (Inside the arcade)" in English; the "look" word in both headings now renders lowercase, upright (not italic), in Bodoni Moda 900 in the logo's taupe colour. Publish only when the user asks (2026-10-22).
 
 
 ## Completed
