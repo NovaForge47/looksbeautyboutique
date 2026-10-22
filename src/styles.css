@@ -242,9 +242,10 @@
   animation: desktop-shimmer-sweep 24s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
 
-/* The "look" word in headings — Bodoni Moda Black (900), the logo-matching serif. */
+/* The "look" word in headings — Bodoni Moda Black (900) in the logo's taupe colour. */
 .look-emphasis {
   font-weight: 900;
+  color: var(--rose-gold);
 }
 
 /* Typewriter entrance for the 15+ years line — types in once when the site opens */
