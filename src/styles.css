@@ -67,6 +67,7 @@
   --color-taupe: var(--taupe);
   --color-review-surface: var(--review-surface);
   --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-bodoni: "Bodoni Moda", ui-serif, Georgia, serif;
   --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -241,12 +242,9 @@
   animation: desktop-shimmer-sweep 24s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
 
-/* "look" word in headings — Cormorant Garamond stops at 700, so thicken the
-   glyphs with a hairline stroke on top of the bold weight. */
+/* The "look" word in headings — Bodoni Moda Black (900), the logo-matching serif. */
 .look-emphasis {
-  font-weight: 700;
-  -webkit-text-stroke: 0.022em currentColor;
-  text-shadow: 0 0 0.5px currentColor;
+  font-weight: 900;
 }
 
 /* Typewriter entrance for the 15+ years line — types in once when the site opens */
