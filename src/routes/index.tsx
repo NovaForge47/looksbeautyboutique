@@ -68,33 +68,69 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-export const Route = createFileRoute("/")({
-  component: LumierePage,
-  head: () => ({
-    meta: [
-      { title: "Looks Beauty Boutique | Nails & Hair Salon στο Σύνταγμα" },
-      {
-        name: "description",
-        content:
-          "Nail & hair salon στην καρδιά του Συντάγματος, Φιλελλήνων 3. Manicure, pedicure, nail art και μαλλιά. Online ραντεβού 24/7.",
-      },
-      { property: "og:title", content: "Looks Beauty Boutique | Nails & Hair Salon, Athens" },
-      {
-        property: "og:description",
-        content:
-          "Περισσότερα από 15 χρόνια ομορφιάς στο Σύνταγμα. Κλείστε online ραντεβού για nails, hair & beauty.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-});
-
+const SITE_URL = "https://looksbeautyboutique.gr/";
 const BOOKING_URL = "https://looksbeautyboutique.setmore.com/";
 const MAPS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=Filellinon+3,+Athina+105+57,+Greece";
 const MAPS_EMBED =
   "https://www.google.com/maps?q=Filellinon+3,+Athina+105+57,+Greece&output=embed";
+const SOCIAL_URLS = {
+  instagram: "https://www.instagram.com/looks_beautyboutiquesyntagma/",
+  facebook: "https://www.facebook.com/looksbeautyboutique/",
+  tiktok: "https://www.tiktok.com/@looksbbsyntagma",
+};
+const SEO_IMAGE = `https://looksbeautyboutique.gr${heroHairBg.url}`;
+const SEO_TITLE = "Κομμωτήριο & Nail Salon στο Σύνταγμα, Αθήνα | Looks";
+const SEO_DESCRIPTION =
+  "Κομμωτήριο και nail salon στο Σύνταγμα (Φιλελλήνων 3). Manicure, pedicure, ημιμόνιμο, gel, balayage και βαφή. 4.6★ στο Google. Κλείσε online.";
+
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["HairSalon", "NailSalon"],
+  name: "Looks Beauty Boutique",
+  url: SITE_URL,
+  telephone: "+302117409989",
+  email: "Looksbb-syntagma@hotmail.com",
+  image: SEO_IMAGE,
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Φιλελλήνων 3",
+    addressLocality: "Αθήνα",
+    postalCode: "10557",
+    addressCountry: "GR",
+  },
+  openingHoursSpecification: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday", "Thursday"], opens: "09:00", closes: "20:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "08:00", closes: "20:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "18:00" },
+  ],
+  sameAs: [SOCIAL_URLS.instagram, SOCIAL_URLS.facebook, SOCIAL_URLS.tiktok, MAPS_URL],
+  hasMap: MAPS_URL,
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: { "@type": "EntryPoint", urlTemplate: BOOKING_URL },
+  },
+};
+
+export const Route = createFileRoute("/")({
+  component: LumierePage,
+  head: () => ({
+    meta: [
+      { title: SEO_TITLE },
+      { name: "description", content: SEO_DESCRIPTION },
+      { property: "og:title", content: SEO_TITLE },
+      { property: "og:description", content: SEO_DESCRIPTION },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SEO_TITLE },
+      { name: "twitter:description", content: SEO_DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: SITE_URL }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(businessJsonLd) }],
+  }),
+});
 
 const hourTimes = [
   null,
@@ -249,8 +285,7 @@ function Hero() {
       {/* Fills the screen on mobile (face kept in frame), contained on desktop */}
       <img
         src={heroHairBg.url}
-        alt=""
-        aria-hidden
+        alt={t.hero.imageAlt}
         className="absolute inset-0 h-full w-full object-cover object-[97%_center] sm:object-contain sm:object-right"
       />
       <HeroNav />
@@ -294,9 +329,14 @@ function Hero() {
       </p>
 
       {/* Main phrase — desktop */}
-      <h1 className="hidden sm:block absolute z-10 sm:top-1/2 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic text-pearl sm:text-4xl lg:text-5xl leading-[1.15] text-left sm:max-w-none">
+      <p className="hidden sm:block absolute z-10 sm:top-1/2 sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 sm:-translate-y-1/2 font-display italic text-pearl sm:text-4xl lg:text-5xl leading-[1.15] text-left sm:max-w-none">
         <span className="block">{t.hero.line1.first}</span>
         <span className="block sm:pl-64 lg:pl-80">{t.hero.line1.second}</span>
+      </p>
+
+      {/* Single page H1 — one element, positioned per breakpoint */}
+      <h1 className="absolute z-10 top-[146px] left-6 min-[430px]:top-[164px] sm:top-[calc(50%+5.5rem)] sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 whitespace-nowrap font-sans font-medium uppercase text-pearl/80 sm:text-taupe text-[9.5px] min-[430px]:text-[10.5px] sm:text-xs lg:text-sm tracking-[0.16em] sm:tracking-[0.3em]">
+        {t.hero.h1}
       </h1>
 
       <p className="hidden sm:block absolute z-10 sm:bottom-10 sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
@@ -758,9 +798,9 @@ function FinalCTA() {
 function Footer() {
   const { t } = useI18n();
   const socials = [
-    { name: "Instagram", href: "https://www.instagram.com/looks_beautyboutiquesyntagma/", icon: <Instagram size={15} /> },
-    { name: "Facebook", href: "https://www.facebook.com/looksbeautyboutique/", icon: <Facebook size={15} /> },
-    { name: "TikTok", href: "https://www.tiktok.com/@looksbbsyntagma", icon: null },
+    { name: "Instagram", href: SOCIAL_URLS.instagram, icon: <Instagram size={15} /> },
+    { name: "Facebook", href: SOCIAL_URLS.facebook, icon: <Facebook size={15} /> },
+    { name: "TikTok", href: SOCIAL_URLS.tiktok, icon: null },
   ];
   return (
     <footer id="contact" className="bg-ink py-12 text-primary-foreground font-body lg:py-16">

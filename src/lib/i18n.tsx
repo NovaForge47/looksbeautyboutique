@@ -4,7 +4,7 @@ export type Lang = "el" | "en";
 
 type Dict = {
   nav: { home: string; about: string; gallery: string; events: string; book: string; menu: string };
-  hero: { line1: { first: string; second: string }; line2: { first: string; second: string }; line2Short: { first: string; second: string }; about: string; tagline: string };
+  hero: { line1: { first: string; second: string }; line2: { first: string; second: string }; line2Short: { first: string; second: string }; about: string; tagline: string; h1: string; imageAlt: string };
   about: {
     label: string;
     title: string;
@@ -55,6 +55,8 @@ const el: Dict = {
     line2Short: { first: "15 χρόνια εμπιστοσύνης", second: "Syntagma-Athens" },
     about: "Σχετικά",
     tagline: "All about Nails-Hair & more!",
+    h1: "Κομμωτήριο & Nail Salon στο Σύνταγμα, Αθήνα",
+    imageAlt: "Περιποιημένα νύχια και λαμπερά μαλλιά από το Looks Beauty Boutique, κομμωτήριο και nail salon στο Σύνταγμα",
   },
   about: {
     label: "Το Salon μας",
@@ -245,6 +247,8 @@ const en: Dict = {
     line2Short: { first: "15 years of trust", second: "Syntagma-Athens" },
     about: "About",
     tagline: "All about Nails-Hair & more!",
+    h1: "Hair & Nail Salon in Syntagma, Athens",
+    imageAlt: "Manicured nails and glossy hair by Looks Beauty Boutique, hair and nail salon in Syntagma, Athens",
   },
   about: {
     label: "Our Salon",
