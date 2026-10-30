@@ -77,12 +77,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Looks Beauty Boutique — Σαλόνι Νυχιών & Μαλλιών στο Σύνταγμα, Αθήνα" },
-      { name: "description", content: "Looks Beauty Boutique — σαλόνι νυχιών & μαλλιών στο Σύνταγμα (Φιλελλήνων 3, Αθήνα). Manicure, pedicure, ημιμόνιμο, nail art & μαλλιά. 4.6★ από 164+ κριτικές. Κλείστε ραντεβού online." },
       { name: "author", content: "Looks Beauty Boutique" },
-      { property: "og:title", content: "Looks Beauty Boutique — Σαλόνι Νυχιών & Μαλλιών στο Σύνταγμα" },
-      { property: "og:description", content: "Premium σαλόνι νυχιών & μαλλιών μέσα στη στοά, Φιλελλήνων 3, Αθήνα. Manicure, pedicure, nail art." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Looks Beauty Boutique" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
