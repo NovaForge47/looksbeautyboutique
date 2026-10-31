@@ -439,18 +439,19 @@ const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: D
   t: el,
 });
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("el");
+export function LanguageProvider({ children, forceLang }: { children: ReactNode; forceLang?: Lang }) {
+  const [lang, setLang] = useState<Lang>(forceLang ?? "el");
 
   useEffect(() => {
+    if (forceLang) return;
     const stored = window.localStorage.getItem("lbb-lang");
     if (stored === "el" || stored === "en") setLang(stored);
-  }, []);
+  }, [forceLang]);
 
   useEffect(() => {
-    window.localStorage.setItem("lbb-lang", lang);
+    if (!forceLang) window.localStorage.setItem("lbb-lang", lang);
     document.documentElement.lang = lang;
-  }, [lang]);
+  }, [lang, forceLang]);
 
   return (
     <LangContext.Provider value={{ lang, setLang, t: dictionaries[lang] }}>
