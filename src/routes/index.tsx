@@ -64,8 +64,6 @@ import {
   Star,
   Phone,
   Clock,
-  Instagram,
-  Facebook,
   Menu,
   X,
   ChevronLeft,
@@ -184,12 +182,14 @@ function LangSwitch({ compact = false }: { compact?: boolean }) {
 
 /* -------------------- HERO NAV -------------------- */
 function HeroNav() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#home", label: t.nav.home },
     { href: "#story", label: t.nav.about },
     { href: "#gallery", label: t.nav.gallery },
+    { href: "/nails", label: lang === "en" ? "Nails" : "Νύχια" },
+    { href: "/hair", label: lang === "en" ? "Hair" : "Μαλλιά" },
     { href: "#gallery", label: t.nav.events, outline: true },
     { href: "#booking", label: t.nav.book, cta: true },
   ];
@@ -199,7 +199,7 @@ function HeroNav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
         <a href="#home" aria-label={t.nav.home} className="shrink-0 w-8 h-8" />
 
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/80">
+        <nav className="hidden md:flex items-center gap-3 lg:gap-6 xl:gap-8 text-[12px] lg:text-[13px] font-medium tracking-[0.18em] uppercase text-white/80">
           {links.map((l) => (
             <a
               key={l.label}
@@ -630,7 +630,7 @@ function Story() {
 
 /* -------------------- GALLERY (CAROUSEL) -------------------- */
 function Gallery() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const nailSlides = [
     { src: nails01.url, alt: t.gallery.alts[0] },
     { src: nails06.url, alt: t.gallery.alts[5] },
@@ -689,11 +689,13 @@ function Gallery() {
 
         <div className="mt-16 grid gap-16 lg:grid-cols-2 lg:gap-10">
           <div className="min-w-0">
-            <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
+            <h3 className="text-center font-display text-3xl font-light">{t.gallery.nails}</h3>
+            <p className="mb-7 mt-2 text-center text-sm"><Link to="/nails" className="text-rose-gold underline underline-offset-4 hover:text-ink">{lang === "en" ? "See nail prices →" : "Δες τιμές νυχιών →"}</Link></p>
             <PhotoCarousel autoPlay slides={nailSlides} portrait fit />
           </div>
           <div className="min-w-0">
-            <h3 className="mb-7 text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
+            <h3 className="text-center font-display text-3xl font-light">{t.gallery.hair}</h3>
+            <p className="mb-7 mt-2 text-center text-sm"><Link to="/hair" className="text-rose-gold underline underline-offset-4 hover:text-ink">{lang === "en" ? "See hair prices →" : "Δες τιμές κομμωτηρίου →"}</Link></p>
             <PhotoCarousel autoPlay slides={hairSlides} portrait />
           </div>
         </div>
