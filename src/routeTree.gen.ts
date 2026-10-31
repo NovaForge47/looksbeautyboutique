@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HairRouteImport } from './routes/hair'
+import { Route as NailsRouteImport } from './routes/nails'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HairRoute = HairRouteImport.update({
+  id: '/hair',
+  path: '/hair',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NailsRoute = NailsRouteImport.update({
+  id: '/nails',
+  path: '/nails',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hair': typeof HairRoute
+  '/nails': typeof NailsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hair': typeof HairRoute
+  '/nails': typeof NailsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hair': typeof HairRoute
+  '/nails': typeof NailsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/hair' | '/nails'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/hair' | '/nails'
+  id: '__root__' | '/' | '/hair' | '/nails'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HairRoute: typeof HairRoute
+  NailsRoute: typeof NailsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hair': {
+      id: '/hair'
+      path: '/hair'
+      fullPath: '/hair'
+      preLoaderRoute: typeof HairRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nails': {
+      id: '/nails'
+      path: '/nails'
+      fullPath: '/nails'
+      preLoaderRoute: typeof NailsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HairRoute: HairRoute,
+  NailsRoute: NailsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
