@@ -1,58 +1,58 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroHairBg from "@/assets/hero-hair.jpg.asset.json";
+const heroHairBg = "/images/hero-hair.jpg";
 
-import heroLogoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
-const heroLogo = heroLogoAsset.url;
-import nails01 from "@/assets/nails-new-01.jpg.asset.json";
-import nails06 from "@/assets/nails-new-06.jpg.asset.json";
-import nails08 from "@/assets/nails-new-08.jpg.asset.json";
-import nails09 from "@/assets/nails-new-09.jpg.asset.json";
-import nails10 from "@/assets/nails-new-10.jpg.asset.json";
-import nails11 from "@/assets/nails-new-11.jpg.asset.json";
-import nails12 from "@/assets/nails-new-12.jpg.asset.json";
-import nails13 from "@/assets/nails-new-13.jpg.asset.json";
-import nails14 from "@/assets/nails-new-14.jpg.asset.json";
-import nails15 from "@/assets/nails-15-black-snowflake.jpg.asset.json";
-import nails17 from "@/assets/nails-17-french-glam.jpg.asset.json";
-import nails18 from "@/assets/nails-18-burgundy-stiletto.jpg.asset.json";
-import nails19 from "@/assets/nails-19-mauve-stiletto.jpg.asset.json";
-import nails20 from "@/assets/nails-20-pastel.jpg.asset.json";
-import nails26 from "@/assets/nails-26-ivory-ombre.jpg.asset.json";
-import nails27 from "@/assets/nails-27-pink-orange-ombre.jpg.asset.json";
-import nails28 from "@/assets/nails-28-mint.jpg.asset.json";
-import nails29 from "@/assets/nails-29-silver.jpg.asset.json";
-import nails30 from "@/assets/nails-30-burgundy-before-after.jpg.asset.json";
-import nails31 from "@/assets/nails-31-colorful-dots.jpg.asset.json";
-import nails32 from "@/assets/nails-32-pink-purple-dots.jpg.asset.json";
-import nails33 from "@/assets/nails-33-nude-gloss.jpg.asset.json";
-import nails34 from "@/assets/nails-34-navy-french-before-after.jpg.asset.json";
-import hair01 from "@/assets/hair-original-01.jpg.asset.json";
-import hair02 from "@/assets/hair-original-02.jpg.asset.json";
-import hair03 from "@/assets/hair-original-03.jpg.asset.json";
-import hair04 from "@/assets/hair-original-04.jpg.asset.json";
-import hair05 from "@/assets/hair-original-05.jpg.asset.json";
-import hair06 from "@/assets/hair-original-06.jpg.asset.json";
-import hair07 from "@/assets/hair-original-07.jpg.asset.json";
-import hair08 from "@/assets/hair-original-08.jpg.asset.json";
-import hair09 from "@/assets/hair-original-09.jpg.asset.json";
-import hair10 from "@/assets/hair-original-10.jpg.asset.json";
-import hair11 from "@/assets/hair-original-11.jpg.asset.json";
-import hair12 from "@/assets/hair-original-12.jpg.asset.json";
-import hair13 from "@/assets/hair-original-13.jpg.asset.json";
-import hair14 from "@/assets/hair-original-14.jpg.asset.json";
-import hair15 from "@/assets/hair-original-15.jpg.asset.json";
-import hair16 from "@/assets/hair-original-16.jpg.asset.json";
-import hair17 from "@/assets/hair-original-17.jpg.asset.json";
-import hair18 from "@/assets/hair-original-18.jpg.asset.json";
-import hair19 from "@/assets/hair-original-19.jpg.asset.json";
-import hair20 from "@/assets/hair-original-20.jpg.asset.json";
-import salonReception from "@/assets/salon-01-reception.jpg.asset.json";
-import salonStations from "@/assets/salon-02-stations.jpg.asset.json";
-import salonPedicure from "@/assets/salon-03-pedicure.jpg.asset.json";
-import salonOverview from "@/assets/salon-04-overview.jpg.asset.json";
-import salonManicure from "@/assets/salon-05-manicure.jpg.asset.json";
-import salonPolishWall from "@/assets/salon-06-polish-wall.jpg.asset.json";
+const heroLogoAsset = "/images/logo-looks-original-colors.png";
+const heroLogo = heroLogoAsset;
+const nails01 = "/images/nails-new-01-black-before-after.jpg";
+const nails06 = "/images/nails-new-06-nude-chrome.jpg";
+const nails08 = "/images/nails-new-08-black-love.jpg";
+const nails09 = "/images/nails-new-09-dark-blue-stiletto.jpg";
+const nails10 = "/images/nails-new-10-pink-flowers.jpg";
+const nails11 = "/images/nails-new-11-nails-french-collage.jpg";
+const nails12 = "/images/nails-new-12-nails-ladybug-collage.jpg";
+const nails13 = "/images/nails-new-13-nails-white-lineart.jpg";
+const nails14 = "/images/nails-new-14-nails-dark-glitter.jpg";
+const nails15 = "/images/nails-15-black-snowflake.jpg";
+const nails17 = "/images/nails-17-french-glam.jpg";
+const nails18 = "/images/nails-18-burgundy-stiletto.jpg";
+const nails19 = "/images/nails-19-mauve-stiletto.jpg";
+const nails20 = "/images/nails-20-pastel.jpg";
+const nails26 = "/images/nails-26-ivory-ombre.jpg";
+const nails27 = "/images/nails-27-pink-orange-ombre.jpg";
+const nails28 = "/images/nails-28-mint.jpg";
+const nails29 = "/images/nails-29-silver.jpg";
+const nails30 = "/images/nails-30-burgundy-before-after.jpg";
+const nails31 = "/images/nails-31-colorful-dots.jpg";
+const nails32 = "/images/nails-32-pink-purple-dots.jpg";
+const nails33 = "/images/nails-33-nude-gloss.jpg";
+const nails34 = "/images/nails-34-navy-french-before-after.jpg";
+const hair01 = "/images/hair-original-01.jpg";
+const hair02 = "/images/hair-original-02.jpg";
+const hair03 = "/images/hair-original-03.jpg";
+const hair04 = "/images/hair-original-04.jpg";
+const hair05 = "/images/hair-original-05.jpg";
+const hair06 = "/images/hair-original-06.jpg";
+const hair07 = "/images/hair-original-07.jpg";
+const hair08 = "/images/hair-original-08.jpg";
+const hair09 = "/images/hair-original-09.jpg";
+const hair10 = "/images/hair-original-10.jpg";
+const hair11 = "/images/hair-original-11.jpg";
+const hair12 = "/images/hair-original-12.jpg";
+const hair13 = "/images/hair-original-13.jpg";
+const hair14 = "/images/hair-original-14.jpg";
+const hair15 = "/images/hair-original-15.jpg";
+const hair16 = "/images/hair-original-16.jpg";
+const hair17 = "/images/hair-original-17.jpg";
+const hair18 = "/images/hair-original-18.jpg";
+const hair19 = "/images/hair-original-19.jpg";
+const hair20 = "/images/hair-original-20.jpg";
+const salonReception = "/images/salon-01-reception.jpg";
+const salonStations = "/images/salon-02-stations.jpg";
+const salonPedicure = "/images/salon-03-pedicure.jpg";
+const salonOverview = "/images/salon-04-overview.jpg";
+const salonManicure = "/images/salon-05-manicure.jpg";
+const salonPolishWall = "/images/salon-06-polish-wall.jpg";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/site/Footer";
@@ -70,7 +70,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const SEO_IMAGE = `https://looksbeautyboutique.gr${heroHairBg.url}`;
+const SEO_IMAGE = `https://looksbeautyboutique.gr${heroHairBg}`;
 const SEO_TITLE = "Κομμωτήριο & Nail Salon στο Σύνταγμα, Αθήνα | Looks";
 const SEO_DESCRIPTION =
   "Κομμωτήριο και nail salon στο Σύνταγμα (Φιλελλήνων 3). Manicure, pedicure, ημιμόνιμο, gel, balayage και βαφή. 4.6★ στο Google. Κλείσε online.";
@@ -277,7 +277,7 @@ function Hero() {
     <section id="home" className="relative bg-black text-white overflow-hidden min-h-[100svh]">
       {/* Fills the screen on mobile (face kept in frame), contained on desktop */}
       <img
-        src={heroHairBg.url}
+        src={heroHairBg}
         alt={t.hero.imageAlt}
         className="absolute inset-0 h-full w-full object-cover object-[97%_center] sm:object-contain sm:object-right"
       />
@@ -488,12 +488,12 @@ function About() {
             autoPlay
             portrait
             slides={[
-              { src: salonReception.url, alt: t.about.salonAlts[0] },
-              { src: salonStations.url, alt: t.about.salonAlts[1] },
-              { src: salonPedicure.url, alt: t.about.salonAlts[2] },
-              { src: salonOverview.url, alt: t.about.salonAlts[3] },
-              { src: salonManicure.url, alt: t.about.salonAlts[4] },
-              { src: salonPolishWall.url, alt: t.about.salonAlts[5] },
+              { src: salonReception, alt: t.about.salonAlts[0] },
+              { src: salonStations, alt: t.about.salonAlts[1] },
+              { src: salonPedicure, alt: t.about.salonAlts[2] },
+              { src: salonOverview, alt: t.about.salonAlts[3] },
+              { src: salonManicure, alt: t.about.salonAlts[4] },
+              { src: salonPolishWall, alt: t.about.salonAlts[5] },
             ]}
           />
         </div>
@@ -632,51 +632,51 @@ function Story() {
 function Gallery() {
   const { t, lang } = useI18n();
   const nailSlides = [
-    { src: nails01.url, alt: t.gallery.alts[0] },
-    { src: nails06.url, alt: t.gallery.alts[5] },
-    { src: nails08.url, alt: t.gallery.alts[7] },
-    { src: nails09.url, alt: t.gallery.alts[8] },
-    { src: nails10.url, alt: t.gallery.alts[9] },
-    { src: nails11.url, alt: t.gallery.alts[10] },
-    { src: nails12.url, alt: t.gallery.alts[11] },
-    { src: nails13.url, alt: t.gallery.alts[12] },
-    { src: nails14.url, alt: t.gallery.alts[13] },
-    { src: nails15.url, alt: t.gallery.alts[14] },
-    { src: nails17.url, alt: t.gallery.alts[16] },
-    { src: nails18.url, alt: t.gallery.alts[17] },
-    { src: nails19.url, alt: t.gallery.alts[18] },
-    { src: nails20.url, alt: t.gallery.alts[19] },
-    { src: nails26.url, alt: t.gallery.alts[25] },
-    { src: nails27.url, alt: t.gallery.alts[26] },
-    { src: nails28.url, alt: t.gallery.alts[27] },
-    { src: nails29.url, alt: t.gallery.alts[28] },
-    { src: nails30.url, alt: t.gallery.alts[29] },
-    { src: nails31.url, alt: t.gallery.alts[30] },
-    { src: nails32.url, alt: t.gallery.alts[31] },
-    { src: nails33.url, alt: t.gallery.alts[32] },
-    { src: nails34.url, alt: t.gallery.alts[33] },
+    { src: nails01, alt: t.gallery.alts[0] },
+    { src: nails06, alt: t.gallery.alts[5] },
+    { src: nails08, alt: t.gallery.alts[7] },
+    { src: nails09, alt: t.gallery.alts[8] },
+    { src: nails10, alt: t.gallery.alts[9] },
+    { src: nails11, alt: t.gallery.alts[10] },
+    { src: nails12, alt: t.gallery.alts[11] },
+    { src: nails13, alt: t.gallery.alts[12] },
+    { src: nails14, alt: t.gallery.alts[13] },
+    { src: nails15, alt: t.gallery.alts[14] },
+    { src: nails17, alt: t.gallery.alts[16] },
+    { src: nails18, alt: t.gallery.alts[17] },
+    { src: nails19, alt: t.gallery.alts[18] },
+    { src: nails20, alt: t.gallery.alts[19] },
+    { src: nails26, alt: t.gallery.alts[25] },
+    { src: nails27, alt: t.gallery.alts[26] },
+    { src: nails28, alt: t.gallery.alts[27] },
+    { src: nails29, alt: t.gallery.alts[28] },
+    { src: nails30, alt: t.gallery.alts[29] },
+    { src: nails31, alt: t.gallery.alts[30] },
+    { src: nails32, alt: t.gallery.alts[31] },
+    { src: nails33, alt: t.gallery.alts[32] },
+    { src: nails34, alt: t.gallery.alts[33] },
   ];
   const hairSlides = [
-    { src: hair01.url, alt: t.hair.alts[0] },
-    { src: hair02.url, alt: t.hair.alts[1] },
-    { src: hair03.url, alt: t.hair.alts[2] },
-    { src: hair04.url, alt: t.hair.alts[3] },
-    { src: hair05.url, alt: t.hair.alts[4] },
-    { src: hair06.url, alt: t.hair.alts[5] },
-    { src: hair07.url, alt: t.hair.alts[6] },
-    { src: hair08.url, alt: t.hair.alts[7] },
-    { src: hair09.url, alt: t.hair.alts[8] },
-    { src: hair10.url, alt: t.hair.alts[9] },
-    { src: hair11.url, alt: t.hair.alts[10] },
-    { src: hair12.url, alt: t.hair.alts[11] },
-    { src: hair13.url, alt: t.hair.alts[12] },
-    { src: hair14.url, alt: t.hair.alts[13] },
-    { src: hair15.url, alt: t.hair.alts[14] },
-    { src: hair16.url, alt: t.hair.alts[15] },
-    { src: hair17.url, alt: t.hair.alts[16] },
-    { src: hair18.url, alt: t.hair.alts[17] },
-    { src: hair19.url, alt: t.hair.alts[18] },
-    { src: hair20.url, alt: t.hair.alts[19] },
+    { src: hair01, alt: t.hair.alts[0] },
+    { src: hair02, alt: t.hair.alts[1] },
+    { src: hair03, alt: t.hair.alts[2] },
+    { src: hair04, alt: t.hair.alts[3] },
+    { src: hair05, alt: t.hair.alts[4] },
+    { src: hair06, alt: t.hair.alts[5] },
+    { src: hair07, alt: t.hair.alts[6] },
+    { src: hair08, alt: t.hair.alts[7] },
+    { src: hair09, alt: t.hair.alts[8] },
+    { src: hair10, alt: t.hair.alts[9] },
+    { src: hair11, alt: t.hair.alts[10] },
+    { src: hair12, alt: t.hair.alts[11] },
+    { src: hair13, alt: t.hair.alts[12] },
+    { src: hair14, alt: t.hair.alts[13] },
+    { src: hair15, alt: t.hair.alts[14] },
+    { src: hair16, alt: t.hair.alts[15] },
+    { src: hair17, alt: t.hair.alts[16] },
+    { src: hair18, alt: t.hair.alts[17] },
+    { src: hair19, alt: t.hair.alts[18] },
+    { src: hair20, alt: t.hair.alts[19] },
   ];
 
   return (

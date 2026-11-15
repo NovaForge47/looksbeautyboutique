@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import logoAsset from "@/assets/logo-looks-original-colors.png.asset.json";
+const logoAsset = "/images/logo-looks-original-colors.png";
 import { LanguageProvider } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/site";
 import type { ServicePageData } from "@/data/services";
@@ -32,7 +32,7 @@ function ServiceNav() {
     <header className="bg-ink">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-10">
         <Link to="/" aria-label="Looks Beauty Boutique — Αρχική" className="shrink-0">
-          <img src={logoAsset.url} alt="Looks Beauty Boutique" className="h-8 w-auto sm:h-10" />
+          <img src={logoAsset} alt="Looks Beauty Boutique" className="h-8 w-auto sm:h-10" />
         </Link>
         <nav className="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.18em] text-white/80 sm:gap-6 sm:text-[13px]">
           {links.map((l) => (
