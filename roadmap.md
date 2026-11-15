@@ -30,3 +30,5 @@
 - [x] Published the slowed typing reveal to the live domains (2026-10-21).
 - [x] Made the "look" word in both headings heavier than bold by adding a hairline stroke on top of weight 700; checked on phone and desktop (2026-10-21).
 - [x] Published the heavier "look" word treatment to the live domains (2026-10-21).
+
+- [x] Moved all 121 asset-pointer images to public/images with original filenames and local URLs for hosting portability (2026-11-15).
