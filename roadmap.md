@@ -32,3 +32,6 @@
 - [x] Published the heavier "look" word treatment to the live domains (2026-10-21).
 
 - [x] Moved all 121 asset-pointer images to public/images with original filenames and local URLs for hosting portability (2026-11-15).
+- [x] Added home-screen app identity: manifest named "Looks Beauty Boutique" (short "Looks") with logo icons, so adding to the home screen no longer shows the long SEO title (2026-11-24).
+- [x] Reverted the website logo to the original wordmark while keeping the new "Looks Beauty Boutique" logo for the home-screen app icons only (2026-11-24).
+- [x] Published the app-identity fix and logo revert to the live domains; verified the manifest, both icon sizes and the original site logo on looksbeautyboutique.gr (2026-11-24).
