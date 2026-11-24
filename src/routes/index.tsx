@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 const heroHairBg = "/images/hero-hair.jpg";
 
-const heroLogoAsset = "/images/looks-beauty-boutique-logo.png";
+const heroLogoAsset = "/images/logo-looks-original-colors.png";
 const heroLogo = heroLogoAsset;
 const nails01 = "/images/nails-new-01-black-before-after.jpg";
 const nails06 = "/images/nails-new-06-nude-chrome.jpg";

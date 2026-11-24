@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronDown } from "lucide-react";
-const logoAsset = "/images/looks-beauty-boutique-logo.png";
+const logoAsset = "/images/logo-looks-original-colors.png";
 import { LanguageProvider } from "@/lib/i18n";
 import { BOOKING_URL } from "@/lib/site";
 import type { ServicePageData } from "@/data/services";
