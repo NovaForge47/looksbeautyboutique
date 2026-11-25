@@ -327,10 +327,8 @@ function Hero() {
         <span className="block sm:pl-64 lg:pl-80">{t.hero.line1.second}</span>
       </p>
 
-      {/* Single page H1 — one element, positioned per breakpoint */}
-      <h1 className="absolute z-10 top-[146px] left-6 min-[430px]:top-[164px] sm:top-[calc(50%+5.5rem)] sm:left-[34%] lg:left-[38%] sm:-translate-x-1/2 whitespace-nowrap font-sans font-medium uppercase text-pearl/80 sm:text-taupe text-[9.5px] min-[430px]:text-[10.5px] sm:text-xs lg:text-sm tracking-[0.16em] sm:tracking-[0.3em]">
-        {t.hero.h1}
-      </h1>
+      {/* Single page H1 — kept for search engines, not shown on screen */}
+      <h1 className="sr-only">{t.hero.h1}</h1>
 
       <p className="hidden sm:block absolute z-10 sm:bottom-10 sm:left-[34%] lg:left-[30%] font-display italic font-bold text-taupe sm:text-xl lg:text-3xl text-left">
         <Tagline />
